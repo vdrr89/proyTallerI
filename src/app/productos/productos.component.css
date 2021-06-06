@@ -1,0 +1,11 @@
+.cart-situation{
+    text-align:center;
+}
+
+.manage-amount{
+    display: inline
+}
+
+.amount-number {
+    max-width: 50px;
+}

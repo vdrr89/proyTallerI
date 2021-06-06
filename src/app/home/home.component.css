@@ -1,0 +1,7 @@
+.carousel-control-prev,
+.carousel-control-next, 
+.carousel-indicators {
+    font-size: 8rem;
+    font-weight: 800;
+    font-family: 'Corben', cursive;
+}

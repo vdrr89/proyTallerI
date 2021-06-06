@@ -1,3 +1,8 @@
+/* 
+FIX: 
+- iluminar más cuando button hover
+*/
+
 .content {
     padding: 15px;
 }
@@ -8,6 +13,7 @@
 
 /* ---------------------- GENERALES ---------------------- */
 
+/* bootstrap icons */
 @import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css");
 
 
@@ -33,11 +39,17 @@ fuente secundaria: roboto condensed
 
 /* ---------------------- FUENTES ---------------------- */
 
+/* Roboto para títulos */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
 /* font-family: 'Roboto Condensed', sans-serif; */
 
+/* Ubuntu para texto */
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,500;1,300;1,500&display=swap');
 /* font-family: 'Ubuntu', sans-serif; */
+
+/* para íconos desde texto */
+@import url('https://fonts.googleapis.com/css2?family=Corben:wght@700&display=swap');
+/* font-family: 'Corben', cursive; */
 
 /* ---------------------- SELECCIONES ---------------------- */
 
@@ -168,12 +180,23 @@ fuente secundaria: roboto condensed
       color:#fff;
   }
   
+  .negative-button {
+    background-color: #9b0b0b;
+  }
+
+  .negative-button:hover {
+    background-color: #ff2020;
+    box-shadow: 0px 15px 20px #9b0b0b80;
+  }
+
   input {
     margin: 4px;
     border-radius: 0px;
-    padding: 16px 32px;
+    padding: 20px 32px;
     margin: 4px 2px;
-    border: 1px #0303031a;
+    border-color: #0303035e;
+    border-style: solid;
+    border-width: 1px;
     } 
 
 /* ---------------------- DIAGRAMACIÓN ---------------------- */
