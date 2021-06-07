@@ -7,7 +7,7 @@ import { CajaComponent } from './caja/caja.component';
 import { GestionproductosComponent } from './gestionproductos/gestionproductos.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
-import { NewUserComponent } from './new-user/new-user.component';
+import { NewUserComponent } from './login/new-user/new-user.component';
 
 
 const routes: Routes = [

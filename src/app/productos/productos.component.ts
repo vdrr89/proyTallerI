@@ -7,6 +7,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductosComponent implements OnInit {
 
+  data = [
+    {
+      title:"uno",
+      description: "acá una no tan larga descripción de lo que es",
+      price: 0
+    },
+    {
+      title:"dos",
+      description: "acá una tan larga descripción de lo que es",
+      price: 0
+    },
+    {
+      title:"tres",
+      description: "una no tan larga descripción de lo que es",
+      price: 0
+    }
+  ]
+
   constructor() { }
 
   ngOnInit(): void {
