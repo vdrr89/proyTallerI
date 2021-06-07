@@ -192,7 +192,7 @@ fuente secundaria: roboto condensed
   input {
     margin: 4px;
     border-radius: 0px;
-    padding: 20px 32px;
+    padding: 16px 32px;
     margin: 4px 2px;
     border-color: #0303035e;
     border-style: solid;
@@ -216,7 +216,22 @@ nav > form {
     margin: 4px 2px
 }
 
-@media screen and (max-width: 600px) {
+/* PC CHICA */
+@media screen and (max-width:900px) {
+  button,
+  nav > button {
+    padding: 8px 16px;
+    margin: 4px 2px;
+  }
+
+  input {
+    padding: 8px 16px;
+    margin: 4px 2px;
+  }
+}
+
+/* TABLET */
+@media screen and (max-width: 760px) {
     nav {
         float: none;
     }

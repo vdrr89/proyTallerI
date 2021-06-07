@@ -5,3 +5,8 @@
     font-weight: 800;
     font-family: 'Corben', cursive;
 }
+
+/* CONTENEDOR DE IMGS DE CAROUSEL */
+.carousel-inner {
+    max-height: 400px;
+}
