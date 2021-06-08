@@ -7,19 +7,40 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionproductosComponent implements OnInit {
 
-  id1 = "id";
-  id2 = "cod";
 
-  dat1 = "Título";
-  dat2 = "Autor";
-  dat3 = "Editor";
-  dat4 = "Cap";
+  infIdes1 = "cod";
+
+  infArticulo1 = "Título";
+  infArticulo2 = "Autor";
+  infArticulo3 = "Editor";
+  infArticulo4 = "Cap";
   
-  inf1 = "Vendedor";
-  inf2 = "Fecha Compra";
-  inf3 = "Stock";
-  inf4 = "$ Costo";
-  inf5 = "$ Venta";
+  infComercial1 = "Vendedor";
+  infComercial2 = "Fecha Compra";
+  infComercial3 = "Stock";
+  infComercial4 = "$ Costo";
+  infComercial5 = "$ Venta";
+
+  infIdes = {
+    code: "1"
+  }
+  
+  infArticulo = {
+    titulo: "2",
+    autor: "h",
+    editorial: "y",
+    cap: "d"
+  }
+  
+  infComercial = {
+    proveedor: "y",
+    fechaCompra: "m", // cambiar a fecha cuanto antes
+    nuevasUnidades: "7",
+    precioCosto: "6",
+    precioVenta: "5"
+  }
+
+
 
   constructor() { }
 

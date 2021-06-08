@@ -17,33 +17,32 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col"> {{id1}} </th>
-        <th scope="col"> {{id2}} </th>
-        <th scope="col"> {{dat1}} </th>
-        <th scope="col"> {{dat2}} </th>
-        <th scope="col"> {{dat3}} </th>
-        <th scope="col"> {{dat4}} </th>
-        <th scope="col"> {{inf1}} </th>
-        <th scope="col"> {{inf2}} </th>
-        <th scope="col"> {{inf3}} </th>
-        <th scope="col"> {{inf4}} </th>
-        <th scope="col"> {{inf5}} </th>
+        <th scope="col"> {{infIdes1}} </th>
+        <th scope="col"> {{infArticulo1}} </th>
+        <th scope="col"> {{infArticulo2}} </th>
+        <th scope="col"> {{infArticulo3}} </th>
+        <th scope="col"> {{infArticulo4}} </th>
+        <th scope="col"> {{infComercial1}} </th>
+        <th scope="col"> {{infComercial2}} </th>
+        <th scope="col"> {{infComercial3}} </th>
+        <th scope="col"> {{infComercial4}} </th>
+        <th scope="col"> {{infComercial5}} </th>
       </tr>
     </thead>
     <tbody>
       <tr>
         <th scope="row">1</th>
-        <td>45</td>
-        <td>12</td>
-        <td>titulo del libro</td>
-        <td>fulano de tal</td>
-        <td>una</td>
-        <td>85</td>
-        <td>sultano</td>
-        <td type="date">01/03/2021</td>
-        <td>900</td>
-        <td>@mdo</td>
-        <td>@mdo</td>
+        <td>{{this.infIdes.code}}</td>
+        <td>{{this.infArticulo.titulo}}</td>
+        <td>{{this.infArticulo.autor}}</td>
+        <td>{{this.infArticulo.editorial}}</td>
+        <td>{{this.infArticulo.cap}}</td>
+        <td>{{this.infComercial.proveedor}}</td>
+        <td>{{this.infComercial.fechaCompra}}</td>
+        <td>{{this.infComercial.nuevasUnidades}}</td>
+        <td>{{this.infComercial.nuevasUnidades}}</td>
+        <td>{{this.infComercial.precioCosto}}</td>
+        <td>{{this.infComercial.precioVenta}}</td>
       </tr>
     </tbody>
   </table>

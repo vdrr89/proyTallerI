@@ -7,36 +7,35 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CrearproductoComponent implements OnInit {
 
-  idi = 0;
-  code = 0;
+infIdes = {
+  code: ""
+}
 
-  titulo = "titulo";
-  autor = "autor";
-  editorial = "editorial";
-  cap = "capitulo";
+infArticulo = {
+  titulo: "",
+  autor: "",
+  editorial: "",
+  cap: ""
+}
 
-  proveedor = "proveedor";
-  fechaCompra = "01/03/2021"
-  nuevasUnidades = 0;
-  precioCosto = 0;
-  precioVenta = 0;
+infComercial = {
+  proveedor: "",
+  fechaCompra: "", // cambiar a fecha cuanto antes
+  nuevasUnidades: "",
+  precioCosto: "",
+  precioVenta: ""
+}
+
 
   clickHandler(e:any){
     e.preventDefault;
-    console.log(this.idi);
-    console.log(this.code);
-    console.log(this.titulo);
-    console.log(this.autor);
-    console.log(this.editorial);
-    console.log(this.cap);
-    console.log(this.proveedor);
-    console.log(this.fechaCompra);
-    console.log(this.nuevasUnidades);
-    console.log(this.precioCosto);
-    console.log(this.precioVenta);
+    console.log(this.infIdes);
+    console.log(this.infArticulo);
+    console.log(this.infComercial);
   }
 
-  constructor() { }
+  constructor() { 
+  }
 
   ngOnInit(): void {
   }
