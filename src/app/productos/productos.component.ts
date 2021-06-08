@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductosComponent implements OnInit {
 
+  noHay = "No hay productos";
+
   data = [
     {
       title:"uno",

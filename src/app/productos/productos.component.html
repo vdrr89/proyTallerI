@@ -1,5 +1,16 @@
-<p>productos works!</p>
-<div class="card" style="width: 18rem;" *ngFor="let item of data">
+<!-- BREADCRUMB -->
+<div style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a [routerLink]="'/'">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Productos</li>
+  </ol>
+</div>
+
+<!-- CARDS DE PRODUCTOS -->
+<p *ngIf="data.length == 0">{{noHay}}</p>
+
+<div id="cards-productos" *ngIf="data.length > 0">
+  <div class="card" style="width: 18rem;" *ngFor="let item of data">
     <img src="https://bit.ly/3vYiswQ" class="card-img-top" alt="img-libro-1">
     <div class="card-body">
       <h5 class="card-title"> {{item.title}} </h5>
@@ -8,11 +19,12 @@
     </div>
     <div class="cart-situation">
       <div class="manage-amount">
-          <button>-</button>
+          <button><i class="bi bi-dash-lg"></i></button>
           <input class="amount-number" type="number" maxlength="4">
-          <button>+</button>
+          <button><i class="bi bi-plus-lg"></i></button>
       </div>
-      <button href="#">Cart</button>
-      <button class="negative-button" href="#">Del Cart</button>
+      <button href="#"><i class="bi bi-cart-fill"></i></button>
+      <button class="negative-button" href="#"><i class="bi bi-trash-fill"></i></button>
     </div>
+  </div>
 </div>

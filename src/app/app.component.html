@@ -1,13 +1,13 @@
   <!-- NAVBAR -->
   <nav>
-    <button aria-current="page" [routerLink]="'/'"> {{link1}} </button>
+    <button aria-current="page" [routerLink]="'/'"> <i class="bi bi-house-fill"></i> </button>
     <button [routerLink]="'/productos'"> {{link2}} </button>
     <button [routerLink]="'/gestionproductos'"> {{link3}} </button> <!-- este tendría que verse solo para admins -->
-    <button [routerLink]="'/caja'"> {{link4}} </button>
+    <button [routerLink]="'/caja'"><i class="bi bi-cart-fill"></i></button>
     <form>
       <input type="search" placeholder="Search" aria-label="Search">
-      <button type="submit">Search</button>
-      <button [routerLink]="'/login'"> {{rightbtn}} </button>
+      <button type="submit"><i class="bi bi-search"></i></button>
+      <button [routerLink]="'/login'"><i class="bi bi-person-fill"></i> {{rightbtn}} </button>
     </form>
     
   </nav>

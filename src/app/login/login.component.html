@@ -1,22 +1,30 @@
-<p>login works!</p>
+<!-- BREADCRUMB -->
+<div style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="'/'">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Login</li>
+    </ol>
+</div>
+
+<!-- LOGIN FORM -->
 <div class="all">
     <div class="users">
-        <button>Soy cliente</button>
-        <button>Trabajo en la tienda</button>
+        <button> {{user}} </button>
+        <button> {{admin}} </button>
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
-        <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+        <input [(ngModel)]="username" class="form-control" placeholder="username" aria-label="username" aria-describedby="basic-addon1">
     </div>
 
     <div class="input-group mb-3">
         <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
-        <input type="text" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+        <input [(ngModel)]="password" class="form-control" placeholder="password" aria-label="password" aria-describedby="basic-addon1">
     </div>
 
-    <button class="users">Login</button>
+    <button class="users" (click)=submitForm($event)> {{login}} </button>
     <div class="foo">
-        <p class="small">No tienes una cuenta? No te preocupes, puedes <u><a class="small" [routerLink]="'newuser'">registrarte aquí</a></u></p>
+        <p class="small">{{noAccMsj}}<u><a class="small" [routerLink]="'/newuser'"> {{createAccLink}} </a></u></p>
     </div>
 </div>

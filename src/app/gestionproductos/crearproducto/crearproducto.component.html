@@ -1,0 +1,72 @@
+<!-- BREADCRUMB -->
+<div style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="'/'">Home</a></li>
+      <li class="breadcrumb-item"><a [routerLink]="'./gestionproductos'">Gestion de Productos</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Crear</li>
+    </ol>
+</div>
+
+<!-- CREATE PRODUCT FORM -->
+<div class="form">
+    <div class="inputs">
+        <!-- IDES -->
+        <div id="identification" class="seccion" >
+            <div class="mb-3">
+                <label for="id" class="form-label">id</label>
+                <input [(ngModel)]="idi" class="form-control" id="id" placeholder="id">
+            </div>
+            <div class="mb-3">
+                <label for="cod" class="form-label">cod</label>
+                <input [(ngModel)]="code" class="form-control" id="cod" placeholder="cod">
+            </div>
+        </div>
+        <hr>
+        <!-- DATOS DEL ARTÍCULO -->
+        <div id="datos" class="seccion">
+            <div class="mb-3">
+                <label for="Título" class="form-label">Título</label>
+                <input [(ngModel)]="titulo" class="form-control" id="Título" placeholder="Título">
+            </div>
+            <div class="mb-3">
+                <label for="Autor" class="form-label">Autor</label>
+                <input [(ngModel)]="autor" class="form-control" id="Autor" placeholder="Autor">
+            </div>
+            <div class="mb-3">
+                <label for="Editorial" class="form-label">Editorial</label>
+                <input [(ngModel)]="editorial" class="form-control" id="Editorial" placeholder="Editorial">
+            </div>
+            <div class="mb-3">
+                <label for="Cap" class="form-label">Cap</label>
+                <input [(ngModel)]="cap" class="form-control" id="Cap" placeholder="Cap">
+            </div>
+        </div>
+        <hr>
+        <!-- INFO COMERCIAL -->
+        <div id="info-comercial" class="seccion">
+            <div class="mb-3">
+                <label for="Proveedor" class="form-label">Proveedor</label>
+                <input [(ngModel)]="proveedor" class="form-control" id="Proveedor" placeholder="Proveedor">
+            </div>
+            <div class="mb-3">
+                <label for="Fecha Compra" class="form-label">Fecha Compra</label>
+                <input [(ngModel)]="fechaCompra" class="form-control" id="Fecha Compra" placeholder="Fecha Compra">
+            </div>
+            <div class="mb-3">
+                <label for="Nuevas Unidades" class="form-label">Nuevas Unidades</label>
+                <input [(ngModel)]="nuevasUnidades" class="form-control" id="Nuevas Unidades" placeholder="Nuevas Unidades">
+            </div>
+            <div class="mb-3">
+                <label for="$ Costo" class="form-label">$ Costo</label>
+                <input [(ngModel)]="precioCosto" class="form-control" id="$ Costo" placeholder="$ Costo">
+            </div>
+            <div class="mb-3">
+                <label for="$ Venta" class="form-label">$ Venta</label>
+                <input [(ngModel)]="precioVenta" class="form-control" id="$ Venta" placeholder="$ Venta">
+            </div>
+        </div>        
+    </div>
+    <button (click)=clickHandler($event)>Submit</button>
+</div>
+
+

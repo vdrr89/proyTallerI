@@ -1,26 +1,33 @@
-<p>gestionproductos works!</p>
+<div style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a [routerLink]="'/'">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Gestión de productos</li>
+  </ol>
+</div>
+
+<button [routerLink]="'/crearproducto'"><i class="bi bi-plus-lg"></i></button>
 
 <!-- FILTRO -->
-<button class="sty-filtro">Filtro</button>
+<button class="sty-filtro"><i class="bi bi-filter"></i></button>
 <input type="text" placeholder="escriba aqui lo que desea buscar" class="sty-search">
-<button class="sty-search">Search</button>
+<button class="sty-search"><i class="bi bi-search"></i></button>
 
 <!-- TABLA -->
 <table class="table">
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Id</th>
-        <th scope="col">Cod</th>
-        <th scope="col">Titulo</th>
-        <th scope="col">Autor</th>
-        <th scope="col">Editor</th>
-        <th scope="col">pags</th>
-        <th scope="col">stock</th>
-        <th scope="col">Vendedor</th>
-        <th scope="col">$ costo</th>
-        <th scope="col">$ venta</th>
-        <th scope="col">Fecha de compra</th>
+        <th scope="col"> {{id1}} </th>
+        <th scope="col"> {{id2}} </th>
+        <th scope="col"> {{dat1}} </th>
+        <th scope="col"> {{dat2}} </th>
+        <th scope="col"> {{dat3}} </th>
+        <th scope="col"> {{dat4}} </th>
+        <th scope="col"> {{inf1}} </th>
+        <th scope="col"> {{inf2}} </th>
+        <th scope="col"> {{inf3}} </th>
+        <th scope="col"> {{inf4}} </th>
+        <th scope="col"> {{inf5}} </th>
       </tr>
     </thead>
     <tbody>
@@ -33,9 +40,13 @@
         <td>una</td>
         <td>85</td>
         <td>sultano</td>
-        <td>68</td>
+        <td type="date">01/03/2021</td>
         <td>900</td>
+        <td>@mdo</td>
         <td>@mdo</td>
       </tr>
     </tbody>
   </table>
+
+  <!-- usar input type="date" para form de crear articulo -->
+  
