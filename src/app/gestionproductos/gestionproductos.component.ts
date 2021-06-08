@@ -7,19 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionproductosComponent implements OnInit {
 
+tableTitle = {
+  Ides1: "cod",
 
-  infIdes1 = "cod";
-
-  infArticulo1 = "Título";
-  infArticulo2 = "Autor";
-  infArticulo3 = "Editor";
-  infArticulo4 = "Cap";
+  Articulo1: "Título",
+  Articulo2: "Autor",
+  Articulo3: "Editor",
+  Articulo4: "Cap",
   
-  infComercial1 = "Vendedor";
-  infComercial2 = "Fecha Compra";
-  infComercial3 = "Stock";
-  infComercial4 = "$ Costo";
-  infComercial5 = "$ Venta";
+  Comercial1: "Vendedor",
+  Comercial2: "Fecha Compra",
+  Comercial3: "Stock",
+  Comercial4: "$ Costo",
+  Comercial5: "$ Venta"
+}
+  
 
   infIdes = {
     code: "1"

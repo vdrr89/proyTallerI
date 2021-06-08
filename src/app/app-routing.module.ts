@@ -9,6 +9,7 @@ import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NewUserComponent } from './login/new-user/new-user.component';
 import { CrearproductoComponent } from './gestionproductos/crearproducto/crearproducto.component';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 
 const routes: Routes = [
   {path:'',component: HomeComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'gestionproductos',component: GestionproductosComponent},
   {path:'login',component: LoginComponent},
   {path:'newuser',component: NewUserComponent},
-  {path:'crearproducto',component: CrearproductoComponent}
+  {path:'crearproducto',component: CrearproductoComponent},
+  {path:'breadcrumb',component: BreadcrumbComponent}
 ];
 
 @NgModule({
