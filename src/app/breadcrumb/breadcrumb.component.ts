@@ -26,6 +26,21 @@ export class BreadcrumbComponent implements OnInit {
       '' : this.url[i - 2]).replace(/\s/g, '-') + '/' + this.parts[i].replace(/\s/g, '-');
     }
     }
+
+<div class="breadcrumb">
+    <h4>{{ activePage }}</h4>
+    <ul>
+      <li *ngFor="let items of parts; let i = index" [ngClass]="{ 'inicio': i === 0, 'separator': i % 2 === 0 && i > 0 }">
+        <div *ngIf="i % 2 !== 0 && i > 0">
+          <a routerLink='{{ url[i] }}'>
+            {{ "Breadcrumbs." + items | translate }}
+          </a>
+        </div>
+        <div *ngIf="i % 2 === 0 && i > 0">-</div>
+      </li>
+    </ul>
+</div>
+
     */
 
    }

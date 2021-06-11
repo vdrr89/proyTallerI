@@ -6,27 +6,34 @@ import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-
+//comun
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { HomeComponent } from './home/home.component';
 import { ProductosComponent } from './productos/productos.component';
 import { CajaComponent } from './caja/caja.component';
-import { GestionproductosComponent } from './gestionproductos/gestionproductos.component';
-import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NewUserComponent } from './login/new-user/new-user.component';
-import { CrearproductoComponent } from './gestionproductos/crearproducto/crearproducto.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+//gestion
+import { GestionComponent } from './gestion/gestion.component';
+import { GestionTabsComponent } from './gestion/gestion-tabs/gestion-tabs.component';
+import { GestionproductosComponent } from './gestion/gestionproductos/gestionproductos.component';
+import { GestionUsuariosComponent } from './gestion/gestion-usuarios/gestion-usuarios.component';
+import { CrearProductoComponent } from './gestion/gestionproductos/crear-producto/crear-producto.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductosComponent,
     CajaComponent,
-    GestionproductosComponent,
     HomeComponent,
     LoginComponent,
     NewUserComponent,
-    CrearproductoComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
+    GestionComponent,
+    GestionproductosComponent,
+    GestionTabsComponent,
+    GestionUsuariosComponent,
+    CrearProductoComponent,
   ],
   imports: [
     BrowserModule,
