@@ -11,35 +11,35 @@
 <div id="all-form" class="all-form">
     <div id="inputs" class="inputs">
     
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
+        <div class="form-floating">
+            <i class="bi bi-person-fill"></i>
             <input [(ngModel)]="userDetail.nombre" class="form-control" placeholder="nombre" aria-label="Nombre" aria-describedby="basic-addon1">
         </div>
     
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="bi bi-person-fill"></i></span>
+        <div class="form-floating">
+           <i class="bi bi-person-fill"></i>
             <input [(ngModel)]="user.username" class="form-control" placeholder="username" aria-label="Username" aria-describedby="basic-addon1">
         </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope-fill"></i></span>
-            <input [(ngModel)]="user.email" class="form-control" placeholder="email" aria-label="EMail" aria-describedby="basic-addon1">
+        <div class="form-floating">
+           <i class="bi bi-envelope-fill"></i>
+           <input [(ngModel)]="user.email" class="form-control" placeholder="email" aria-label="EMail" aria-describedby="basic-addon1">
         </div>
     
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
+        <div class="form-floating">
+           <i class="bi bi-lock-fill"></i>
             <input [(ngModel)]="user.password" class="form-control" placeholder="password" aria-label="Password" aria-describedby="basic-addon1">
         </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
+        <div class="form-floating">
+           <i class="bi bi-lock-fill"></i>
             <input [(ngModel)]="userDetail.direccion" class="form-control" placeholder="dirección" aria-label="Direccion" aria-describedby="basic-addon1">
         </div>
 
-        <div class="input-group mb-3">
-            <span class="input-group-text" id="basic-addon1"><i class="bi bi-lock-fill"></i></span>
+        <div class="form-floating">
+           <i class="bi bi-lock-fill"></i>
             <input [(ngModel)]="userDetail.telefono" class="form-control" placeholder="telefono" aria-label="Telefono" aria-describedby="basic-addon1">
         </div>
     </div>
-    <button (click)="submitNewUser($event)">{{send}}</button>
+    <button class="btn-green" (click)="submitNewUser($event)">{{send}}</button>
 </div>

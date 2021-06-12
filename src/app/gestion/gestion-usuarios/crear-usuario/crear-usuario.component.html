@@ -1,0 +1,46 @@
+<!-- BREADCRUMB -->
+<app-breadcrumb></app-breadcrumb>
+<div style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="'/'">Home</a></li>
+      <li class="breadcrumb-item"><a [routerLink]="'/gestion/productos'">Gestion</a></li>
+      <li class="breadcrumb-item"><a [routerLink]="'/gestion/usuarios'">Gestion de Usuarios</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Crear Usuario</li>
+    </ol>
+</div>
+
+<!-- en esta pag hay un texto superpuesto entre si que aparece arriba a la izq -->
+
+<!-- CREATE PRODUCT FORM -->
+<div class="all-form">
+    <div class="inputs">
+        <!-- DATOS DEL ARTÍCULO -->
+        <div id="datos" class="seccion">
+            <div class="form-floating mb-3">
+                <label for="cod">Nombre</label>
+                <input [(ngModel)]="datos.nombre" class="form-control" style="width: 100%" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="form-floating mb-3">
+                <label for="Título">Apellido</label>
+                <input [(ngModel)]="datos.apellido" class="form-control" style="width: 100%;" id="apellido" placeholder="Apellido">
+            </div>
+            <div class="form-floating mb-3">
+                <label for="Autor">Email</label>
+                <input [(ngModel)]="datos.email" class="form-control" style="width: 100%;" id="email" placeholder="email">
+            </div>
+            <div class="form-floating mb-3">
+                <label for="Editorial">Telefono</label>
+                <input [(ngModel)]="datos.telefono" class="form-control" style="width: 50%;" id="telefono" placeholder="Telefono">
+            </div>
+            <div class="form-floating mb-3">
+                <label for="Editorial">Direccion</label>
+                <input [(ngModel)]="datos.direccion" class="form-control" style="width: 100%;" id="direccion" placeholder="Direccion">
+            </div>
+        </div>    
+    </div>
+    <div class="bottom-btns">
+        <button class="btn-green" (click)=clickHandler($event)>Submit</button>
+        <button class="btn-red" [routerLink]="'/gestion/usuarios'">Cancel</button>
+    </div>
+    
+</div>

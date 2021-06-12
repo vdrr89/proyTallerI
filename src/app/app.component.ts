@@ -7,8 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = ''; //acá va lo que en el app component puedo poner entre {{title}}
-  link2 = 'Productos';
-  link3 = 'Gestión'; // este tednría que verse solo x los admins
-  rightbtn = 'Login';
-
 }

@@ -1,12 +1,14 @@
-button {
-    margin-left: 40%;
+.bottom-btns {
+    margin-left: 35%;
 }
 
-/* each input group */
-.mb-3 {
-    display:inline-block;
+/* grupo de inputs juntos */
+.group {
+    display: flex;
 }
 
-.vr-3 {
-    display:inline-block;
+/*solo el simbolo*/
+.bi-currency-dollar {
+    background-color: gray;
+    padding: 10px;
 }

@@ -1,55 +1,51 @@
 <!-- BREADCRUMB -->
+<app-breadcrumb></app-breadcrumb>
 <div style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a [routerLink]="'/'">Home</a></li>
-      <li class="breadcrumb-item active" aria-current="page">Gestión de productos</li>
+      <li class="breadcrumb-item active" aria-current="page">Gestión</li>
     </ol>
-  </div>
+</div>
 
-  <button [routerLink]="'/gestion/crearproducto'"><i class="bi bi-plus-lg"></i></button>
-  
-  <!-- FILTRO -->
-  <!-- hacer componente para filtro -->
-  <button class="sty-filtro"><i class="bi bi-filter"></i></button>
-  <input type="text" placeholder="escriba aqui lo que desea buscar" class="sty-search">
-  <button class="sty-search"><i class="bi bi-search"></i></button>
-  
+<!-- FILTRO Y ADD -->
+<app-gestion-productos-filtro></app-gestion-productos-filtro>
+
+<!-- TABS -->
 <app-gestion-tabs></app-gestion-tabs>
 
-  <!-- TABLA -->
-  <table class="table">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col"> {{this.tableTitle.Ides1}} </th>
-          <th scope="col"> {{this.tableTitle.Articulo1}} </th>
-          <th scope="col"> {{this.tableTitle.Articulo2}} </th>
-          <th scope="col"> {{this.tableTitle.Articulo3}} </th>
-          <th scope="col"> {{this.tableTitle.Articulo4}} </th>
-          <th scope="col"> {{this.tableTitle.Comercial1}} </th>
-          <th scope="col"> {{this.tableTitle.Comercial2}} </th>
-          <th scope="col"> {{this.tableTitle.Comercial3}} </th>
-          <th scope="col"> {{this.tableTitle.Comercial4}} </th>
-          <th scope="col"> {{this.tableTitle.Comercial5}} </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <th scope="row">1</th>
-          <td>{{this.infIdes.code}}</td>
-          <td>{{this.infArticulo.titulo}}</td>
-          <td>{{this.infArticulo.autor}}</td>
-          <td>{{this.infArticulo.editorial}}</td>
-          <td>{{this.infArticulo.cap}}</td>
-          <td>{{this.infComercial.proveedor}}</td>
-          <td>{{this.infComercial.fechaCompra}}</td>
-          <td>{{this.infComercial.nuevasUnidades}}</td>
-          <td>{{this.infComercial.nuevasUnidades}}</td>
-          <td>{{this.infComercial.precioCosto}}</td>
-          <td>{{this.infComercial.precioVenta}}</td>
-        </tr>
-      </tbody>
-    </table>
-  
-    <!-- usar input type="date" para form de crear articulo -->
+<!-- TABLA -->
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col"> {{this.tableTitle.Ides1}} </th>
+      <th scope="col"> {{this.tableTitle.Articulo1}} </th>
+      <th scope="col"> {{this.tableTitle.Articulo2}} </th>
+      <th scope="col"> {{this.tableTitle.Articulo3}} </th>
+      <th scope="col"> {{this.tableTitle.Articulo4}} </th>
+      <th scope="col"> {{this.tableTitle.Comercial1}} </th>
+      <th scope="col"> {{this.tableTitle.Comercial2}} </th>
+      <th scope="col"> {{this.tableTitle.Comercial3}} </th>
+      <th scope="col"> {{this.tableTitle.Comercial4}} </th>
+      <th scope="col"> {{this.tableTitle.Comercial5}} </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">1</th>
+      <td>{{this.infIdes.code}}</td>
+      <td>{{this.infArticulo.titulo}}</td>
+      <td>{{this.infArticulo.autor}}</td>
+      <td>{{this.infArticulo.editorial}}</td>
+      <td>{{this.infArticulo.cap}}</td>
+      <td>{{this.infComercial.proveedor}}</td>
+      <td>{{this.infComercial.fechaCompra}}</td>
+      <td>{{this.infComercial.nuevasUnidades}}</td>
+      <td>{{this.infComercial.nuevasUnidades}}</td>
+      <td>{{this.infComercial.precioCosto}}</td>
+      <td>{{this.infComercial.precioVenta}}</td>
+    </tr>
+  </tbody>
+</table>
+
     

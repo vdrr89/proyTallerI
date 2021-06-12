@@ -5,17 +5,26 @@
 /* ---------------------- GENERALES ---------------------- */
 
 /* 
-color principal: #6ca2e0 (azul claro)
+color PRINCIPAL: #6ca2e0 (azul claro)
 color principal claro: #aacaee
 color principal oscuro: #225ea3 (azul link)
 
-color secundario: #1abc9c (verde agua)
+color SECUNDARIO: #1abc9c (verde agua)
 color secundario claro: #62eace
 color secundario oscuro: #12876f
 
-color especial (hover links): #1abc9c (verde agua)
+color ESPECIAL (hover links): #1abc9c (verde agua)
+color INACTIVO: #3d4b57 (gris con fuerza)
+color inactivo oscuro: #222a31 transp 80
 
-links color principal: #225ea3 (azul link)
+color RED (no): #9b0b0b (rojo)
+color red oscuro: #9b0b0b transp 80
+
+color GREEN (ok): #1abc9c (verde agua)
+color green claro: #62eace
+color green oscuro: #12876f
+
+LINKS color principal: #225ea3 (azul link)
 links color secundario: #323dbd (azul violeta)
 
 guardar color para otro momento: #fdfcf7 (casi blanco beige)
@@ -136,8 +145,7 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
     color: #323dbd;
   }
   
-  a:hover, 
-  nav > a:hover {
+  a:hover {
     text-decoration: none;
     color:#1abc9c;
   }
@@ -150,9 +158,7 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
   
   /* ---------------------- BUTTON INPUT FORMS ---------------------- */
   
-  button,
-  nav > button,
-  nav > form > button {
+  .btn-nav {
     font-family: 'Oswald', sans-serif;
     background-color: #6ca2e0;
     color: #fff;
@@ -167,34 +173,91 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
     box-shadow: 0px 8px 15px #0000001a;
   }
   
-  button:hover,
-  nav > button:hover {
+  .btn-nav:hover {
     background-color: #1abc9c;
     box-shadow: 0px 15px 20px #12876f;
     transform: translateY(7px);
     color: #fff;
   }
 
-  button > a,
-  nav > button > a {
+  .btn-nav > a {
       color:#fff;
   }
   
-  .negative-button {
-    background-color: #9b0b0b;
+
+  .btn-out {
+    margin: 4px 2px;
+    padding: 16px 32px;
+    border-radius: 0px;
+    cursor: pointer;
+    color: #3d4b57;
+    border-color: #3d4b57;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+  }
+  
+  .btn-out:hover {
+    color: #fff;
+    background-color: #3d4b57;
+    border-color: #3d4b57;
+    box-shadow: 0px 15px 20px #697c8dad;
+    transform: translateY(7px);
+  }
+  
+  .btn-out:focus {
+    box-shadow: 0 0 0 0.25rem rgba(108, 117, 125, 0.5);
+  }
+  
+  .btn-out:active {
+    color: #fff;
+    background-color: #6c757d;
+    border-color: #6c757d;
   }
 
-  .negative-button:hover {
-    background-color: #ff2020;
-    box-shadow: 0px 15px 20px #9b0b0b80;
+  .btn-green {
+    margin: 4px 2px;
+    padding: 16px 32px;
+    border-radius: 0px;
+    cursor: pointer;
+    color: #1abc9c;
+    border-color: #1abc9c;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
   }
+
+  .btn-green:hover {
+    color: #fff;
+    background-color: #1abc9c;
+    transform: translateY(7px);
+    box-shadow: 0px 15px 20px #12876f80
+  }
+
+  .btn-red {
+    margin: 4px 2px;
+    padding: 16px 32px;
+    border-radius: 0px;
+    cursor: pointer;
+    color: #9b0b0b;
+    border-color: #9b0b0b;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+  }
+
+  .btn-red:hover {
+    color: #fff;
+    background-color: #9b0b0b;
+    box-shadow: 0px 15px 20px #9b0b0b80;
+    transform: translateY(7px);
+  }
+
 
   .form-box {
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;
   }
 
-  input {
+  input, 
+  .input {
     margin: 4px;
     border-radius: 0px;
     padding: 16px 32px;
@@ -205,23 +268,12 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
     } 
 
   label {
-    position: absolute;
-    top:0;
-    left: 0;
     padding: 10px 0;
     font-size: 16px;
     color: #0303035e;
     pointer-events: none;
     transition: .5s;
   }
-
-  input:focus ~ label,
-  input:valid ~ label {
-  top: -20px;
-  left: 0;
-  color: #1abc9c;
-  font-size: 12px;
-}
 
 /* para que el formulario no ocupe toda la pantalla */
 .all-form {
@@ -261,7 +313,8 @@ nav > form {
     margin: 4px 2px;
   }
 
-  input {
+  input, 
+  .input {
     padding: 8px 16px;
     margin: 4px 2px;
   }

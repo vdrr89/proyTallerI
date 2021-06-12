@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { GestionTabsComponent } from './gestion-tabs.component';
+import { CrearUsuarioComponent } from './crear-usuario.component';
 
-describe('GestionTabsComponent', () => {
-  let component: GestionTabsComponent;
-  let fixture: ComponentFixture<GestionTabsComponent>;
+describe('CrearUsuarioComponent', () => {
+  let component: CrearUsuarioComponent;
+  let fixture: ComponentFixture<CrearUsuarioComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ GestionTabsComponent ]
+      declarations: [ CrearUsuarioComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(GestionTabsComponent);
+    fixture = TestBed.createComponent(CrearUsuarioComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
