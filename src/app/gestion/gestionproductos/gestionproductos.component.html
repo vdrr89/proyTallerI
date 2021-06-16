@@ -18,32 +18,35 @@
   <thead>
     <tr>
       <th scope="col">#</th>
-      <th scope="col"> {{this.tableTitle.Ides1}} </th>
-      <th scope="col"> {{this.tableTitle.Articulo1}} </th>
-      <th scope="col"> {{this.tableTitle.Articulo2}} </th>
-      <th scope="col"> {{this.tableTitle.Articulo3}} </th>
-      <th scope="col"> {{this.tableTitle.Articulo4}} </th>
-      <th scope="col"> {{this.tableTitle.Comercial1}} </th>
-      <th scope="col"> {{this.tableTitle.Comercial2}} </th>
-      <th scope="col"> {{this.tableTitle.Comercial3}} </th>
-      <th scope="col"> {{this.tableTitle.Comercial4}} </th>
-      <th scope="col"> {{this.tableTitle.Comercial5}} </th>
+      <th scope="col"> {{this.tableTitle.Cod}} </th>
+      <th scope="col"> {{this.tableTitle.Titulo}} </th>
+      <th scope="col"> {{this.tableTitle.Autor}} </th>
+      <th scope="col"> {{this.tableTitle.Editorial}} </th>
+      <th scope="col"> {{this.tableTitle.Cap}} </th>
+      <th scope="col"> {{this.tableTitle.Vendedor}} </th>
+      <th scope="col"> {{this.tableTitle.FechaCompra}} </th>
+      <th scope="col"> {{this.tableTitle.Stock}} </th>
+      <th scope="col"> {{this.tableTitle.PrecioCosto}} </th>
+      <th scope="col"> {{this.tableTitle.PrecioVenta}} </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <th scope="row">1</th>
-      <td>{{this.infIdes.code}}</td>
-      <td>{{this.infArticulo.titulo}}</td>
-      <td>{{this.infArticulo.autor}}</td>
-      <td>{{this.infArticulo.editorial}}</td>
-      <td>{{this.infArticulo.cap}}</td>
-      <td>{{this.infComercial.proveedor}}</td>
-      <td>{{this.infComercial.fechaCompra}}</td>
-      <td>{{this.infComercial.nuevasUnidades}}</td>
-      <td>{{this.infComercial.nuevasUnidades}}</td>
-      <td>{{this.infComercial.precioCosto}}</td>
-      <td>{{this.infComercial.precioVenta}}</td>
+      <td>{{this.Ides.code}}</td>
+      <td>{{this.Articulo.titulo}}</td>
+      <td>{{this.Articulo.autor}}</td>
+      <td>{{this.Articulo.editorial}}</td>
+      <td>{{this.Articulo.cap}}</td>
+      <td>{{this.Comercial.proveedor}}</td>
+      <td>{{this.Comercial.fechaCompra}}</td>
+      <td>{{this.Comercial.stock}}</td>
+      <td>{{this.Comercial.precioCosto}}</td>
+      <td>{{this.Comercial.precioVenta}}</td>
+      <td>
+        <button class="btn-green-micro"><i class="bi bi-pen-fill"></i></button>
+        <button class="btn-red-micro"><i class="bi bi-trash-fill"></i></button>
+      </td>
     </tr>
   </tbody>
 </table>

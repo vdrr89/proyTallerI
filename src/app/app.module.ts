@@ -56,7 +56,7 @@ import { CrearUsuarioComponent } from './gestion/gestion-usuarios/crear-usuario/
     FormsModule, //sirve para hacer que los formularios anden con el ngModel
     ReactiveFormsModule // este y el de arriba, verificar e import de la carpeta @angular/forms
   ],
-  providers: [],
+  providers: [], //aqui van los servicios
   bootstrap: [AppComponent]
 })
 export class AppModule { }

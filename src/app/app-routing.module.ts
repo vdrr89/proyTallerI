@@ -25,24 +25,28 @@ import { GestionUsuariosComponent } from './gestion/gestion-usuarios/gestion-usu
 import { CrearUsuarioComponent } from './gestion/gestion-usuarios/crear-usuario/crear-usuario.component';
 
 const routes: Routes = [
+  //general
   {path:'breadcrumb',component: BreadcrumbComponent},
   {path:'',component: HomeComponent},
-  {path:'productos',component: ProductosComponent},
-  {path:'caja',component: CajaComponent},
-
-  {path:'gestion',component: GestionComponent},
-  {path:'gestion/tabs',component: GestionTabsComponent},
-  {path:'gestion/productos/filtro',component: GestionProductosFiltroComponent},
-  {path:'gestion/productos',component: GestionproductosComponent},
-  {path:'gestion/crearproducto',component: CrearProductoComponent},
-  {path:'gestion/usuarios/filtro',component: GestionUsuariosFiltroComponent},
-  {path:'gestion/usuarios',component: GestionUsuariosComponent},
-  {path:'gestion/usuarios/crearusuario',component: CrearUsuarioComponent},
-
+  //general usuarios
   {path:'login/tabs',component: LoginTabsComponent},
   {path:'login',component: LoginComponent},
   {path:'newuser',component: NewUserComponent},
-  {path:'newuser/tabs',component: NewUserTabsComponent}
+  {path:'newuser/tabs',component: NewUserTabsComponent},
+  //general productos
+  {path:'productos',component: ProductosComponent},
+  {path:'gestion/productos/filtro',component: GestionProductosFiltroComponent},
+  {path:'caja',component: CajaComponent},
+  //gestion general
+  {path:'gestion',component: GestionComponent},
+  {path:'gestion/tabs',component: GestionTabsComponent},
+  //gestion usuarios
+  {path:'gestion/usuarios/filtro',component: GestionUsuariosFiltroComponent},
+  {path:'gestion/usuarios',component: GestionUsuariosComponent},
+  {path:'gestion/usuarios/crearusuario',component: CrearUsuarioComponent},
+  //gestion productos
+  {path:'gestion/productos',component: GestionproductosComponent},
+  {path:'gestion/crearproducto',component: CrearProductoComponent}
 ];
 
 @NgModule({
