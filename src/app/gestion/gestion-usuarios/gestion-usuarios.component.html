@@ -17,22 +17,12 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col"> {{this.tableTitle.nombre}}</th>
-      <th scope="col"> {{this.tableTitle.apellido}} </th>
-      <th scope="col"> {{this.tableTitle.email}} </th>
-      <th scope="col"> {{this.tableTitle.telefono}} </th>
-      <th scope="col"> {{this.tableTitle.direccion}} </th>
+      <th *ngFor="let item of tableTitle" scope="col"> {{item.title}}</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>{{this.datos.nombre}}</td>
-      <td>{{this.datos.apellido}}</td>
-      <td>{{this.datos.email}}</td>
-      <td>{{this.datos.telefono}}</td>
-      <td>{{this.datos.direccion}}</td>
+      <td *ngFor="let item of tableContent">{{item.content}}</td>
       <td>
         <button class="btn-green-micro"><i class="bi bi-pen-fill"></i></button>
         <button class="btn-red-micro"><i class="bi bi-trash-fill"></i></button>

@@ -1,21 +1,28 @@
 /* FIX: 
-- iluminar más cuando button hover
+- iluminar más cuando nav button hover
 */
 
 /* ---------------------- GENERALES ---------------------- */
 
 /* 
-color PRINCIPAL: #6ca2e0 (azul claro)
-color principal claro: #aacaee
-color principal oscuro: #225ea3 (azul link)
 
-color SECUNDARIO: #1abc9c (verde agua)
-color secundario claro: #62eace
-color secundario oscuro: #12876f
+MAMARRACHO: no puede ser que hayan 2 colores principales
 
-color ESPECIAL (hover links): #1abc9c (verde agua)
-color INACTIVO: #3d4b57 (gris con fuerza)
-color inactivo oscuro: #222a31 transp 80
+NAV / THEME:
+
+PRINCIPAL: 
+#6ca2e0 // (azul claro)
+#aacaee // claro
+#225ea3 // oscuro (azul link en txt)
+
+  SECUNDARIO: 
+  #1abc9c // (verde agua) -- nav links hover
+  #62eace // claro
+  #12876f // oscuro
+
+COLOR INACTIVO:
+#3d4b57 // (gris con fuerza)
+#222a3180 // oscuro
 
 color RED (no): #9b0b0b (rojo)
 color red oscuro: #9b0b0b transp 80

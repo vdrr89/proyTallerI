@@ -7,41 +7,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionproductosComponent implements OnInit {
 
-  tableTitle = {
-    Cod: "cod",
+  tableTitle = [
+    {title: "cod"},
+    {title: "Título"},
+    {title: "Autor"},
+    {title: "Editorial"},
+    {title: "Cap"},
+    {title: "Vendedor"},
+    {title: "Fecha Compra"},
+    {title: "Stock"},
+    {title: "$ Costo"},
+    {title: "$ Venta"}
+  ]
   
-    Titulo: "Título",
-    Autor: "Autor",
-    Editorial: "Editorial",
-    Cap: "Cap",
-    
-    Vendedor: "Vendedor",
-    FechaCompra: "Fecha Compra",
-    Stock: "Stock",
-    PrecioCosto: "$ Costo",
-    PrecioVenta: "$ Venta"
-  }
-    
-  
-  Ides = {
-    code: "1"
-  }
-  
-  Articulo = {
-    titulo: "2",
-    autor: "h",
-    editorial: "y",
-    cap: "d"
-  }
-  
-  Comercial = {
-    proveedor: "y",
-    fechaCompra: "m", // cambiar a fecha cuanto antes
-    stock: "7",
-    precioCosto: "6",
-    precioVenta: "5"
-  }
-  
+  tableContent = [
+    {content: "598"},
+    {content: "Me Llamo"},
+    {content: "Menganito"},
+    {content: "Menanasia"},
+    {content: "Cap.8 V.34"},
+    {content: "Fulanito S.A."},
+    {content: "08/10/1981"},
+    {content: "999"},
+    {content: "$6800"},
+    {content: "$200"}
+  ]
 
   constructor() { }
 

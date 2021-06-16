@@ -17,32 +17,12 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col"> {{this.tableTitle.Cod}} </th>
-      <th scope="col"> {{this.tableTitle.Titulo}} </th>
-      <th scope="col"> {{this.tableTitle.Autor}} </th>
-      <th scope="col"> {{this.tableTitle.Editorial}} </th>
-      <th scope="col"> {{this.tableTitle.Cap}} </th>
-      <th scope="col"> {{this.tableTitle.Vendedor}} </th>
-      <th scope="col"> {{this.tableTitle.FechaCompra}} </th>
-      <th scope="col"> {{this.tableTitle.Stock}} </th>
-      <th scope="col"> {{this.tableTitle.PrecioCosto}} </th>
-      <th scope="col"> {{this.tableTitle.PrecioVenta}} </th>
+      <th *ngFor="let item of tableTitle" scope="col"> {{item.title}} </th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>{{this.Ides.code}}</td>
-      <td>{{this.Articulo.titulo}}</td>
-      <td>{{this.Articulo.autor}}</td>
-      <td>{{this.Articulo.editorial}}</td>
-      <td>{{this.Articulo.cap}}</td>
-      <td>{{this.Comercial.proveedor}}</td>
-      <td>{{this.Comercial.fechaCompra}}</td>
-      <td>{{this.Comercial.stock}}</td>
-      <td>{{this.Comercial.precioCosto}}</td>
-      <td>{{this.Comercial.precioVenta}}</td>
+      <td *ngFor="let item of tableContent">{{item.content}}</td>
       <td>
         <button class="btn-green-micro"><i class="bi bi-pen-fill"></i></button>
         <button class="btn-red-micro"><i class="bi bi-trash-fill"></i></button>

@@ -7,21 +7,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GestionUsuariosComponent implements OnInit {
 
-  tableTitle = {
-    nombre: "Nombre",
-    apellido: "Apellido",
-    email: "Email",
-    telefono: "Telefono",
-    direccion: "Direccion"
-  }
-    
-    datos = {
-      nombre: "Fulano",
-      apellido: "Mengano",
-      email: "y@j.com",
-      telefono: "093456789",
-      direccion: "una 234 ap 5"
-    }
+  tableTitle = [
+    {title: "Nombre"},
+    {title: "Apellido"},
+    {title: "Email"},
+    {title: "Telefono"},
+    {title: "Direccion"}
+  ]
+ 
+  tableContent = [
+    {content: "Fulano"},
+    {content: "Menganez"},
+    {content: "fulano@gmail.com"},
+    {content: "091234567"},
+    {content: "aqui 234 ap 5"}
+  ]
   
 
   constructor() { }
