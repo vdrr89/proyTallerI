@@ -6,28 +6,34 @@ import { AppComponent } from './app.component';
 
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+
 //comun
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-import { HomeComponent } from './home/home.component';
-import { ProductosComponent } from './productos/productos.component';
-import { CajaComponent } from './caja/caja.component';
-//comun users
-import { LoginComponent } from './login/login.component';
-import { LoginTabsComponent } from './login/login-tabs/login-tabs.component';
-import { NewUserComponent } from './login/new-user/new-user.component';
-import { NewUserTabsComponent } from './login/new-user/new-user-tabs/new-user-tabs.component';
-//gestion
+ 
+//GRAL
+import { HomeComponent } from './gral/home/home.component';
+//.. productos
+import { ProductosComponent } from './gral/productos/productos.component';
+import { CajaComponent } from './gral/caja/caja.component'
+//.. users
+import { LoginComponent } from './gral/login/login.component';
+import { LoginTabsComponent } from './gral/login/login-tabs/login-tabs.component';
+import { NewUserComponent } from './gral/login/new-user/new-user.component';
+import { NewUserTabsComponent } from './gral/login/new-user/new-user-tabs/new-user-tabs.component'
+//GESTION
+import { GestionModule } from './gestion/gestion.module';
 import { GestionComponent } from './gestion/gestion.component';
 import { GestionTabsComponent } from './gestion/gestion-tabs/gestion-tabs.component';
-//gestion productos
+//.. productos
 import { GestionProductosFiltroComponent } from './gestion/gestionproductos/gestion-productos-filtro/gestion-productos-filtro.component';
 import { GestionproductosComponent } from './gestion/gestionproductos/gestionproductos.component';
 import { CrearProductoComponent } from './gestion/gestionproductos/crear-producto/crear-producto.component';
-//gestion usuarios
+//.. usuarios
 import { GestionUsuariosFiltroComponent } from './gestion/gestion-usuarios/gestion-usuarios-filtro/gestion-usuarios-filtro.component';
 import { GestionUsuariosComponent } from './gestion/gestion-usuarios/gestion-usuarios.component';
 import { CrearUsuarioComponent } from './gestion/gestion-usuarios/crear-usuario/crear-usuario.component';
+import { BreadcrumbService } from './breadcrumb/breadcrumb.service';
 
 @NgModule({
   declarations: [
@@ -50,13 +56,14 @@ import { CrearUsuarioComponent } from './gestion/gestion-usuarios/crear-usuario/
     NavBarComponent,
     CrearUsuarioComponent
   ],
-  imports: [
+  imports: [ //acá van los módulos, ponerlos también en el import
     BrowserModule,
     AppRoutingModule,
     FormsModule, //sirve para hacer que los formularios anden con el ngModel
-    ReactiveFormsModule // este y el de arriba, verificar e import de la carpeta @angular/forms
+    ReactiveFormsModule, // este y el de arriba, verificar e import de la carpeta @angular/forms
+    GestionModule
   ],
-  providers: [], //aqui van los servicios
+  providers: [BreadcrumbService], //aqui van los servicios
   bootstrap: [AppComponent]
 })
 export class AppModule { }

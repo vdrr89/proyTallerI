@@ -165,6 +165,7 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
   
   /* ---------------------- BUTTON INPUT FORMS ---------------------- */
   
+  /* BTN NAV */
   .btn-nav {
     font-family: 'Oswald', sans-serif;
     background-color: #6ca2e0;
@@ -191,7 +192,7 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
       color:#fff;
   }
   
-
+/* BTN OUT */
   .btn-out {
     margin: 4px 2px;
     padding: 16px 32px;
@@ -236,6 +237,7 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
     border-color: #6c757d;
   }
 
+  /* BTN GEEN & RED */
   .btn-green {
     margin: 4px 2px;
     padding: 16px 32px;
@@ -275,6 +277,7 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
   }
 
 
+  /* BTN GREEN & RED !MICRO */
   .btn-green-micro {
     margin: 2px 1px;
     padding: 4px;
@@ -297,7 +300,30 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
     transition: all 0.3s ease 0s;
   }
 
+/* BTN GREEN & RED MICRO !ALONE */
+.btn-green-micro-alone {
+  margin: 2px 1px;
+  padding: 4px;
+  border-radius: 0px;
+  cursor: pointer;
+  color: #1abc9c;
+  border-color: transparent;
+  background-color: transparent;
+  transition: all 0.3s ease 0s;
+}
 
+.btn-red-micro-alone {
+  margin: 2px 1px;
+  padding: 4px;
+  border-radius: 0px;
+  cursor: pointer;
+  color: #9b0b0b;
+  border-color: transparent;
+  background-color: transparent;
+  transition: all 0.3s ease 0s;
+}
+
+/* FORM */
   .form-box {
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     border-radius: 10px;

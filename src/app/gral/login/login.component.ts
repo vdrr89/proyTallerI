@@ -9,10 +9,13 @@ export class LoginComponent implements OnInit {
 
   userBtn = "Soy cliente";
   adminBtn = "Trabajo en la tienda";
-  loginBtn = "login";
 
-  noAccMsj = "No tienes una cuenta? No te preocupes, puedes "
+  noAccMsj = "No tienes una cuenta? No te preocupes, puedes ";
   createAccLink = "registrarte aquí";
+
+  dontRememberMsj = "No recuerdas tu usuario o contraseña?, haz ";
+  sendRecuperarLink = "click aquí";
+
 
   user = {
     username:"",

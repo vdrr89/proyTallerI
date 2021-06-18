@@ -1,0 +1,18 @@
+.all{
+    border: solid, 1px rgb(65, 65, 65);
+    border-radius: 10px;
+    margin: auto;
+    }
+    
+    .users{
+    text-align: center;
+    margin: 20px;
+    }
+    
+    .foo {
+        text-align: center;
+    }
+    
+    .bottom-btns {
+        margin-left: 35%;
+    }

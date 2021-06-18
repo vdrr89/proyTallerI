@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CajaComponent implements OnInit {
 
-  constructor() { }
+  constructor() { } //serviciosaca, funcionaes ang
 
-  ngOnInit(): void {
+  ngOnInit(): void { //solo renderear cosas comp 
   }
 
 }

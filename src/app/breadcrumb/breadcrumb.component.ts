@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from '@angular/router';
+// import { BreadcrumbService } from './breadcrumb.service';
 
 @Component({
   selector: 'app-breadcrumb',
@@ -7,45 +9,41 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BreadcrumbComponent implements OnInit {
 
-  constructor() {
+  //add
+  // name: string;
+  // breadcrumb: Array<any> = [];
+  // breadcrumbList: Array<any> = [];
+  // listenRouting: any;
 
-    /*
-    ver esto... 
+  // dentro del () add
+  // constructor(private _router: Router, private breadcrumbService: BreadcrumbService) { 
+  //   this.name = "";
+  //  }
+   constructor(){}
 
-    this.parts.unshift('Inicio');
-    const limit = this.parts.length;
-    for (let i = 0; i < limit; i++) {
-    if (i > 0) {
-      this.parts.splice(i * 2, 0, '-');
-    }
-    }
-    this.parts.pop();
-    for (let i = 0; i < limit; i++) {
-    if (this.parts[i] !== 'inicio' && this.parts[i] !== '-') {
-      this.url[i] = (typeof this.url[i - 2] === 'undefined' ?
-      '' : this.url[i - 2]).replace(/\s/g, '-') + '/' + this.parts[i].replace(/\s/g, '-');
-    }
-    }
-
-<div class="breadcrumb">
-    <h4>{{ activePage }}</h4>
-    <ul>
-      <li *ngFor="let items of parts; let i = index" [ngClass]="{ 'inicio': i === 0, 'separator': i % 2 === 0 && i > 0 }">
-        <div *ngIf="i % 2 !== 0 && i > 0">
-          <a routerLink='{{ url[i] }}'>
-            {{ "Breadcrumbs." + items | translate }}
-          </a>
-        </div>
-        <div *ngIf="i % 2 === 0 && i > 0">-</div>
-      </li>
-    </ul>
-</div>
-
-    */
-
-   }
-
-  ngOnInit(): void {
+  // dentro del {} add
+  ngOnInit(): void { 
+    // this.breadcrumb = this.breadcrumbService.getBreadcrumb();
+    // this.listenRouting();
   }
 
+// // aqui debajo add
+// let routerUrl:string, routerList: Array<any>, target: any;
+// this._router.events.subscribe((router: any) => { 
+//   target = this.breadcrumb;
+//   this.breadcrumbList.lenght = 0;
+//   routerList = routerUrl.slice(1).split('/');
+//   routerList.forEach((router,index) => { 
+//     target = target.find(page => page.path.slice(2) === router);
+//     this.breadcrumbList.push({ 
+//       name: target.name,
+//       path: (index === 0) ? target.path : `${this.breadcrumbList[index-1].path}/${target.path.slice(2)}`
+//     });
+
+//     if (index+1 !== routerList.length) {
+//       target = target.children; //pasa que de momento no tengo childrens
+//     }
+//   });
+//   console.log(this.breadcrumbList);
+// });
 }
