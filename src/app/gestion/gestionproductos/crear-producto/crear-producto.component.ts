@@ -11,26 +11,8 @@ import { GestionproductosComponent } from '../gestionproductos.component'; // ac
 })
 export class CrearProductoComponent implements OnInit {
 
-  // infIdes = {
-  //   code: ""
-  // }
-  
-  // infArticulo = {
-  //   titulo: "",
-  //   autor: "",
-  //   editorial: "",
-  //   cap: ""
-  // }
-  
-  // infComercial = {
-  //   proveedor: "",
-  //   fechaCompra: "", // cambiar a fecha cuanto antes
-  //   nuevasUnidades: "",
-  //   precioCosto: "",
-  //   precioVenta: ""
-  // }
-
-  prod!: Productos[];
+ 
+  prod: Productos[] = [];
   productos:Productos = { 
     cod:"",
     titulo:"",
@@ -50,7 +32,7 @@ export class CrearProductoComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  submit(event:any){ //ese any está distinto al de prof, xq sino me da error
+  submit(event:any){ 
     event.preventDefault();
     if (this.productos.cod === ""){
       this._productosService.insertarProductos(this.productos).subscribe((response:any) => {
@@ -58,8 +40,7 @@ export class CrearProductoComponent implements OnInit {
         this.prod.push(response);
       })
     } else {
-      console.log("response else: el producto ya existe")
-        //acá irían los msjs de que se completó correctamente o incorr con this.funct.subfunct = true ó false
+      console.log("response else: ")
       }
 }
 }

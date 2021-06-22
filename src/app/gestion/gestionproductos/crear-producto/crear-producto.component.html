@@ -48,7 +48,7 @@
                 <div class="form-floating mb-3">
                     <label for="Nuevas Unidades">Nuevas Unidades</label>
                     <input [(ngModel)]="productos.stock" class="form-control" id="Nuevas Unidades" placeholder="Nuevas Unidades">
-                <div class="form-floating mb-3">
+                </div>
                 <div class="form-floating mb-3">
                     <i class="bi bi-currency-dollar"></i>
                     <input [(ngModel)]="productos.precioCosto" type="number" class="form-control" placeholder="Precio de Costo" aria-label="costo" aria-describedby="basic-addon1">
@@ -63,6 +63,5 @@
     <div class="bottom-btns">
         <button class="btn-green" (click)=submit($event)>Submit</button>
         <button class="btn-red" routerLink="/gestion/productos">Cancel</button>
-    </div>
-    
+    </div>   
 </div>

@@ -6,7 +6,7 @@ import { Productos } from '../clases/productos';
   providedIn: 'root'
 })
 export class ProductosService {
-  url = "http://localhost:3000/productos";  //la url de mi json server levantado que me da cuando npm run server /elArreglo que uso en este componente
+  url = "http://localhost:3000/productos";  
 
   constructor(private _http: HttpClient) { }  
     
