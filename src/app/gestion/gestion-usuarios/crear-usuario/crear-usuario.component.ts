@@ -8,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
 export class CrearUsuarioComponent implements OnInit {
 
   datos = {
-    nombre: "",
-    apellido: "",
+    type: "",
+    user: "",
     email: "",
     telefono: "",
+    nombre: "",
+    apellido: "",
     direccion: ""
   }
     

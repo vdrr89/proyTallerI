@@ -9,20 +9,24 @@
     </ol>
 </div>
 
-<!-- en esta pag hay un texto superpuesto entre si que aparece arriba a la izq -->
-
-<!-- CREATE PRODUCT FORM -->
+<!-- CREATE USER FORM -->
 <div class="all-form">
     <div class="inputs">
-        <!-- DATOS DEL ARTÍCULO -->
+        <!-- DATOS DEL USUARIO -->
         <div id="datos" class="seccion">
             <div class="form-floating mb-3">
-                <label for="cod">Nombre</label>
-                <input [(ngModel)]="datos.nombre" class="form-control" style="width: 100%" id="nombre" placeholder="Nombre">
+                <label class="visually-hidden" for="autoSizingSelect">Type</label>
+                <select class="form-select" id="autoSizingSelect">
+                  <option selected>Type...</option>
+                  <option value="1">Cliente</option>
+                  <option value="2">Empleado</option>
+                  <option value="3">Admin</option>
+                </select>
             </div>
+            <hr>
             <div class="form-floating mb-3">
-                <label for="Título">Apellido</label>
-                <input [(ngModel)]="datos.apellido" class="form-control" style="width: 100%;" id="apellido" placeholder="Apellido">
+                <label for="Autor">Usuario</label>
+                <input [(ngModel)]="datos.user" class="form-control" style="width: 100%;" id="user" placeholder="user">
             </div>
             <div class="form-floating mb-3">
                 <label for="Autor">Email</label>
@@ -31,6 +35,15 @@
             <div class="form-floating mb-3">
                 <label for="Editorial">Telefono</label>
                 <input [(ngModel)]="datos.telefono" class="form-control" style="width: 50%;" id="telefono" placeholder="Telefono">
+            </div>
+            <hr>
+            <div class="form-floating mb-3">
+                <label for="cod">Nombre</label>
+                <input [(ngModel)]="datos.nombre" class="form-control" style="width: 100%" id="nombre" placeholder="Nombre">
+            </div>
+            <div class="form-floating mb-3">
+                <label for="Título">Apellido</label>
+                <input [(ngModel)]="datos.apellido" class="form-control" style="width: 100%;" id="apellido" placeholder="Apellido">
             </div>
             <div class="form-floating mb-3">
                 <label for="Editorial">Direccion</label>

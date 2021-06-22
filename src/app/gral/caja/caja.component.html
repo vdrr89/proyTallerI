@@ -10,33 +10,31 @@
   <!-- CAJA -->
   <div id="all-form" class="all-form">
     <table class="table">
+      <!-- CART TITLE -->
       <thead>
         <tr>
-          <th scope="col">Cod</th>
-          <th scope="col">Title</th>
-          <th scope="col">$</th>
+          <th scope="col" *ngFor="let item of CartTitle">{{item.title}}</th>
         </tr>
       </thead>
+      <!-- CART ITEMS -->
       <tbody>
         <tr>
-          <td>Mark</td>
-          <td>Otto</td>
-          <td>@mdo</td>
-          <td>
-            <button class="btn-green-micro"><i class="bi bi-pen-fill"></i></button>
-            <button class="btn-red-micro"><i class="bi bi-trash-fill"></i></button>
+          <td *ngFor="let item of CartContent">{{item.producto}} 
+            <button class="btn-green-micro-alone"><i class="bi bi-pen-fill"></i></button>
+            <button class="btn-red-micro-alone"><i class="bi bi-trash-fill"></i></button>
           </td>
         </tr>
       </tbody>
+      <!-- CART FOOTER -->
       <tfoot>
         <tr>
-          <td></td>
-          <td></td>
-          <td><i class="bi bi-currency-dollar"></i>Tot</td>
+          <td *ngFor="let item of CartFooter">{{item.footer}}</td>
         </tr>
         <tr>
-          <button class="btn-green" href="#"><i class="bi bi-cart-fill"></i></button>
-          <button class="btn-red" href="#"><i class="bi bi-trash-fill"></i></button>
+          <td></td>
+          <td></td>
+          <td><button class="btn-green" href="#"><i class="bi bi-cart-fill"></i></button></td>
+          <td><button class="btn-red" href="#"><i class="bi bi-trash-fill"></i></button></td>
         </tr>
       </tfoot>
     </table>

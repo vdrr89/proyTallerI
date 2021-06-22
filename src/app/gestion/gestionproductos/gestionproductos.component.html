@@ -16,14 +16,25 @@
 <table class="table">
   <thead>
     <tr>
-      <th *ngFor="let item of tableTitle" scope="col"> {{item.title}} </th>
+      <!-- TITULOS DE LA TABLA -->
+      <th *ngFor="let item of tableTitle" scope="col"> {{item.title}} </th> 
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td *ngFor="let item of tableContent">{{item.content}}</td>
+    <!-- ITEMS DE LA TABLA -->
+    <tr *ngFor="let item of prod">
+      <td>{{item.cod}}</td>
+      <td>{{item.titulo}}</td>
+      <td>{{item.autor}}</td>
+      <td>{{item.editorial}}</td>
+      <td>{{item.capitulo}}</td>
+      <td>{{item.proveedor}}</td>
+      <td>{{item.fechaCompra}}</td>
+      <td>{{item.stock}}</td>
+      <td>{{item.precioCosto}}</td>
+      <td>{{item.precioVenta}}</td>
       <td>
-        <button class="btn-green-micro-alone"><i class="bi bi-pen-fill"></i></button>
+        <button class="btn-green-micro-alone" (click)="update(item)"><i class="bi bi-pen-fill"></i></button>
         <button class="btn-red-micro-alone"><i class="bi bi-trash-fill"></i></button>
       </td>
     </tr>

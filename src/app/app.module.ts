@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http'; //esto es para el json el get put y eso
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,9 +11,14 @@ import { ReactiveFormsModule } from '@angular/forms';
 //comun
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
- 
+//servicios
+import { BreadcrumbService } from './breadcrumb/breadcrumb.service';
+import { ProductosService } from './servicios/productos.service';
+import { UsuariosService } from './servicios/usuarios.service';
 //GRAL
 import { HomeComponent } from './gral/home/home.component';
+import { ProductosCarouselComponent } from './gral/home/productos-carousel/productos-carousel.component';
+import { FooterComponent } from './gral/footer/footer.component';
 //.. productos
 import { ProductosComponent } from './gral/productos/productos.component';
 import { CajaComponent } from './gral/caja/caja.component'
@@ -22,7 +28,6 @@ import { LoginTabsComponent } from './gral/login/login-tabs/login-tabs.component
 import { NewUserComponent } from './gral/login/new-user/new-user.component';
 import { NewUserTabsComponent } from './gral/login/new-user/new-user-tabs/new-user-tabs.component'
 //GESTION
-import { GestionModule } from './gestion/gestion.module';
 import { GestionComponent } from './gestion/gestion.component';
 import { GestionTabsComponent } from './gestion/gestion-tabs/gestion-tabs.component';
 //.. productos
@@ -33,7 +38,6 @@ import { CrearProductoComponent } from './gestion/gestionproductos/crear-product
 import { GestionUsuariosFiltroComponent } from './gestion/gestion-usuarios/gestion-usuarios-filtro/gestion-usuarios-filtro.component';
 import { GestionUsuariosComponent } from './gestion/gestion-usuarios/gestion-usuarios.component';
 import { CrearUsuarioComponent } from './gestion/gestion-usuarios/crear-usuario/crear-usuario.component';
-import { BreadcrumbService } from './breadcrumb/breadcrumb.service';
 
 @NgModule({
   declarations: [
@@ -54,16 +58,23 @@ import { BreadcrumbService } from './breadcrumb/breadcrumb.service';
     LoginTabsComponent,
     NewUserTabsComponent,
     NavBarComponent,
-    CrearUsuarioComponent
+    CrearUsuarioComponent,
+    FooterComponent,
+    ProductosCarouselComponent
   ],
   imports: [ //acá van los módulos, ponerlos también en el import
     BrowserModule,
     AppRoutingModule,
     FormsModule, //sirve para hacer que los formularios anden con el ngModel
     ReactiveFormsModule, // este y el de arriba, verificar e import de la carpeta @angular/forms
-    GestionModule
+    HttpClientModule //esto es para el servidor de json 
   ],
-  providers: [BreadcrumbService], //aqui van los servicios
+  providers: [//aqui van los servicios
+    BreadcrumbService, 
+    ProductosService, 
+    UsuariosService,
+    HttpClientModule //eso es para el servidor de json
+  ], 
   bootstrap: [AppComponent]
 })
 export class AppModule { }

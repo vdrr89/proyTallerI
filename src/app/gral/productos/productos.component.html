@@ -14,18 +14,19 @@
     <div class="vr-card" style="width: 18rem;" *ngFor="let item of data">
       <img src="https://bit.ly/3vYiswQ" class="card-img-top" alt="img-libro-1">
       <div class="card-body">
+        <button class="btn-gold-micro-alone"><i class="bi bi-heart"></i></button>
         <h5 class="card-title"> {{item.title}} </h5>
         <p class="card-text"> {{item.description}} </p>
         <p class="price">$ {{item.price}} </p>
       </div>
       <div class="cart-situation">
+        <button class="btn-red-micro-alone" href="#"><i class="bi bi-trash-fill"></i></button>
         <div class="manage-amount">
-            <button class="btn-out-micro"><i class="bi bi-dash-lg"></i></button>
+            <button class="btn-out-micro-alone"><i class="bi bi-dash-lg"></i></button>
             <input class="input-micro + .amount-number" type="number" maxlength="4">
-            <button class="btn-out-micro"><i class="bi bi-plus-lg"></i></button>
+            <button class="btn-out-micro-alone"><i class="bi bi-plus-lg"></i></button>
         </div>
-        <button class="btn-green-micro" href="#"><i class="bi bi-cart-fill"></i></button>
-        <button class="btn-red-micro" href="#"><i class="bi bi-trash-fill"></i></button>
+        <button class="btn-green-micro-alone" href="#"><i class="bi bi-cart-fill"></i></button>
       </div>
     </div>
   </div>

@@ -1,0 +1,22 @@
+{
+    "productos": [{
+        "codigo": "codigo",
+        "titulo": "titulo",
+        "autor": "autor",
+        "editorial": "editorial",
+        "capitulo": "capitulo",
+        "proveedor": "proveedor",
+        "fechaCompra": "fechadecompra",
+        "nuevasUnidades": "nuevasunidades",
+        "stock":"123",
+        "precioCosto": "6800",
+        "precioVenta": "200"
+    }], 
+    "usuarios": [{
+        "nombre": "nombre",
+        "apellido": "apellido",
+        "email": "email",
+        "telefono": "tel",
+        "direccion": "dir"
+    }]
+}

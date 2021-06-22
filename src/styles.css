@@ -205,24 +205,15 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
   }
   
   .btn-out:hover, 
-  .btn-out-micro:hover {
+  .btn-out-micro:hover,
+  .btn-out-micro-alone:hover {
     color: #fff;
     background-color: #3d4b57;
     border-color: #3d4b57;
     box-shadow: 0px 15px 20px #697c8dad;
     transform: translateY(7px);
   }
-  
-  .btn-out-micro {
-    margin: 2px 1px;
-    padding: 4px;
-    border-radius: 0px;
-    cursor: pointer;
-    color: #3d4b57;
-    border-color: #3d4b57;
-    background-color: #fff;
-    transition: all 0.3s ease 0s;
-  }
+
   
 
   .btn-out:focus, 
@@ -250,7 +241,8 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
   }
 
   .btn-green:hover, 
-  .btn-green-micro:hover {
+  .btn-green-micro:hover,
+  .btn-green-micro-alone:hover {
     color: #fff;
     background-color: #1abc9c;
     transform: translateY(7px);
@@ -269,7 +261,8 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
   }
 
   .btn-red:hover, 
-  .btn-red-micro:hover {
+  .btn-red-micro:hover,
+  .btn-red-micro-alone:hover {
     color: #fff;
     background-color: #9b0b0b;
     box-shadow: 0px 15px 20px #9b0b0b80;
@@ -277,7 +270,20 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
   }
 
 
-  /* BTN GREEN & RED !MICRO */
+  /* BTN !MICRO */
+  /* OUT GREEN RED GOLD */
+  
+  .btn-out-micro {
+    margin: 2px 1px;
+    padding: 4px;
+    border-radius: 0px;
+    cursor: pointer;
+    color: #3d4b57;
+    border-color: #3d4b57;
+    background-color: #fff;
+    transition: all 0.3s ease 0s;
+  }
+
   .btn-green-micro {
     margin: 2px 1px;
     padding: 4px;
@@ -300,7 +306,20 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
     transition: all 0.3s ease 0s;
   }
 
-/* BTN GREEN & RED MICRO !ALONE */
+/* BTN MICRO !ALONE */
+/* OUT GREEN RED GOLD */
+  
+.btn-out-micro-alone {
+  margin: 2px 1px;
+  padding: 4px;
+  border-radius: 0px;
+  cursor: pointer;
+  color: #3d4b57;
+  border-color: transparent;
+  background-color: transparent;
+  transition: all 0.3s ease 0s;
+}
+
 .btn-green-micro-alone {
   margin: 2px 1px;
   padding: 4px;
@@ -321,6 +340,25 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
   border-color: transparent;
   background-color: transparent;
   transition: all 0.3s ease 0s;
+}
+
+  
+.btn-gold-micro-alone {
+  margin: 2px 1px;
+  padding: 4px;
+  border-radius: 0px;
+  cursor: pointer;
+  color: goldenrod;
+  border-color: transparent;
+  background-color: transparent;
+  transition: all 0.3s ease 0s;
+}
+
+.btn-gold-micro-alone:hover {
+  color: #fff;
+  background-color: goldenrod;
+  box-shadow: 0px 15px 20px #7c5e12;
+  transform: translateY(7px);
 }
 
 /* FORM */
@@ -369,7 +407,7 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
 
 /* ---------------------- DIAGRAMACIÓN ---------------------- */
 
-/* ---------------------- MENU NAVBAR ---------------------- */
+/* ---------------------- MENU NAV Y FOOTER ---------------------- */
 nav {
     position: sticky;
     position: -webkit-sticky; /* Safari */
@@ -383,6 +421,29 @@ nav > form {
     margin-right: 1%;
     float: right;
     margin: 4px 2px
+}
+
+footer {
+  position: fixed;
+  position: -webkit-sticky; /* Safari */
+  display: inline-block;
+  background-color: #131b25;
+  box-shadow: 2px 2px 4px #00000023;
+  bottom: 0px;
+  width: 100%;
+}
+
+footer > ul {
+  margin: auto;
+}
+
+footer > ul > li {
+  color: #fff;
+  margin: 10px;
+}
+
+footer > ul > li:hover {
+  color: #fff;
 }
 
 /* ---------------------- MEDIA SCREEN ---------------------- */

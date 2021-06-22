@@ -21,6 +21,12 @@ img {
     text-align: center;
 }
 
+.btn-gold-micro-alone {
+    display: flex;
+    left: 200px;
+    top: 50px;
+}
+
 /* CART */
 .cart-situation{
     text-align:center;
