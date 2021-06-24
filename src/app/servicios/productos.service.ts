@@ -8,16 +8,20 @@ import { Productos } from '../clases/productos';
 export class ProductosService {
   url = "http://localhost:3000/productos";  
 
-  constructor(private _http: HttpClient) { }  
+  constructor(public _http: HttpClient) { }  
     
     getProductos(){
-      return this._http.get<Productos>(this.url);
+      return this._http.get<Productos[]>(this.url);
     }
   
-    insertarProductos(Productos:any){
+    addProductos(Productos:Productos){
       return this._http.post(this.url,Productos);
     }
-    actualizarProductos(Productos:any){
-      return this._http.put(this.url+"/"+Productos.cod,Productos);
+    actualizarProductos(prod:Productos){
+       
+      return this._http.put(this.url+"/"+prod.codigo,Productos);
    }
+  //   eliminarProductos(Productos:any){
+  //   return this._http.delete(this.url+"/"+codigo);
+  // }
 }

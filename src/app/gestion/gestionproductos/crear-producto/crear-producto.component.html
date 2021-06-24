@@ -8,60 +8,61 @@
     </ol>
 </div>
 
-<!-- CREATE PRODUCT FORM -->
+<!-- FORMULARIO CREAR PRODUCTO -->
 <div class="all-form">
+    <!-- DATOS DEL ARTÍCULO -->
     <div class="inputs">
-        <!-- DATOS DEL ARTÍCULO -->
-        <div id="datos" class="seccion">
-            <div class="form-floating mb-3">
-                <label for="cod">cod</label>
-                <input [(ngModel)]="productos.cod" class="form-control" style="width: 25%" id="cod" placeholder="cod">
-            </div>
-            <div class="form-floating mb-3">
-                <label for="Título">Título</label>
-                <input [(ngModel)]="productos.titulo" class="form-control" style="width: 100%;" id="Título" placeholder="Título">
-            </div>
-            <div class="form-floating mb-3">
-                <label for="Autor">Autor</label>
-                <input [(ngModel)]="productos.autor" class="form-control" style="width: 100%;" id="Autor" placeholder="Autor">
-            </div>
-            <div class="form-floating mb-3">
-                <label for="Editorial">Editorial</label>
-                <input [(ngModel)]="productos.editorial" class="form-control" style="width: 100%;" id="Editorial" placeholder="Editorial">
-            </div>
-            <div class="form-floating mb-3">
-                <label for="Cap">Cap</label>
-                <input [(ngModel)]="productos.capitulo" class="form-control" style="width: 50%;" id="Cap" placeholder="Cap">
-            </div>
+        <div class="form-floating mb-3">
+            <label for="codigo">cod</label>
+            <input [(ngModel)]="productos.codigo" class="form-control" style="width: 25%" id="codigo" placeholder="codigo">
+        </div>
+        <div class="form-floating mb-3">
+            <label for="imgUrl">Imagen</label>
+            <input [(ngModel)]="productos.imgUrl" class="form-control" style="width: 25%" id="imgUrl" placeholder="URL de la Imagen">
+        </div>
+        <div class="form-floating mb-3">
+            <label for="Título">Título</label>
+            <input [(ngModel)]="productos.titulo" class="form-control" style="width: 100%;" id="Título" placeholder="Título">
+        </div>
+        <div class="form-floating mb-3">
+            <label for="Autor">Autor</label>
+            <input [(ngModel)]="productos.autor" class="form-control" style="width: 100%;" id="Autor" placeholder="Autor">
+        </div>
+        <div class="form-floating mb-3">
+            <label for="Editorial">Editorial</label>
+            <input [(ngModel)]="productos.editorial" class="form-control" style="width: 100%;" id="Editorial" placeholder="Editorial">
+        </div>
+        <div class="form-floating mb-3">
+            <label for="Cap">Cap</label>
+            <input [(ngModel)]="productos.capitulo" class="form-control" style="width: 50%;" id="Cap" placeholder="Cap">
         </div>
         <hr>
-        <div id="info-comercial" class="seccion">
+        <div class="form-floating mb-3">
+            <label for="Proveedor">Proveedor</label>
+            <input [(ngModel)]="productos.proveedor" class="form-control" style="width: 100%" id="Proveedor" placeholder="Proveedor">
+        </div>
+        <div class="form-floating mb-3">
+            <label for="Fecha Compra">Fecha Compra</label>
+            <input [(ngModel)]="productos.fechaCompra" type="date" class="form-control" style="width: 50%" id="Fecha Compra" placeholder="Fecha Compra">
+        </div>
+        <div class="group">
             <div class="form-floating mb-3">
-                <label for="Proveedor">Proveedor</label>
-                <input [(ngModel)]="productos.proveedor" class="form-control" style="width: 100%" id="Proveedor" placeholder="Proveedor">
+                <label for="Nuevas Unidades">Nuevas Unidades</label>
+                <input [(ngModel)]="productos.stock" class="form-control" id="Nuevas Unidades" placeholder="Nuevas Unidades">
             </div>
             <div class="form-floating mb-3">
-                <label for="Fecha Compra">Fecha Compra</label>
-                <input [(ngModel)]="productos.fechaCompra" type="date" class="form-control" style="width: 50%" id="Fecha Compra" placeholder="Fecha Compra">
+                <i class="bi bi-currency-dollar"></i>
+                <input [(ngModel)]="productos.precioCosto" type="number" class="form-control" placeholder="Precio de Costo" aria-label="costo" aria-describedby="basic-addon1">
             </div>
-            <div class="group">
-                <div class="form-floating mb-3">
-                    <label for="Nuevas Unidades">Nuevas Unidades</label>
-                    <input [(ngModel)]="productos.stock" class="form-control" id="Nuevas Unidades" placeholder="Nuevas Unidades">
-                </div>
-                <div class="form-floating mb-3">
-                    <i class="bi bi-currency-dollar"></i>
-                    <input [(ngModel)]="productos.precioCosto" type="number" class="form-control" placeholder="Precio de Costo" aria-label="costo" aria-describedby="basic-addon1">
-                </div>
-                <div class="form-floating mb-3">
-                    <i class="bi bi-currency-dollar"></i>
-                    <input [(ngModel)]="productos.precioVenta" type="number" class="form-control" placeholder="Precio de Venta" aria-label="Venta" aria-describedby="basic-addon1">
-                </div>
+            <div class="form-floating mb-3">
+                <i class="bi bi-currency-dollar"></i>
+                <input [(ngModel)]="productos.precioVenta" type="number" class="form-control" placeholder="Precio de Venta" aria-label="Venta" aria-describedby="basic-addon1">
             </div>
-        </div>        
+        </div>       
     </div>
+    <!-- BOTONES DE ABAJO / SUBMIT | CANCEL -->
     <div class="bottom-btns">
-        <button class="btn-green" (click)=submit($event)>Submit</button>
+        <button class="btn-green" (click)="submit($event)">Submit</button>
         <button class="btn-red" routerLink="/gestion/productos">Cancel</button>
     </div>   
 </div>

@@ -12,6 +12,7 @@ import { FooterComponent } from './gral/footer/footer.component';
 //.. productos
 import { ProductosComponent } from './gral/productos/productos.component';
 import { CajaComponent } from './gral/caja/caja.component';
+import { ProductoDetalleComponent } from './gral/productos/producto-detalle/producto-detalle.component';
 //.. usuarios
 import { LoginComponent } from './gral/login/login.component';
 import { LoginTabsComponent } from './gral/login/login-tabs/login-tabs.component'; 
@@ -46,6 +47,7 @@ const routes: Routes = [
   {path:'productos',component: ProductosComponent},
   {path:'gestion/productos/filtro',component: GestionProductosFiltroComponent},
   {path:'caja',component: CajaComponent},
+  {path:'producto-detalle/:codigo',component: ProductoDetalleComponent},
   //GESTION
   {path:'gestion',component: GestionComponent},
   {path:'gestion/tabs',component: GestionTabsComponent},

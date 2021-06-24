@@ -12,14 +12,14 @@ import { event } from 'jquery';
 export class GestionUsuariosComponent implements OnInit {
 
   usu: Usuarios[] = []; 
-  usuarios:Usuarios = {
-    usuario:"",
-    email:"",
-    telefono:0,
-    nombre:"",
-    apellido:"",
-    direccion:""
-  }
+  // usuarios:Usuarios = {
+  //   usuario:"",
+  //   email:"",
+  //   telefono:0,
+  //   nombre:"",
+  //   apellido:"",
+  //   direccion:""
+  // }
 
   tableTitle = [
     {title: "Nombre"},

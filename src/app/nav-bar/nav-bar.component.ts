@@ -22,8 +22,8 @@ export class NavBarComponent implements OnInit {
     },
     {
       id:"gestion",
-      nombre: '',
-      icon:'bi bi-kanban-fill',
+      nombre: 'Gestión',
+      icon:'',
       link:"/gestion/productos"
     },
     {

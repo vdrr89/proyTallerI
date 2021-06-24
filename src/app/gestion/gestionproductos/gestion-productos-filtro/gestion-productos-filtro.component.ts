@@ -9,15 +9,16 @@ import { Productos } from 'src/app/clases/productos'; // primero importa la clas
 })
 export class GestionProductosFiltroComponent implements OnInit {
 
-productos:Productos = { //primero inicializar acá despues hacer funcion abajo
-    
-      cod:"",
+productos:Productos = { 
+      codigo:"",
+      imgUrl:"",
       titulo:"",
       autor:"",
       editorial:"",
       capitulo:"",
       proveedor:"",
       fechaCompra:"",
+      nuevasUnidades:0,
       stock:0,
       precioCosto:0,
       precioVenta:0
@@ -31,5 +32,5 @@ productos:Productos = { //primero inicializar acá despues hacer funcion abajo
 }
 
 // filtrar(){
-//   console.log(Productos.cod);
+//   console.log(Productos.codigo);
 // }

@@ -7,27 +7,31 @@
     </ol>
   </div>
   
-  <!-- CARDS DE PRODUCTOS -->
-  <p *ngIf="data.length == 0">{{noHay}}</p>
-  
-  <div id="vr-card-group" style="display: flex;" *ngIf="data.length > 0">
-    <div class="vr-card" style="width: 18rem;" *ngFor="let item of data">
-      <img src="https://bit.ly/3vYiswQ" class="card-img-top" alt="img-libro-1">
-      <div class="card-body">
-        <button class="btn-gold-micro-alone"><i class="bi bi-heart"></i></button>
-        <h5 class="card-title"> {{item.title}} </h5>
-        <p class="card-text"> {{item.description}} </p>
-        <p class="price">$ {{item.price}} </p>
+<!-- CARDS DE PRODUCTOS -->
+
+<p *ngIf="prod.length == 0">{{noHay}}</p>
+
+<div id="vr-card-group" style="display: flex;" *ngIf="prod.length > 0">
+  <div class="vr-card" style="width: 18rem;" *ngFor="let item of prod">
+    <!-- IMG -->
+    <img src="{{item.imgUrl}}" class="card-img-top" alt="img-libro-1">
+    <button class="btn-gold-micro-alone"><i class="bi bi-heart"></i></button>
+    <!-- <button class="btn-out-micro-alone" [routerLink]="['/producto-detalle', producto.codigo]"><i class="bi bi-eye"></i></button> -->
+    <!-- PROD INFO -->
+    <div class="card-body">
+      <h5 class="card-title">{{item.titulo}}</h5>
+      <p class="card-text">{{item.autor}}</p>
+      <p class="price">$ {{item.precioVenta}}</p>
+    </div>
+    <!-- CART SITUATION -->
+    <div class="cart-situation">
+      <button class="btn-red-micro-alone" href="#"><i class="bi bi-trash-fill"></i></button>
+      <div class="manage-amount">
+          <button class="btn-out-micro-alone"><i class="bi bi-dash-lg"></i></button>
+          <input class="input-micro + .amount-number" type="number" maxlength="4">
+          <button class="btn-out-micro-alone"><i class="bi bi-plus-lg"></i></button>
       </div>
-      <div class="cart-situation">
-        <button class="btn-red-micro-alone" href="#"><i class="bi bi-trash-fill"></i></button>
-        <div class="manage-amount">
-            <button class="btn-out-micro-alone"><i class="bi bi-dash-lg"></i></button>
-            <input class="input-micro + .amount-number" type="number" maxlength="4">
-            <button class="btn-out-micro-alone"><i class="bi bi-plus-lg"></i></button>
-        </div>
-        <button class="btn-green-micro-alone" href="#"><i class="bi bi-cart-fill"></i></button>
-      </div>
+      <button class="btn-green-micro-alone" href="#"><i class="bi bi-cart-fill"></i></button>
     </div>
   </div>
-  
+</div>

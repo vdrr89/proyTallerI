@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { Productos } from 'src/app/clases/productos';
+import { ProductosService } from 'src/app/servicios/productos.service';
 
 @Component({
   selector: 'app-productos',
@@ -6,30 +9,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./productos.component.css']
 })
 export class ProductosComponent implements OnInit {
-
   noHay = "No hay productos";
-
-  data = [
-    {
-      title:"uno",
-      description: "acá una no tan larga descripción de lo que es",
-      price: 0
-    },
-    {
-      title:"dos",
-      description: "acá una tan larga descripción de lo que es",
-      price: 0
-    },
-    {
-      title:"tres",
-      description: "una no tan larga descripción de lo que es",
-      price: 0
-    }
-  ]
-
-  constructor() { }
+  
+  prod: Productos[] = []; 
+  
+  constructor(private _productosService: ProductosService) { }
 
   ngOnInit(): void {
+    this._productosService.getProductos().subscribe(response => {
+      console.log("productos cards response: ", response);
+      this.prod = response;
+    })
   }
 
 }

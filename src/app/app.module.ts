@@ -21,7 +21,8 @@ import { ProductosCarouselComponent } from './gral/home/productos-carousel/produ
 import { FooterComponent } from './gral/footer/footer.component';
 //.. productos
 import { ProductosComponent } from './gral/productos/productos.component';
-import { CajaComponent } from './gral/caja/caja.component'
+import { CajaComponent } from './gral/caja/caja.component';
+import { ProductoDetalleComponent } from './gral/productos/producto-detalle/producto-detalle.component';
 //.. users
 import { LoginComponent } from './gral/login/login.component';
 import { LoginTabsComponent } from './gral/login/login-tabs/login-tabs.component';
@@ -60,7 +61,8 @@ import { CrearUsuarioComponent } from './gestion/gestion-usuarios/crear-usuario/
     NavBarComponent,
     CrearUsuarioComponent,
     FooterComponent,
-    ProductosCarouselComponent
+    ProductosCarouselComponent,
+    ProductoDetalleComponent
   ],
   imports: [ //acá van los módulos, ponerlos también en el import
     BrowserModule,

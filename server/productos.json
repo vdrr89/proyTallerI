@@ -1,6 +1,7 @@
 {
     "productos": [{
         "codigo": "codigo",
+        "imgUrl": "https://bit.ly/3vYiswQ",
         "titulo": "titulo",
         "autor": "autor",
         "editorial": "editorial",

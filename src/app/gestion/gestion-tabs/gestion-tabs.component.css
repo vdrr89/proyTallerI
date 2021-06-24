@@ -1,3 +1,4 @@
-.all-tabs {
-    margin-left: 35%;
+.nav-tabs {
+    display: inline-flex;
+    margin: 0 35%;
 }

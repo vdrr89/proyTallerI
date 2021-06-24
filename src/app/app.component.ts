@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router'; //agregar import
 import { ProductosService } from './servicios/productos.service'; //agregar imports servicios
 import { UsuariosService } from './servicios/usuarios.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-root',
