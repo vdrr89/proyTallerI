@@ -14,6 +14,7 @@ export class GestionproductosComponent implements OnInit {
 
   prod: Productos[] = []; 
   productos:Productos = { 
+    id: 0,
     codigo:"",
     imgUrl:"",
     titulo:"",
@@ -54,6 +55,7 @@ export class GestionproductosComponent implements OnInit {
  
 //EDITAR PROD
 update(productos:Productos){
+  this.productos.id = productos.id;
   this.productos.codigo = productos.codigo;
   this.productos.titulo = productos.titulo;
   this.productos.autor = productos.autor;
@@ -69,14 +71,14 @@ update(productos:Productos){
 }
 
 //ELIMINAR
-// eliminarProductos(id: any){
-//   this._productosService.addProductos(codigo).subscribe((response:any)=>{
-//     console.log(response)
+// no existe filtro en productos
+// eliminarProductos(codigo: any){
+//   this._productosService.eliminarProductos(codigo).subscribe((response:any)=>{
+//     console.log("eliminarProductos response: ", response)
 //     const newItems = this.productos.filter((item:any)=>{
-//       return item.id !== codigo
+//       return item.codigo !== codigo
 //     });
 //     this.productos = newItems;
 //   })
 //   }
-
 }

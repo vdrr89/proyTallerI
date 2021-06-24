@@ -1,6 +1,6 @@
-import { HttpClientModule } from '@angular/common/http'; //esto es para el json el get put y eso
-import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -28,7 +28,7 @@ import { LoginComponent } from './gral/login/login.component';
 import { LoginTabsComponent } from './gral/login/login-tabs/login-tabs.component';
 import { NewUserComponent } from './gral/login/new-user/new-user.component';
 import { NewUserTabsComponent } from './gral/login/new-user/new-user-tabs/new-user-tabs.component'
-//GESTION
+//GESTION 
 import { GestionComponent } from './gestion/gestion.component';
 import { GestionTabsComponent } from './gestion/gestion-tabs/gestion-tabs.component';
 //.. productos
@@ -41,7 +41,7 @@ import { GestionUsuariosComponent } from './gestion/gestion-usuarios/gestion-usu
 import { CrearUsuarioComponent } from './gestion/gestion-usuarios/crear-usuario/crear-usuario.component';
 
 @NgModule({
-  declarations: [
+  declarations: [ // componentes
     AppComponent,
     ProductosComponent,
     CajaComponent,
@@ -64,18 +64,17 @@ import { CrearUsuarioComponent } from './gestion/gestion-usuarios/crear-usuario/
     ProductosCarouselComponent,
     ProductoDetalleComponent
   ],
-  imports: [ //acá van los módulos, ponerlos también en el import
+  imports: [  //modules
     BrowserModule,
     AppRoutingModule,
-    FormsModule, //sirve para hacer que los formularios anden con el ngModel
-    ReactiveFormsModule, // este y el de arriba, verificar e import de la carpeta @angular/forms
-    HttpClientModule //esto es para el servidor de json 
+    FormsModule, 
+    ReactiveFormsModule, 
+    HttpClientModule
   ],
-  providers: [//aqui van los servicios
+  providers: [ // servicios
     BreadcrumbService, 
     ProductosService, 
-    UsuariosService,
-    HttpClientModule //eso es para el servidor de json
+    UsuariosService
   ], 
   bootstrap: [AppComponent]
 })

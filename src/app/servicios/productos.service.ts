@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core'; // esto hace que se pueda usar el @injectable
-import {HttpClient} from '@angular/common/http'
+import { Injectable } from '@angular/core'; 
+import { HttpClient } from '@angular/common/http';
 import { Productos } from '../clases/productos';
 
 @Injectable({
@@ -17,11 +17,12 @@ export class ProductosService {
     addProductos(Productos:Productos){
       return this._http.post(this.url,Productos);
     }
+
     actualizarProductos(prod:Productos){
-       
-      return this._http.put(this.url+"/"+prod.codigo,Productos);
+      return this._http.put(this.url+"/"+prod.codigo,prod);
    }
-  //   eliminarProductos(Productos:any){
-  //   return this._http.delete(this.url+"/"+codigo);
-  // }
+
+    eliminarProductos(Productos:any){
+    return this._http.delete(this.url+"/"+Productos.codigo,Productos);
+  }
 }

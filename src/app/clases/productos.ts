@@ -1,4 +1,5 @@
 export class Productos {
+    id: number;
     codigo:string;
     imgUrl:string;
     titulo:string;
@@ -13,6 +14,7 @@ export class Productos {
     precioVenta:number;
 
     constructor(){
+        this.id=0;
         this.codigo="";
         this.imgUrl="";
         this.titulo="";

@@ -10,6 +10,7 @@ import { Productos } from 'src/app/clases/productos'; // primero importa la clas
 export class GestionProductosFiltroComponent implements OnInit {
 
 productos:Productos = { 
+      id:0,
       codigo:"",
       imgUrl:"",
       titulo:"",

@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-
-import { AppComponent } from './app.component';
 //..
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
@@ -57,7 +55,8 @@ const routes: Routes = [
   {path:'gestion/usuarios/crearusuario',component: CrearUsuarioComponent},
   //.. productos
   {path:'gestion/productos',component: GestionproductosComponent},
-  {path:'gestion/crearproducto',component: CrearProductoComponent}
+  {path:'gestion/crearproducto',component: CrearProductoComponent},
+  {path:'gestion/crearproducto/:codigo',component: CrearProductoComponent}
 ];
 
 @NgModule({

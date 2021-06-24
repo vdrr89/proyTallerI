@@ -13,7 +13,7 @@
     <!-- DATOS DEL ARTÍCULO -->
     <div class="inputs">
         <div class="form-floating mb-3">
-            <label for="codigo">cod</label>
+            <label for="codigo">codigo</label>
             <input [(ngModel)]="productos.codigo" class="form-control" style="width: 25%" id="codigo" placeholder="codigo">
         </div>
         <div class="form-floating mb-3">
@@ -62,7 +62,7 @@
     </div>
     <!-- BOTONES DE ABAJO / SUBMIT | CANCEL -->
     <div class="bottom-btns">
-        <button class="btn-green" (click)="submit($event)">Submit</button>
+        <button class="btn-green"(click)="submit($event)">Enviar</button>
         <button class="btn-red" routerLink="/gestion/productos">Cancel</button>
     </div>   
 </div>

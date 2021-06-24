@@ -13,6 +13,7 @@ export class GestionUsuariosComponent implements OnInit {
 
   usu: Usuarios[] = []; 
   // usuarios:Usuarios = {
+  //   id:0,
   //   usuario:"",
   //   email:"",
   //   telefono:0,
@@ -51,6 +52,7 @@ export class GestionUsuariosComponent implements OnInit {
 //       console.log("else actualizar usuario: ", response);
 //       this.usu.map((item:Usuarios)=>{
 //         if(item.usuario === this.usuarios.usuario){
+//           item.id = this.usuarios.id;
 //           item.apellido = this.usuarios.apellido;
 //           item.direccion = this.usuarios.direccion;
 //           item.email = this.usuarios.email;
@@ -68,6 +70,7 @@ export class GestionUsuariosComponent implements OnInit {
 
 //UPDATE
 // Update(usuarios){
+//   this.usuarios.id = usuarios.id;
 //   this.usuarios.usuario = usuarios.usuario;
 //   this.usuarios.nombre = usuarios.nombre;
 //   this.usuarios.apellido = usuarios.apellido;

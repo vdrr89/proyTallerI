@@ -1,23 +1,75 @@
 {
-    "productos": [{
-        "codigo": "codigo",
-        "imgUrl": "https://bit.ly/3vYiswQ",
-        "titulo": "titulo",
-        "autor": "autor",
-        "editorial": "editorial",
-        "capitulo": "capitulo",
-        "proveedor": "proveedor",
-        "fechaCompra": "fechadecompra",
-        "nuevasUnidades": "nuevasunidades",
-        "stock":"123",
-        "precioCosto": "6800",
-        "precioVenta": "200"
-    }], 
-    "usuarios": [{
-        "nombre": "nombre",
-        "apellido": "apellido",
-        "email": "email",
-        "telefono": "tel",
-        "direccion": "dir"
-    }]
+  "productos": [
+    {
+      "id": "1",
+      "codigo": "1",
+      "imgUrl": "https://bit.ly/3vYiswQ",
+      "titulo": "titulo",
+      "autor": "autor",
+      "editorial": "editorial",
+      "capitulo": "capitulo",
+      "proveedor": "proveedor",
+      "fechaCompra": "fechadecompra",
+      "nuevasUnidades": "nuevasunidades",
+      "stock": "123",
+      "precioCosto": "6800",
+      "precioVenta": "200"
+    },
+    {
+      "id": "Fha-Nus",
+      "codigo": "",
+      "imgUrl": "",
+      "titulo": "",
+      "autor": "",
+      "editorial": "",
+      "capitulo": "",
+      "proveedor": "",
+      "fechaCompra": "",
+      "nuevasUnidades": 0,
+      "stock": 0,
+      "precioCosto": 0,
+      "precioVenta": 0
+    },
+    {
+      "id": "3vpR8K1",
+      "codigo": "",
+      "imgUrl": "",
+      "titulo": "",
+      "autor": "",
+      "editorial": "",
+      "capitulo": "",
+      "proveedor": "",
+      "fechaCompra": "",
+      "nuevasUnidades": 0,
+      "stock": 0,
+      "precioCosto": 0,
+      "precioVenta": 0
+    },
+    {
+      "id": "fhMn03F",
+      "codigo": "",
+      "imgUrl": "",
+      "titulo": "",
+      "autor": "",
+      "editorial": "",
+      "capitulo": "",
+      "proveedor": "",
+      "fechaCompra": "",
+      "nuevasUnidades": 0,
+      "stock": 0,
+      "precioCosto": 0,
+      "precioVenta": 0
+    }
+  ],
+  "usuarios": [
+    {
+      "id": "1",
+      "usuario": "usuario",
+      "nombre": "nombre",
+      "apellido": "apellido",
+      "email": "email",
+      "telefono": "tel",
+      "direccion": "dir"
+    }
+  ]
 }

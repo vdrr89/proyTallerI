@@ -35,7 +35,7 @@
       <td>{{item.precioCosto}}</td>
       <td>{{item.precioVenta}}</td>
       <td>
-        <button class="btn-green-micro-alone" (click)="update(item)"><i class="bi bi-pen-fill"></i></button>
+        <button class="btn-green-micro-alone" routerLink="/gestion/crearproducto/{{item.codigo}}" (click)="update(item)"><i class="bi bi-pen-fill"></i></button>
         <button class="btn-red-micro-alone"><i class="bi bi-trash-fill"></i></button>
       </td>
     </tr>
