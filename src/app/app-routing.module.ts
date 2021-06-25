@@ -56,7 +56,7 @@ const routes: Routes = [
   //.. productos
   {path:'gestion/productos',component: GestionproductosComponent},
   {path:'gestion/crearproducto',component: CrearProductoComponent},
-  {path:'gestion/crearproducto/:codigo',component: CrearProductoComponent}
+  {path:'gestion/crearproducto/:id',component: CrearProductoComponent}
 ];
 
 @NgModule({

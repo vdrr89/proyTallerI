@@ -31,6 +31,7 @@ export class GestionproductosComponent implements OnInit {
   
 
   tableTitle = [ //fijo solo título
+    {title: "id"},
     {title: "cod"},
     {title: "imgUrl"},
     {title: "Título"},
@@ -44,7 +45,11 @@ export class GestionproductosComponent implements OnInit {
     {title: "$ Venta"}
   ]
 
-  constructor(private _productosService: ProductosService, private _router: Router, private _activatedRoute: ActivatedRoute) { } 
+  constructor(
+    private _productosService: ProductosService, 
+    private _route: Router, 
+    private _activatedRoute: ActivatedRoute
+    ) { } 
 
   ngOnInit(): void { 
     this._productosService.getProductos().subscribe(response =>{
@@ -55,30 +60,35 @@ export class GestionproductosComponent implements OnInit {
  
 //EDITAR PROD
 update(productos:Productos){
-  this.productos.id = productos.id;
-  this.productos.codigo = productos.codigo;
-  this.productos.titulo = productos.titulo;
-  this.productos.autor = productos.autor;
-  this.productos.capitulo = productos.capitulo;
-  this.productos.editorial = productos.editorial;
-  this.productos.proveedor = productos.proveedor;
-  this.productos.fechaCompra = productos.fechaCompra;
-  this.productos.imgUrl = productos.imgUrl;
-  this.productos.precioCosto = productos.precioCosto;
-  this.productos.precioVenta = productos.precioVenta;
-  this.productos.stock = productos.stock;
-  this.productos.nuevasUnidades = productos.nuevasUnidades;
+  this._route.navigate(["/gestion/crearproducto",productos.id])
 }
+
+//EDITAR PROD
+// update(productos:Productos){
+//   this.productos.id = productos.id;
+//   this.productos.codigo = productos.codigo;
+//   this.productos.titulo = productos.titulo;
+//   this.productos.autor = productos.autor;
+//   this.productos.capitulo = productos.capitulo;
+//   this.productos.editorial = productos.editorial;
+//   this.productos.proveedor = productos.proveedor;
+//   this.productos.fechaCompra = productos.fechaCompra;
+//   this.productos.imgUrl = productos.imgUrl;
+//   this.productos.precioCosto = productos.precioCosto;
+//   this.productos.precioVenta = productos.precioVenta;
+//   this.productos.stock = productos.stock;
+//   this.productos.nuevasUnidades = productos.nuevasUnidades;
+// }
 
 //ELIMINAR
 // no existe filtro en productos
-// eliminarProductos(codigo: any){
-//   this._productosService.eliminarProductos(codigo).subscribe((response:any)=>{
+// eliminarProductos(id: any){
+//   this._productosService.eliminarProductos(id).subscribe((response:any)=>{
 //     console.log("eliminarProductos response: ", response)
 //     const newItems = this.productos.filter((item:any)=>{
-//       return item.codigo !== codigo
+//       return item.id !== id
 //     });
 //     this.productos = newItems;
 //   })
-//   }
+//  }
 }

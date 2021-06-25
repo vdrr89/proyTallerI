@@ -59,6 +59,51 @@
       "stock": 0,
       "precioCosto": 0,
       "precioVenta": 0
+    },
+    {
+      "id": "XTJOyil",
+      "codigo": "",
+      "imgUrl": "",
+      "titulo": "",
+      "autor": "",
+      "editorial": "",
+      "capitulo": "",
+      "proveedor": "",
+      "fechaCompra": "",
+      "nuevasUnidades": 0,
+      "stock": 0,
+      "precioCosto": 0,
+      "precioVenta": 0
+    },
+    {
+      "id": "tQ805-e",
+      "codigo": "",
+      "imgUrl": "",
+      "titulo": "",
+      "autor": "",
+      "editorial": "",
+      "capitulo": "",
+      "proveedor": "",
+      "fechaCompra": "",
+      "nuevasUnidades": 0,
+      "stock": 0,
+      "precioCosto": 0,
+      "precioVenta": 0
+    },
+    {
+      "id": "QAIaOUq",
+      "codigo": "",
+      "imgUrl": "",
+      "titulo": "",
+      "autor": "",
+      "editorial": "",
+      "capitulo": "",
+      "proveedor": "",
+      "fechaCompra": "",
+      "nuevasUnidades": 0,
+      "stock": 0,
+      "precioCosto": 0,
+      "precioVenta": 0
     }
   ],
   "usuarios": [

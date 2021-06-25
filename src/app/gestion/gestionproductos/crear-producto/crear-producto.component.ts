@@ -74,38 +74,5 @@ export class CrearProductoComponent implements OnInit {
     this.producto2.precioCosto = 0;
     this.producto2.precioVenta = 2;
   }
- 
-
-  // AGREGAR PROD / ABP
-  // submit(event:any){
-  //   console.log("submit1");
-  //   if (this.productos.codigo === "") {
-  //     this._productosService.addProductos(this.productos).subscribe((response:any)=>{
-  //       console.log("submit response: ", response);
-  //       this.prod.push(response);
-  //     })
-  //   } else {
-  //     this._productosService.actualizarProductos(this.productos).subscribe((response:any)=>{
-  //       console.log("submit else response: ", response);
-  //       this.prod.map((item:Productos)=>{
-  //         if(item.codigo === this.productos.codigo){
-  //           item.id = this.productos.id;
-  //           item.imgUrl = this.productos.imgUrl;
-  //           item.titulo = this.productos.titulo;
-  //           item.autor = this.productos.autor;
-  //           item.editorial = this.productos.editorial;
-  //           item.capitulo = this.productos.capitulo;
-  //           item.proveedor = this.productos.proveedor;
-  //           item.fechaCompra = this.productos.fechaCompra;
-  //           item.nuevasUnidades = this.productos.nuevasUnidades;
-  //           item.stock = this.productos.stock;
-  //           item.precioCosto = this.productos.precioCosto;
-  //           item.precioVenta = this.productos.precioVenta;
-  //         }
-  //         return item;
-  //       })
-  //     })
-  //   }
-  // }
 
 }
