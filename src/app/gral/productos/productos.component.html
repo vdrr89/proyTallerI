@@ -5,23 +5,20 @@
       <li class="breadcrumb-item"><a [routerLink]="'/'">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Productos</li>
     </ol>
-  </div>
+</div>
   
 <!-- CARDS DE PRODUCTOS -->
-
-<p *ngIf="prod.length == 0">{{noHay}}</p>
-
-<div id="vr-card-group" style="display: flex;" *ngIf="prod.length > 0">
+<div id="vr-card-group" style="display: flex;">
   <div class="vr-card" style="width: 18rem;" *ngFor="let item of prod">
     <!-- IMG -->
     <img src="{{item.imgUrl}}" class="card-img-top" alt="img-libro-1">
     <button class="btn-gold-micro-alone"><i class="bi bi-heart"></i></button>
     <!-- PROD INFO -->
-    <div class="card-body">
+    <div class="card-body">  
       <h5 class="card-title">{{item.titulo}}</h5>
       <p class="card-text">{{item.autor}}</p>
       <p class="price">$ {{item.precioVenta}}</p>
-    </div>
+    </div> 
     <!-- CART SITUATION -->
     <div class="cart-situation">
       <button class="btn-red-micro-alone" href="#"><i class="bi bi-trash-fill"></i></button>
@@ -30,7 +27,7 @@
           <input [(ngModel)]="cantd" class="input-micro + .amount-number" type="number" maxlength="4">
           <button (click)="plus()" class="btn-out-micro-alone"><i class="bi bi-plus-lg"></i></button>
       </div>
-      <button class="btn-green-micro-alone" href="#"><i class="bi bi-cart-fill"></i></button>
+      <button (click)="addCart(productos)" class="btn-green-micro-alone" href="#"><i class="bi bi-cart-fill"></i></button>
     </div>
   </div>
 </div>

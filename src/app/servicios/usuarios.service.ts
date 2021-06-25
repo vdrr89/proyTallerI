@@ -6,19 +6,24 @@ import { Usuarios } from '../clases/usuarios';
   providedIn: 'root'
 })
 export class UsuariosService {
-  url = "http://localhost:3000/usuarios"; //la url de mi json server levantado que me da cuando npm run server /elArreglo que uso en este componente
+  url = "http://localhost:3000/usuarios";
 
   constructor(private _http: HttpClient) {}
 
   getUsuarios(){
-    return this._http.get<Usuarios>(this.url);
+    return this._http.get<Usuarios[]>(this.url);
   }
 
   insertarUsuarios(Usuarios:any){
     return this._http.post(this.url,Usuarios);
   }
+
   actualizarUsuarios(Usuarios:any){
     return this._http.put(this.url+"/"+Usuarios.usuario,Usuarios);
  }
+
+  eliminarUsuarios(id:number){
+    return this._http.delete(this.url+"/"+id);
+  }
 
 }

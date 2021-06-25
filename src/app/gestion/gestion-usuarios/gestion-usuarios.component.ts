@@ -1,8 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http'; 
+import { Router } from '@angular/router';
+
 import { Usuarios } from 'src/app/clases/usuarios'; 
 import { UsuariosService } from 'src/app/servicios/usuarios.service'; 
-import { event } from 'jquery';
+
+import { ActivatedRoute } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 @Component({
   selector: 'app-gestion-usuarios',
@@ -12,17 +15,21 @@ import { event } from 'jquery';
 export class GestionUsuariosComponent implements OnInit {
 
   usu: Usuarios[] = []; 
-  // usuarios:Usuarios = {
-  //   id:0,
-  //   usuario:"",
-  //   email:"",
-  //   telefono:0,
-  //   nombre:"",
-  //   apellido:"",
-  //   direccion:""
-  // }
+  backup: Usuarios[] = [];
+  usuarios:Usuarios = {
+    id:0,
+    usuario:"",
+    email:"",
+    telefono:0,
+    nombre:"",
+    apellido:"",
+    direccion:""
+  }
 
-  tableTitle = [
+  editado = "Ha editado un usuario exitosamente!";
+  noEditado = "No se ha editdo el usuario";
+
+  tableTitle = [ // estático solo tíutlo
     {title: "Nombre"},
     {title: "Apellido"},
     {title: "Email"},
@@ -30,51 +37,35 @@ export class GestionUsuariosComponent implements OnInit {
     {title: "Direccion"}
   ]
   
-  constructor(private _usuariosService: UsuariosService) {}
+  constructor(
+    private _usuariosService: UsuariosService,
+    private _route: Router,
+    private _activatedRoute: ActivatedRoute
+    ) {}
 
   ngOnInit(): void {
     this._usuariosService.getUsuarios().subscribe((response:any) => {
       this.usu = response;
       console.log("usu response: ", response);
+      this.backup = this.usu;
     })
-}}
+}
 
-//AGREGAR 
-// submit(event){ 
-//   event.preventDefault();
-//   if (this.usuarios.usuario === ""){
-//     this._usuariosService.insertarUsuarios(this.usuarios).subscribe((response:any)=>{
-//       console.log("submit response: ", response);
-//       this.usu.push(response);
-//     })
-//   } else {
-//     this._usuariosService.actualizarUsuarios(this.usuarios).subscribe((response:any)=>{
-//       console.log("else actualizar usuario: ", response);
-//       this.usu.map((item:Usuarios)=>{
-//         if(item.usuario === this.usuarios.usuario){
-//           item.id = this.usuarios.id;
-//           item.apellido = this.usuarios.apellido;
-//           item.direccion = this.usuarios.direccion;
-//           item.email = this.usuarios.email;
-//           item.nombre = this.usuarios.nombre;
-//           item.telefono = this.usuarios.telefono;
-//         }
-//         return item;
-//       })
-//       //acá irían los msjs de que se completó correctamente o incorr con this.funct.subfunct = true ó false
-//     })
-//   }
-// }
+//GO TO EDITAR USUARIO
+goToUpdate(usuarios:Usuarios){
+  this._route.navigate(["/gestion/crearusuario",usuarios.id]);
+}
 
-//acá iría el evento onChange que va con usuarios admin o cliente... 
+//ELIMINAR USUARIO
+delete(id: number){
+  this._usuariosService.eliminarUsuarios(id).subscribe((response:any)=>{
+    console.log("delete usu response: ", response);
+    const newItems = this.usu.filter((item:any)=>{
+      return item.id !== id;
+    });
+    this.usu = newItems;
+  })
+}
 
-//UPDATE
-// Update(usuarios){
-//   this.usuarios.id = usuarios.id;
-//   this.usuarios.usuario = usuarios.usuario;
-//   this.usuarios.nombre = usuarios.nombre;
-//   this.usuarios.apellido = usuarios.apellido;
-//   this.usuarios.email = usuarios.email;
-//   this.usuarios.telefono = usuarios.telefono;
-//   this.usuarios.direccion = usuarios.direccion;
-// }
+}
+

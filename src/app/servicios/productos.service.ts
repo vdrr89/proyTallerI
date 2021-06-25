@@ -22,7 +22,7 @@ export class ProductosService {
       return this._http.put(this.url+"/"+prod.codigo,prod);
    }
 
-    eliminarProductos(Productos:any){
-    return this._http.delete(this.url+"/"+Productos.codigo,Productos);
+    eliminarProductos(id:number){
+    return this._http.delete(this.url+"/"+id);
   }
 }

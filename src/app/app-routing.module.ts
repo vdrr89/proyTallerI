@@ -9,6 +9,7 @@ import { ProductosCarouselComponent } from './gral/home/productos-carousel/produ
 import { FooterComponent } from './gral/footer/footer.component';
 //.. productos
 import { ProductosComponent } from './gral/productos/productos.component';
+import { ProductoCardComponent } from './gral/productos/producto-card/producto-card.component';
 import { CajaComponent } from './gral/caja/caja.component';
 import { ProductoDetalleComponent } from './gral/productos/producto-detalle/producto-detalle.component';
 //.. usuarios
@@ -43,7 +44,7 @@ const routes: Routes = [
   {path:'newuser/tabs',component: NewUserTabsComponent},
   //.. productos
   {path:'productos',component: ProductosComponent},
-  {path:'gestion/productos/filtro',component: GestionProductosFiltroComponent},
+  {path:'producto/card-component',component:ProductoCardComponent},
   {path:'caja',component: CajaComponent},
   {path:'producto-detalle/:codigo',component: ProductoDetalleComponent},
   //GESTION
@@ -53,8 +54,10 @@ const routes: Routes = [
   {path:'gestion/usuarios/filtro',component: GestionUsuariosFiltroComponent},
   {path:'gestion/usuarios',component: GestionUsuariosComponent},
   {path:'gestion/usuarios/crearusuario',component: CrearUsuarioComponent},
+  {path:'gestion/usuarios/crearusuario/:id',component: CrearUsuarioComponent},
   //.. productos
   {path:'gestion/productos',component: GestionproductosComponent},
+  {path:'gestion/productos/filtro',component: GestionProductosFiltroComponent},
   {path:'gestion/crearproducto',component: CrearProductoComponent},
   {path:'gestion/crearproducto/:id',component: CrearProductoComponent}
 ];

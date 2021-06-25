@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+
 import { Productos } from 'src/app/clases/productos';
 import { ProductosService } from 'src/app/servicios/productos.service';
-import { GestionproductosComponent } from '../gestionproductos.component';  
+
 import { ActivatedRoute, Router } from '@angular/router';
 import { Route } from '@angular/compiler/src/core';
 
@@ -11,7 +12,9 @@ import { Route } from '@angular/compiler/src/core';
   templateUrl: './crear-producto.component.html',
   styleUrls: ['./crear-producto.component.css']
 })
+
 export class CrearProductoComponent implements OnInit {
+
   prod: Productos[] = [];
   productos:Productos = { 
     id:0,
@@ -28,17 +31,23 @@ export class CrearProductoComponent implements OnInit {
     precioCosto:0,
     precioVenta:0
   }
-
   producto2: Productos = new Productos();
-  constructor(private _productosService: ProductosService,private _activedRoute: ActivatedRoute, private route:Router) { }
+
+  constructor(
+    private _productosService: ProductosService,
+    private _activedRoute: ActivatedRoute, 
+    private route: Router
+    ) { }
+
   id=0;
+
   ngOnInit(): void {
     this._activedRoute.paramMap.subscribe((item:any)=>{
       this.id = item.get('id');
       if(this.id>0){
         this._productosService.getProductos().subscribe((response:Productos[])=>{
           const item = response.filter((prod2:any)=>{
-            return prod2.id == this.id
+            return prod2.id == this.id;
           })[0];
           this.producto2 = item;
         })
@@ -47,16 +56,33 @@ export class CrearProductoComponent implements OnInit {
   }
 
   submit(event:any){
-    if(this.id>0){
+    if(this.id>0){ //if url/:id = prod.id
       this._productosService.actualizarProductos(this.producto2).subscribe((response:any)=>{
         console.log("submit if response: ", response);
       });
-    } else {
+    } else { //update
       this._productosService.addProductos(this.producto2).subscribe((response:any)=>{
         console.log("submit else response: ", response);
+        this.update2(this.productos);
         this.cleanFormData();
       });
     }
+  }
+
+    update2(productos:Productos){
+    this.productos.id = productos.id;
+    this.productos.codigo = productos.codigo;
+    this.productos.titulo = productos.titulo;
+    this.productos.autor = productos.autor;
+    this.productos.capitulo = productos.capitulo;
+    this.productos.editorial = productos.editorial;
+    this.productos.proveedor = productos.proveedor;
+    this.productos.fechaCompra = productos.fechaCompra;
+    this.productos.imgUrl = productos.imgUrl;
+    this.productos.precioCosto = productos.precioCosto;
+    this.productos.precioVenta = productos.precioVenta;
+    this.productos.stock = productos.stock;
+    this.productos.nuevasUnidades = productos.nuevasUnidades;
   }
 
   cleanFormData(){

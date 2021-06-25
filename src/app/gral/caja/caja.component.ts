@@ -1,8 +1,5 @@
-import { NgPluralCase } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { ProductosCarouselComponent } from '../home/productos-carousel/productos-carousel.component';
-import { ProductosComponent } from '../productos/productos.component';
-// import { ProductosService } from './servicios/productos.service'; //esto lo tengo que importar acá?
+import { Productos } from 'src/app/clases/productos';
 
 @Component({
   selector: 'app-caja',
@@ -11,56 +8,111 @@ import { ProductosComponent } from '../productos/productos.component';
 })
 export class CajaComponent implements OnInit {
 
-  CartTitle = [
+  CartTitle = [ //fijo
     {title: "Titulo"},
     {title: "Unidades"},
     {title: "$ c/u"},
     {title: "$ Tot"}
   ]
 
-  CartContent = [
-    {producto: ""}
-  ]
+  CartContent:any = [];
 
   CartFooter = [
     {footer: "Total"},
     {footer: 'montoTotal'}
   ]
 
-  montoTotal = 0;
+  total = 0;
+  entregaCliente = 0;
+  vuelto = 0;
+  sobraOFalta = "Vuelto: "
 
-  // esto tiene que ir acá o va en el servicio?
-  producto: string[] = []
-  carritoProducto: any = []
+  productos:string[] = [];
+  cartProduct:any[] = [];
 
-/* 
-DETALLE CARRITO: 
+  constructor() { } 
 
-  img
-  nombre producto
-  unidades
-  - input + (cambiar unidades) | if click btn+ => (input) +1
-  monto unidad | traer de sessionStorage (input)
-  monto total | = unidades * monto c/u
-  delete all product | sessionStorage delete all item
+  ngOnInit(): void {  
 
-FOOTER CARRITO: 
+    //trae del sessionStorage
+    this.productos = Object.keys(sessionStorage);
+    this.productos.forEach((element:any) => {
+      const item = sessionStorage.getItem(element);
 
-  "total"
-  monto total | = sum(montos totales)
-  delete all cart | sessionStorage delete
-
-*/
-
-  addCart(producto: ProductosComponent){ // viene del json? lo saco de las clases / del ts de un componente?
-  sessionStorage.setItem("producto",JSON.stringify(producto)) //
-
+      //agrega al carrito
+      if(item != null){
+        let obj = JSON.parse(item);
+        this.cartProduct.push(JSON.parse(item));
+        this.total += obj.unidades*obj.precio
+      }
+    });
 }
 
-  constructor() { } //serviciosaca, funcionaes ang
+//cuanto es el vuelto y lo que tiene que decir en p
+//al presionar cada tecla en el input
+calcularVuelto(){
+  this.vuelto = this.entregaCliente - this.total;
+  this.sobraOFalta = this.vuelto >= 0 ? "Vuelto: " : "Aún le falta: ";
+}
 
-  ngOnInit(): void { //solo renderear cosas del componente 
+// tiene un change que no tengo
 
+//suma $productos
+//+input-
+plus(producto:any){
+  let temp = this.cartProduct.map((element:any)=>{
+    if (element.id === producto.id){
+      element.unidades++;
+      this.total += element.precio;
+      return element;
+    } else {
+      return element;
+    }
+  });
+  this.cartProduct = temp;
+}
+
+//resta $productos
+//+input-
+less(producto:any){
+  if(producto.unidades === 1){
+    let borrar = this.cartProduct.filter((element:any)=>{
+      return element.id !== producto.id
+    })
+    this.total -= producto.precio;
+    this.cartProduct = borrar;
+  } else {
+    let temp = this.cartProduct.map((element:any)=>{
+      if(element.id === producto.id){
+        element.unidades--;
+        this.total -= element.precio;
+        return element;
+      } else {
+        return element;
+      }
+    });
+    this.cartProduct = temp;
+  }
+}
+
+cancelar(){
+  this.sobraOFalta = "Vuelto: "; 
+  this.total = 0; 
+  this.entregaCliente = 0;
+  this.cartProduct = [];
+  this.productos.forEach((el:any)=>{
+    sessionStorage.removeItem(el);
+  });
+  this.productos = [];
+}
+
+deleteItem(producto:any){
+  sessionStorage.removeItem("Producto: "+producto.id);
+  const newItems = this.cartProduct.filter((item:any)=>{
+    return item.id !== producto.id
+  });
+  this.cartProduct = newItems;
+  this.total -= producto.unidades*producto.precio;
 }
 
 }

@@ -21,6 +21,7 @@ import { ProductosCarouselComponent } from './gral/home/productos-carousel/produ
 import { FooterComponent } from './gral/footer/footer.component';
 //.. productos
 import { ProductosComponent } from './gral/productos/productos.component';
+import { ProductoCardComponent } from './gral/productos/producto-card/producto-card.component';
 import { CajaComponent } from './gral/caja/caja.component';
 import { ProductoDetalleComponent } from './gral/productos/producto-detalle/producto-detalle.component';
 //.. users
@@ -62,7 +63,8 @@ import { CrearUsuarioComponent } from './gestion/gestion-usuarios/crear-usuario/
     CrearUsuarioComponent,
     FooterComponent,
     ProductosCarouselComponent,
-    ProductoDetalleComponent
+    ProductoDetalleComponent,
+    ProductoCardComponent
   ],
   imports: [  //modules
     BrowserModule,
