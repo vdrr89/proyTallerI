@@ -16,8 +16,8 @@ import { Route } from '@angular/compiler/src/core';
 export class CrearProductoComponent implements OnInit {
 
   prod: Productos[] = [];
-  productos:Productos = { 
-    id:0,
+  productos:Productos = {
+    id:"",
     codigo:"",
     imgUrl:"",
     titulo:"",
@@ -35,18 +35,18 @@ export class CrearProductoComponent implements OnInit {
 
   constructor(
     private _productosService: ProductosService,
-    private _activedRoute: ActivatedRoute, 
+    private _activedRoute: ActivatedRoute,
     private route: Router
     ) { }
 
-  id=0;
+  id="";
 
   ngOnInit(): void {
     //version1 / funciona con submit() update2() y cleanFormData()
     // no sacar el producto2 por favor comportate
     this._activedRoute.paramMap.subscribe((item:any)=>{
       this.id = item.get('id');
-      if(this.id>0){
+      if(this.id != ""){
         this._productosService.getProductos().subscribe((response:Productos[])=>{
           const item = response.filter((prod2:any)=>{
             return prod2.id == this.id;
@@ -60,9 +60,9 @@ export class CrearProductoComponent implements OnInit {
     // this.cargar();
   }
 
-  //VERSION1 / funca con update2() y cleanFormData() y ngOnInit 
+  //VERSION1 / funca con update2() y cleanFormData() y ngOnInit
   submit(event:any){
-    if(this.productos.id != 0){ 
+    if(this.producto2.id != ""){
       this._productosService.actualizarProductos(this.producto2).subscribe((response:any)=>{
         console.log("submit if response: ", response);
         this.route.navigate(['/gestion/productos']); //iupii
@@ -94,10 +94,10 @@ export class CrearProductoComponent implements OnInit {
     this.producto2.nuevasUnidades = productos3.nuevasUnidades;
   }
 
-  //VERSION1 / funca con submit() update2() y ngOnInit / funca divino 
+  //VERSION1 / funca con submit() update2() y ngOnInit / funca divino
   cleanFormData(){
     console.log("crear-producto cleanFormData");
-    this.producto2.id = 0;
+    this.producto2.id = "";
     this.producto2.codigo = "";
     this.producto2.imgUrl = "";
     this.producto2.titulo = "";
@@ -135,7 +135,7 @@ export class CrearProductoComponent implements OnInit {
     )
   }
 
-  //VERSION2 / funca con create() y cargar(ngOnInit)  
+  //VERSION2 / funca con create() y cargar(ngOnInit)
   update3():void{
     this._productosService.actualizarProductos(this.productos).subscribe(
       res=>this.route.navigate(['/gestion/productos'])
