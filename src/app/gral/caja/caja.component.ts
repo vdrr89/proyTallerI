@@ -57,8 +57,6 @@ calcularVuelto(){
 
 // tiene un change que no tengo
 
-//suma $productos
-//+input-
 plus(producto:any){
   let temp = this.cartProduct.map((element:any)=>{
     if (element.id === producto.id){
@@ -72,8 +70,6 @@ plus(producto:any){
   this.cartProduct = temp;
 }
 
-//resta $productos
-//+input-
 less(producto:any){
   if(producto.unidades === 1){
     let borrar = this.cartProduct.filter((element:any)=>{

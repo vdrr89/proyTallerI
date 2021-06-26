@@ -21,7 +21,7 @@
     </div> 
     <!-- CART SITUATION -->
     <div class="cart-situation">
-      <button class="btn-red-micro-alone" href="#"><i class="bi bi-trash-fill"></i></button>
+      <button (click)="deleteItem(productos)" class="btn-red-micro-alone" href="#"><i class="bi bi-trash-fill"></i></button>
       <div class="manage-amount">
           <button (click)="less()" class="btn-out-micro-alone"><i class="bi bi-dash-lg"></i></button>
           <input [(ngModel)]="cantd" class="input-micro + .amount-number" type="number" maxlength="4">

@@ -56,7 +56,7 @@ export class CrearProductoComponent implements OnInit {
   }
 
   submit(event:any){
-    if(this.id>0){ //if url/:id = prod.id
+    if(this.productos.id != 0){ //if url/:id = prod.id
       this._productosService.actualizarProductos(this.producto2).subscribe((response:any)=>{
         console.log("submit if response: ", response);
       });
@@ -69,20 +69,20 @@ export class CrearProductoComponent implements OnInit {
     }
   }
 
-    update2(productos:Productos){
-    this.productos.id = productos.id;
-    this.productos.codigo = productos.codigo;
-    this.productos.titulo = productos.titulo;
-    this.productos.autor = productos.autor;
-    this.productos.capitulo = productos.capitulo;
-    this.productos.editorial = productos.editorial;
-    this.productos.proveedor = productos.proveedor;
-    this.productos.fechaCompra = productos.fechaCompra;
-    this.productos.imgUrl = productos.imgUrl;
-    this.productos.precioCosto = productos.precioCosto;
-    this.productos.precioVenta = productos.precioVenta;
-    this.productos.stock = productos.stock;
-    this.productos.nuevasUnidades = productos.nuevasUnidades;
+  update2(productos3:Productos){
+    this.producto2.id = productos3.id;
+    this.producto2.codigo = productos3.codigo;
+    this.producto2.titulo = productos3.titulo;
+    this.producto2.autor = productos3.autor;
+    this.producto2.capitulo = productos3.capitulo;
+    this.producto2.editorial = productos3.editorial;
+    this.producto2.proveedor = productos3.proveedor;
+    this.producto2.fechaCompra = productos3.fechaCompra;
+    this.producto2.imgUrl = productos3.imgUrl;
+    this.producto2.precioCosto = productos3.precioCosto;
+    this.producto2.precioVenta = productos3.precioVenta;
+    this.producto2.stock = productos3.stock;
+    this.producto2.nuevasUnidades = productos3.nuevasUnidades;
   }
 
   cleanFormData(){
@@ -98,7 +98,7 @@ export class CrearProductoComponent implements OnInit {
     this.producto2.nuevasUnidades = 0;
     this.producto2.stock = 0;
     this.producto2.precioCosto = 0;
-    this.producto2.precioVenta = 2;
+    this.producto2.precioVenta = 0;
   }
 
 }

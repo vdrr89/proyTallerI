@@ -44,6 +44,36 @@
       "stock": "300",
       "precioCosto": 500,
       "precioVenta": 20
+    },
+    {
+      "id": "eIFYyzy",
+      "codigo": "456",
+      "imgUrl": "",
+      "titulo": "un tit",
+      "autor": "un aut",
+      "editorial": "un edit",
+      "capitulo": "un cap",
+      "proveedor": "un prov",
+      "fechaCompra": "",
+      "nuevasUnidades": 0,
+      "stock": 0,
+      "precioCosto": 0,
+      "precioVenta": 0
+    },
+    {
+      "id": "gBcSbUC",
+      "codigo": "456",
+      "imgUrl": "",
+      "titulo": "sin titulo",
+      "autor": "sin autor",
+      "editorial": "sin editorial",
+      "capitulo": "sin capitulos",
+      "proveedor": "sin provveedor",
+      "fechaCompra": "",
+      "nuevasUnidades": 0,
+      "stock": 0,
+      "precioCosto": 0,
+      "precioVenta": 0
     }
   ],
   "usuarios": [

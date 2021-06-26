@@ -11,7 +11,6 @@ import { ProductosService } from 'src/app/servicios/productos.service';
 
 export class ProductosComponent implements OnInit {
 
-  // @Input() productos:Productos[] = [];
   @Input() producto:Productos = new Productos();
     
   prod: Productos[] = [];
@@ -56,8 +55,6 @@ export class ProductosComponent implements OnInit {
       this.prod = response;
     })
     console.log("prod", this.prod);
-    console.log("producto ngOnInit input", this.producto);
-    console.log("productos", this.productos);
   } 
 
   addCart(producto:Productos){
@@ -75,10 +72,29 @@ export class ProductosComponent implements OnInit {
     console.log("plus cantd", this.cantd);
   }
 
-    less(){
+  less(){
     this.cantd = this.cantd > 0 ? this.cantd -1 : 0;
     console.log("less cantd", this.cantd);
-
   }
 
+  // deleteItem(producto:Productos){
+  //   sessionStorage.removeItem("Producto: "+producto.id);
+  //   console.log("item producto delete: ");
+  //   const newItems = this.cartProduct.filter((item:any)=>{
+  //     return item.id !== producto.id
+  //   });
+  //   this.cartProduct = newItems;
+  // }
+
+
+  //deleteItem
+  deleteItem(producto:Productos){
+    this.cartProduct.precio = 0;
+    this.cartProduct.titulo = "";
+    this.cartProduct.cantidad = 0;
+    this.cartProduct.imgUrl = "";
+    this.cartProduct.codigo = "";
+    sessionStorage.removeItem("producto"+this.productos.id);
+    console.log("deleteCart", this.cartProduct);
+  }
 }
