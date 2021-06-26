@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 
-import { Productos } from 'src/app/clases/productos'; 
+import { Productos } from 'src/app/clases/productos';
 import { ProductosService } from 'src/app/servicios/productos.service';
 
 import { ActivatedRoute } from '@angular/router';
@@ -14,10 +14,10 @@ import { HttpClientModule } from '@angular/common/http';
 })
 export class GestionproductosComponent implements OnInit {
 
-  prod: Productos[] = []; 
+  prod: Productos[] = [];
   backup: Productos[] = [];
-  productos:Productos = { 
-    id: 0,
+  productos:Productos = {
+    id: "",
     codigo:"",
     imgUrl:"",
     titulo:"",
@@ -51,26 +51,26 @@ export class GestionproductosComponent implements OnInit {
   ]
 
   constructor(
-    private _productosService: ProductosService, 
-    private _route: Router, 
+    private _productosService: ProductosService,
+    private _route: Router,
     private _activatedRoute: ActivatedRoute
-    ) { } 
+    ) { }
 
-  ngOnInit(): void { 
+  ngOnInit(): void {
     this._productosService.getProductos().subscribe(response =>{
       this.prod = response;
       console.log("prod response: ", response);
       this.backup = this.prod;
     })
   }
- 
+
 //GO TO EDITAR PRODUCTO
 goToUpdate(productos:Productos){
   this._route.navigate(["/gestion/crearproducto",productos.id]);
 }
 
 //ELIMINAR PRODUCTO
-delete(id: number){
+delete(id: string){
   this._productosService.eliminarProductos(id).subscribe((response:any)=>{
     console.log("delete response: ", response);
     const newItems = this.prod.filter((item:any)=>{

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Productos } from 'src/app/clases/productos'; 
+import { Productos } from 'src/app/clases/productos';
 import { ProductosService } from 'src/app/servicios/productos.service';
 
 @Component({
@@ -11,8 +11,8 @@ export class ProductosFiltroComponent implements OnInit {
 
   hideDiv = false;
 
-  productos:Productos = { 
-        id:0,
+  productos:Productos = {
+        id:"",
         codigo:"",
         imgUrl:"",
         titulo:"",
@@ -28,16 +28,16 @@ export class ProductosFiltroComponent implements OnInit {
       }
   productos2: Productos[] = [];
   backup: Productos[] = [];
-  
+
   codigo = "";
   titulo = "";
   autor = "";
   editorial = "";
   precioMin = 0;
   precioMax = 0;
-  
+
   constructor(private _productosService: ProductosService) { }
-  
+
     ngOnInit(): void {
       this._productosService.getProductos().subscribe(response => {
         console.log("filtro productos response: ", response);
@@ -45,12 +45,12 @@ export class ProductosFiltroComponent implements OnInit {
         this.backup = this.productos2;
       })
     }
-  
+
     showDiv(){
       this.hideDiv = !this.hideDiv;
       this.limpiarFiltro();
     }
-  
+
     keyupSearch(event:any){
       this.buscar();
     }
@@ -62,28 +62,28 @@ export class ProductosFiltroComponent implements OnInit {
         });
         this.productos2 = filtradosByCodigo;
       };
-  
+
       if(this.titulo.length > 0){
         let productosFiltrados = this.productos2.filter(producto => {
           return producto.titulo === this.titulo;
         });
         this.productos2 = productosFiltrados;
       };
-  
+
       if(this.autor.length > 0){
         let productosFiltrados = this.productos2.filter(producto => {
           return producto.autor === this.autor;
         });
         this.productos2 = productosFiltrados;
       };
-  
+
       if(this.editorial.length > 0){
         let productosFiltrados = this.productos2.filter(producto => {
           return producto.editorial === this.editorial;
         });
         this.productos2 = productosFiltrados;
       };
-  
+
       if(this.precioMin > 0 && this.precioMax > 0){
         let productosFiltrados = this.productos2.filter(producto => {
           return producto.precioVenta >= this.precioMin && this.precioMax <= this.precioMax;
@@ -91,7 +91,7 @@ export class ProductosFiltroComponent implements OnInit {
         this.productos2 = productosFiltrados;
       }
     }
-  
+
     limpiarFiltro(){
       this.codigo = "";
       this.titulo = "";
@@ -101,7 +101,7 @@ export class ProductosFiltroComponent implements OnInit {
       this.precioMax = 0;
       this.productos2 = this.backup;
     }
-  
+
   }
-  
-  
+
+

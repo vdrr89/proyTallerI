@@ -12,11 +12,11 @@ import { ProductosService } from 'src/app/servicios/productos.service';
 export class ProductosComponent implements OnInit {
 
   @Input() producto:Productos = new Productos();
-    
+
   prod: Productos[] = [];
 
   productos:Productos = {
-    id:0,
+    id:"",
     codigo:"",
     imgUrl:"",
     titulo:"",
@@ -34,7 +34,7 @@ export class ProductosComponent implements OnInit {
   // productos2: Productos = new Productos();
 
   noHay = "No hay productos";
-   
+
   cantd = 0;
   cartProduct ={
     id:"",
@@ -44,7 +44,7 @@ export class ProductosComponent implements OnInit {
     imgUrl:"",
     codigo:""
   }
-  
+
   constructor(private _productosService: ProductosService) { }
 
 // constructor(){}
@@ -55,7 +55,7 @@ export class ProductosComponent implements OnInit {
       this.prod = response;
     })
     console.log("prod", this.prod);
-  } 
+  }
 
   addCart(producto:Productos){
     this.cartProduct.precio = this.productos.precioVenta;

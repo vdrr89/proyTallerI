@@ -24,8 +24,8 @@ export class CajaComponent implements OnInit {
   sobraOFalta = "Vuelto: "
 
   productos:string[] = [];
-  productos2:Productos = { 
-    id: 0,
+  productos2:Productos = {
+    id: "",
     codigo:"",
     imgUrl:"",
     titulo:"",
@@ -42,9 +42,9 @@ export class CajaComponent implements OnInit {
   CartContent:any = [];
   cartProduct:any[] = [];
 
-  constructor() { } 
+  constructor() { }
 
-  ngOnInit(): void {  
+  ngOnInit(): void {
 
     //trae del sessionStorage
     this.productos = Object.keys(sessionStorage);
@@ -106,8 +106,8 @@ less(producto:any){
 }
 
 cancelar(){
-  this.sobraOFalta = "Vuelto: "; 
-  this.total = 0; 
+  this.sobraOFalta = "Vuelto: ";
+  this.total = 0;
   this.entregaCliente = 0;
   this.cartProduct = [];
   this.productos.forEach((el:any)=>{
