@@ -3,11 +3,11 @@ import { Productos } from 'src/app/clases/productos';
 import { ProductosService } from 'src/app/servicios/productos.service';
 
 @Component({
-  selector: 'app-gestion-productos-filtro',
-  templateUrl: './gestion-productos-filtro.component.html',
-  styleUrls: ['./gestion-productos-filtro.component.css']
+  selector: 'app-productos-filtro',
+  templateUrl: './productos-filtro.component.html',
+  styleUrls: ['./productos-filtro.component.css']
 })
-export class GestionProductosFiltroComponent implements OnInit {
+export class ProductosFiltroComponent implements OnInit {
 
   hideDiv = false;
 
@@ -36,9 +36,7 @@ export class GestionProductosFiltroComponent implements OnInit {
   precioMin = 0;
   precioMax = 0;
   
-  constructor(
-    private _productosService: ProductosService,
-    ) { }
+  constructor(private _productosService: ProductosService) { }
   
     ngOnInit(): void {
       this._productosService.getProductos().subscribe(response => {

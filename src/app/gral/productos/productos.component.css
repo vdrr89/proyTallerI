@@ -5,7 +5,8 @@ img {
 }
 
 .vr-card-group {
-    display: flex; 
+    display: inline-flex; 
+    max-width: 100%;
 }
 
 .vr-card {
@@ -34,4 +35,8 @@ img {
 
 .manage-amount{
     display: inline
+}
+
+.search-filtro {
+    display: inline-flexbox;
 }

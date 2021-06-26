@@ -59,21 +59,6 @@
       "stock": 0,
       "precioCosto": 0,
       "precioVenta": 0
-    },
-    {
-      "id": "gBcSbUC",
-      "codigo": "456",
-      "imgUrl": "",
-      "titulo": "sin titulo",
-      "autor": "sin autor",
-      "editorial": "sin editorial",
-      "capitulo": "sin capitulos",
-      "proveedor": "sin provveedor",
-      "fechaCompra": "",
-      "nuevasUnidades": 0,
-      "stock": 0,
-      "precioCosto": 0,
-      "precioVenta": 0
     }
   ],
   "usuarios": [

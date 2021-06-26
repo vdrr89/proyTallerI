@@ -1,0 +1,17 @@
+.left {
+    margin-right: 1%;
+    /* float: right; */
+    margin: 4px 2px
+}
+
+.input {
+	list-style: none;
+}
+
+.input > li {
+    display: inline-block;
+}
+
+.mb-3 {
+    display: inline-flex;
+}

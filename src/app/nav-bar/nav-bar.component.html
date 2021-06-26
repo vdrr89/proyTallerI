@@ -2,8 +2,8 @@
   <button *ngFor="let item of menu" class="btn-nav" [routerLink]="item.link"><i class="{{item.icon}}"></i>{{item.nombre}}</button> <!-- va item, no menu, xq es let item of menu -->  
 
    <form id="search-seccion">
-    <input id="search-inp" type="search" placeholder="Search" aria-label="Search">
-    <button id="search-btn" class="btn-nav" type="submit"><i class="bi bi-search"></i></button>
+    <!-- <input id="search-inp" type="search" placeholder="Search" aria-label="Search">
+    <button id="search-btn" class="btn-nav" type="submit"><i class="bi bi-search"></i></button> -->
     <button id="login" class="btn-nav" [routerLink]="'/login'"><i class="bi bi-person-fill"></i></button>
   </form>
 </nav>

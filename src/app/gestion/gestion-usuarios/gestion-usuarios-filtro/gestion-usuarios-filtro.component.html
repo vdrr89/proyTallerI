@@ -1,9 +1,46 @@
 <!-- add -->
 <button class="btn-green" [routerLink]="'/gestion/usuarios/crearusuario'"><i class="bi bi-plus-lg"></i></button>  
 
-<!-- filtro -->
+
+<!-- filtro botones fijo-->
+<!-- poner keyup desde filtros hasta buscador gral -->
 <div class="left">
-    <button class="btn-out"><i class="bi bi-filter"></i></button> <!-- ex: button class sty-filtro -->
-    <input type="text" placeholder="escriba aqui lo que desea buscar" class="sty-search">
-    <button class="btn-out"><i class="bi bi-search"></i></button> <!-- ex: button class sty-search -->
+    <button (click)="showDiv()" class="btn-out"><i class="bi bi-filter"></i></button>
+    <input (keyup)="keyupSearch($event)" type="text" placeholder="escriba aqui lo que desea buscar" class="sty-search">
+    <button (click)="buscar()" class="btn-out"><i class="bi bi-search"></i></button>
 </div>
+
+<!-- inputs del filtro -->
+<table class="mb-3" *ngIf="hideDiv">
+    <tr>
+        <td>
+            <label for="usuario" class="form-label">Usuario</label>
+            <input (keyup)="keyupSearch($event)" class="form-control" name="usuario" type="text" placeholder="Usuario" [(ngModel)]="usuario">
+        </td>
+        <td>
+            <label for="email" class="form-label">Email</label>
+            <input (keyup)="keyupSearch($event)" class="form-control" name="titulo" type="text" placeholder="Email" [(ngModel)]="email">
+        </td>
+        <td>
+            <label for="telefono" class="form-label">Telefono</label>
+            <input (keyup)="keyupSearch($event)" class="form-control" name="telefono" type="text" placeholder="Telefono" [(ngModel)]="telefono">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="nombre" class="form-label">Nombre</label>
+            <input (keyup)="keyupSearch($event)" class="form-control" name="nombre" type="text" placeholder="Nombre" [(ngModel)]="nombre">
+        </td>
+        <td>
+            <label for="apellido" class="form-label">Apellido</label>
+            <input (keyup)="keyupSearch($event)" class="form-control" name="apellido" type="text" placeholder="Apellido" [(ngModel)]="apellido">
+        </td>
+        <td>
+            <label for="direccion" class="form-label">direccion</label>
+            <input (keyup)="keyupSearch($event)" class="form-control" name="direccion" type="text" placeholder="Direccion" [(ngModel)]="direccion">
+        </td>
+        <td>
+            <button (click)="limpiarFiltro()" class="btn-red-micro-alone"><i class="bi bi-trash-fill"></i></button>
+        </td>
+    </tr>
+</table>

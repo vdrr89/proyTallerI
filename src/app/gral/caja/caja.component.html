@@ -12,43 +12,42 @@
   <!-- PRODUCTOS CONFIRM -->
   <div id="all-form" class="all-form">
     <table class="table">
-      <!-- CART TITLE -->
+      <!-- CAJA TITLE -->
       <thead>
         <tr>
           <th scope="col" *ngFor="let item of CartTitle">{{item.title}}</th>
         </tr>
       </thead>
-      <!-- CART ITEMS -->
+      <!-- CAJA ITEMS -->
       <tbody>
         <tr *ngFor="let producto of CartContent">
           <td>{{producto.producto}} </td>
           <td>{{producto.codigo}}</td>
           <td>{{producto.precioVenta}}</td>
-          <td>
-            <button class="btn-green-micro-alone"><i class="bi bi-pen-fill"></i></button>
-            <button class="btn-red-micro-alone"><i class="bi bi-trash-fill"></i></button>
+          <td>{{producto.precioTotal}}</td>
+          <td></td>
+          <td class="manage-amount">
+            <button (click)="less(producto)" class="btn-out-micro-alone"><i class="bi bi-dash-lg"></i></button>
+            <input [(ngModel)]="unidades" class="input-micro + .amount-number" type="number" maxlength="4">
+            <button (click)="plus(producto)" class="btn-out-micro-alone"><i class="bi bi-plus-lg"></i></button>
           </td>
         </tr>
       </tbody>
       <!-- CART FOOTER -->
       <tfoot>
         <tr>
-          <td *ngFor="let item of CartFooter">{{item.footer}}</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td></td>
-          <td>
-            <button class="btn-green" href="#"><i class="bi bi-cart-fill"></i></button>
-            <button class="btn-red" href="#"><i class="bi bi-trash-fill"></i></button>
-          </td>
+          <td>Total: $ {{total}}</td>
         </tr>
       </tfoot>
     </table>
+    <div *ngIf="!hideDiv">
+      <span routerLink="/productos" class="bottom-buttons-left"><button id="first-left" class="btn-red" href="#"><i class="bi bi-arrow-left"></i></button></span>            
+      <span (click)="showDiv()" class="bottom-buttons-right"><button id="first-right" class="btn-green" href="#"><i class="bi bi-arrow-right"></i></button></span>
+    </div>
   </div>
   
 <!-- CONTACTO Y PAGO -->
-<div id="contactoypago" class="all-form">
+<div id="contactoypago" class="all-form" *ngIf="hideDiv">
   <!-- CONTACTO -->
   <div>
     <!-- DIRECCION -->
@@ -65,23 +64,27 @@
   <hr>
 
     <!-- MEDIO DE PAGO -->
-  <div>
-    <!-- EFECTIVO -->
-    <div class="form-check form-check-inline">
-      <input type="radio" name="efectivo" id="efectivo" value="efectivo">
-      <label class="form-check-label" for="efectivo">Efectivo</label>
-    </div>
-    <!-- TARJETA -->
-    <div class="form-check form-check-inline">
-      <input type="radio" name="tarjeta" id="tarjeta" value="tarjeta">
-      <label class="form-check-label" for="tarjeta">Tarjeta</label>
-    </div>
-    <!-- MERCADOPAGO -->
-    <div class="form-check form-check-inline">
-      <input type="radio" name="mercadopago" id="mercadopago" value="mercadopago">
-      <label class="form-check-label" for="mercadopago">MercadoPago</label>
-    </div>
-  </div>
+
+    <ul class="medio-de-pago-items">
+      <li>
+        <div class="circulo"></div>
+      </li>
+      <li class="medio-de-pago-text">
+        <p>Efectivo</p>
+      </li>
+      <li>
+        <div class="circulo"></div>
+      </li>
+      <li class="medio-de-pago-text">
+        <p>Tarjeta</p> 
+      </li>
+      <li>
+        <div class="circulo"></div>
+      </li>
+      <li class="medio-de-pago-text">
+        <p>MercadoPago</p>        
+      </li>
+    </ul>
 
   <!-- DETALLE MEDIO DE PAGO -->
   <div>
@@ -103,5 +106,11 @@
   <div class="mb-3">
     <label for="exampleFormControlTextarea1" class="form-label">Comentarios</label>
     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+
+  <!-- BOTONES FINALES -->
+  <div>
+    <span (click)="showDiv()" class="bottom-buttons-left"><button class="btn-red" href="#"><i class="bi bi-arrow-left"></i></button></span>            
+    <span class="bottom-buttons-right"><button class="btn-green" href="#"><i class="bi bi-cart-fill"></i></button></span>
   </div>
 </div>

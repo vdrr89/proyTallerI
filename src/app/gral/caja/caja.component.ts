@@ -15,19 +15,31 @@ export class CajaComponent implements OnInit {
     {title: "$ Tot"}
   ]
 
-  CartContent:any = [];
+  hideDiv = false;
 
-  CartFooter = [
-    {footer: "Total"},
-    {footer: 'montoTotal'}
-  ]
-
+  unidades = 0;
   total = 0;
   entregaCliente = 0;
   vuelto = 0;
   sobraOFalta = "Vuelto: "
 
   productos:string[] = [];
+  productos2:Productos = { 
+    id: 0,
+    codigo:"",
+    imgUrl:"",
+    titulo:"",
+    autor:"",
+    editorial:"",
+    capitulo:"",
+    proveedor:"",
+    fechaCompra:"",
+    nuevasUnidades:0,
+    stock:0,
+    precioCosto:0,
+    precioVenta:0
+  };
+  CartContent:any = [];
   cartProduct:any[] = [];
 
   constructor() { } 
@@ -36,6 +48,7 @@ export class CajaComponent implements OnInit {
 
     //trae del sessionStorage
     this.productos = Object.keys(sessionStorage);
+    console.log(this.productos);
     this.productos.forEach((element:any) => {
       const item = sessionStorage.getItem(element);
 
@@ -48,14 +61,15 @@ export class CajaComponent implements OnInit {
     });
 }
 
-//cuanto es el vuelto y lo que tiene que decir en p
-//al presionar cada tecla en el input
+showDiv(){
+  this.hideDiv = !this.hideDiv;
+}
+
+//hacer al presionar cada tecla en el input
 calcularVuelto(){
   this.vuelto = this.entregaCliente - this.total;
   this.sobraOFalta = this.vuelto >= 0 ? "Vuelto: " : "Aún le falta: ";
 }
-
-// tiene un change que no tengo
 
 plus(producto:any){
   let temp = this.cartProduct.map((element:any)=>{

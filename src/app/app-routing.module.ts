@@ -9,7 +9,6 @@ import { ProductosCarouselComponent } from './gral/home/productos-carousel/produ
 import { FooterComponent } from './gral/footer/footer.component';
 //.. productos
 import { ProductosComponent } from './gral/productos/productos.component';
-import { ProductoCardComponent } from './gral/productos/producto-card/producto-card.component';
 import { CajaComponent } from './gral/caja/caja.component';
 import { ProductoDetalleComponent } from './gral/productos/producto-detalle/producto-detalle.component';
 //.. usuarios
@@ -19,9 +18,10 @@ import { NewUserTabsComponent } from './gral/login/new-user/new-user-tabs/new-us
 import { NewUserComponent } from './gral/login/new-user/new-user.component';
 //gestion
 import { GestionComponent } from './gestion/gestion.component';
+import { GestionProductosFiltroComponent } from './gestion/gestionproductos/gestion-productos-filtro/gestion-productos-filtro.component';
 import { GestionTabsComponent } from './gestion/gestion-tabs/gestion-tabs.component';
 //gestion productos
-import { GestionProductosFiltroComponent } from './gestion/gestionproductos/gestion-productos-filtro/gestion-productos-filtro.component';
+import { ProductosFiltroComponent } from './gral/productos/productos-filtro/productos-filtro.component';
 import { GestionproductosComponent } from './gestion/gestionproductos/gestionproductos.component';
 import { CrearProductoComponent } from './gestion/gestionproductos/crear-producto/crear-producto.component';
 //gestion usuarios
@@ -44,7 +44,7 @@ const routes: Routes = [
   {path:'newuser/tabs',component: NewUserTabsComponent},
   //.. productos
   {path:'productos',component: ProductosComponent},
-  {path:'producto/card-component',component:ProductoCardComponent},
+  {path:'productos/filtro',component: ProductosFiltroComponent},
   {path:'caja',component: CajaComponent},
   {path:'producto-detalle/:codigo',component: ProductoDetalleComponent},
   //GESTION

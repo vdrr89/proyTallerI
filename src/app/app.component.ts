@@ -10,9 +10,8 @@ import { HttpClientModule } from '@angular/common/http';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = ''; //acá va lo que en el app component puedo poner entre {{title}} en el html
+  title = ''; 
 
-  //acrordarse de agregar constructor con sus imports 
   constructor(private route: Router,private _productoService: ProductosService, private _usuarioService: UsuariosService) {}
 
   ngOnInit(): void { //agregar acá
