@@ -36,7 +36,7 @@ export class GestionproductosComponent implements OnInit {
   noEditado = "No se ha editado el producto";
 
   tableTitle = [ //estático solo título
-    {title: "id"},
+    // {title: "id"},
     {title: "cod"},
     {title: "imgUrl"},
     {title: "Título"},

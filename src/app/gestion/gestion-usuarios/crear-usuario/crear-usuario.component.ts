@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
 
 import { Usuarios } from 'src/app/clases/usuarios';
 import { UsuariosService } from 'src/app/servicios/usuarios.service';
@@ -35,7 +34,6 @@ export class CrearUsuarioComponent implements OnInit {
   ) { }
 
   id=0;
-// html enlazar usuario2 arreglo vacio con ngmodel 
 
   ngOnInit(): void {
     this._activatedRoute.paramMap.subscribe((item:any)=>{
@@ -52,32 +50,34 @@ export class CrearUsuarioComponent implements OnInit {
   }
 
   
-  submit(event:any){ //tengo mis dudas con sus response:any
-    if(this.id>0){
+  submit(event:any){ 
+    if(this.usuarios.id != 0){
       this._usuariosService.actualizarUsuarios(this.usuarios2).subscribe((response:any)=>{
         console.log("submit if response: ", response);
-        
+        this._route.navigate(['/gestion/usuarios']);
       });
     } else { //update
       this._usuariosService.insertarUsuarios(this.usuarios2).subscribe((response:any)=>{
         console.log("submit else response: ", response);
         this.update2(this.usuarios);
         this.cleanFormData();
+        this._route.navigate(['/gestion/usuarios']);
       });
     }
   }
 
   update2(usuarios:Usuarios){
-    this.usuarios.id = usuarios.id;
-    this.usuarios.usuario = usuarios.usuario;
-    this.usuarios.email = usuarios.email;
-    this.usuarios.telefono = usuarios.telefono;
-    this.usuarios.nombre = usuarios.nombre;
-    this.usuarios.apellido = usuarios.apellido;
-    this.usuarios.direccion = usuarios.direccion;
+    this.usuarios2.id = usuarios.id;
+    this.usuarios2.usuario = usuarios.usuario;
+    this.usuarios2.email = usuarios.email;
+    this.usuarios2.telefono = usuarios.telefono;
+    this.usuarios2.nombre = usuarios.nombre;
+    this.usuarios2.apellido = usuarios.apellido;
+    this.usuarios2.direccion = usuarios.direccion;
   }
 
   cleanFormData(){
+    console.log("crear-usuario cleanFormData");
     this.usuarios2.id = 0;
     this.usuarios2.usuario = "";
     this.usuarios2.email = "",

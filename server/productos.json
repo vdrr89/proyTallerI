@@ -59,6 +59,36 @@
       "stock": 0,
       "precioCosto": 0,
       "precioVenta": 0
+    },
+    {
+      "id": "5qfjFpl",
+      "codigo": "123",
+      "imgUrl": "",
+      "titulo": "aqui un ejemplo",
+      "autor": "listo para",
+      "editorial": "editar",
+      "capitulo": "su contenido",
+      "proveedor": "a ver si",
+      "fechaCompra": "",
+      "nuevasUnidades": 0,
+      "stock": 0,
+      "precioCosto": 0,
+      "precioVenta": 0
+    },
+    {
+      "id": "bLp2kXB",
+      "codigo": "",
+      "imgUrl": "",
+      "titulo": "ponele que ",
+      "autor": "te edité",
+      "editorial": "Y NO ",
+      "capitulo": "te agregué",
+      "proveedor": "",
+      "fechaCompra": "",
+      "nuevasUnidades": 0,
+      "stock": 0,
+      "precioCosto": 0,
+      "precioVenta": 0
     }
   ],
   "usuarios": [
