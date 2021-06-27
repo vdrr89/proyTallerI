@@ -13,10 +13,10 @@
 </div>
   
 <!-- CARDS DE PRODUCTOS -->
-<div id="vr-card-group" style="display: flex;">
-  <div class="vr-card" style="width: 18rem;" *ngFor="let item of prod">
+<div class="vr-card-group">
+  <div class="vr-card" *ngFor="let item of prod">
     <!-- IMG -->
-    <img src="{{item.imgUrl}}" class="card-img-top" alt="img-libro-1">
+    <img src="{{item.imgUrl}}" class="cardImg" alt="img-libro-1">
     <button class="btn-gold-micro-alone"><i class="bi bi-heart"></i></button>
     <!-- PROD INFO -->
     <div class="card-body">  
