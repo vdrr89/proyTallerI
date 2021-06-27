@@ -17,7 +17,7 @@ export class GestionUsuariosComponent implements OnInit {
   usu: Usuarios[] = []; 
   backup: Usuarios[] = [];
   usuarios:Usuarios = {
-    id:0,
+    id:"",
     usuario:"",
     email:"",
     telefono:0,
@@ -26,10 +26,8 @@ export class GestionUsuariosComponent implements OnInit {
     direccion:""
   }
 
-  editado = "Ha editado un usuario exitosamente!";
-  noEditado = "No se ha editdo el usuario";
-
   tableTitle = [ // estático solo tíutlo
+    {title: "Usuario"},
     {title: "Nombre"},
     {title: "Apellido"},
     {title: "Email"},
@@ -53,11 +51,11 @@ export class GestionUsuariosComponent implements OnInit {
 
 //GO TO EDITAR USUARIO
 goToUpdate(usuarios:Usuarios){
-  this._route.navigate(["/gestion/crearusuario",usuarios.id]);
+  this._route.navigate(["/gestion/usuarios/crearusuario",usuarios.id]);
 }
 
 //ELIMINAR USUARIO
-delete(id: number){
+delete(id: string){
   this._usuariosService.eliminarUsuarios(id).subscribe((response:any)=>{
     console.log("delete usu response: ", response);
     const newItems = this.usu.filter((item:any)=>{

@@ -5,7 +5,6 @@ import { Productos } from 'src/app/clases/productos';
 import { ProductosService } from 'src/app/servicios/productos.service';
 
 import { ActivatedRoute, Router } from '@angular/router';
-import { Route } from '@angular/compiler/src/core';
 
 @Component({
   selector: 'app-crear-producto',

@@ -32,9 +32,6 @@ export class GestionproductosComponent implements OnInit {
     precioVenta:0
   }
 
-  editado = "Ha editado un producto exitosamente!";
-  noEditado = "No se ha editado el producto";
-
   tableTitle = [ //estático solo título
     // {title: "id"},
     {title: "cod"},

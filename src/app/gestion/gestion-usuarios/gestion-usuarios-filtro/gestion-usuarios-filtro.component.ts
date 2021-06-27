@@ -12,7 +12,7 @@ export class GestionUsuariosFiltroComponent implements OnInit {
   hideDiv = false;
 
   usuarios:Usuarios = { 
-    id:0,
+    id:"",
     usuario:"",
     email:"",
     telefono:0,
@@ -23,7 +23,7 @@ export class GestionUsuariosFiltroComponent implements OnInit {
   usuarios2: Usuarios[] = [];
   backup: Usuarios[] = [];
   
-  id = 0;
+  id = "";
   usuario = "";
   email = "";
   telefono = 0;
@@ -97,7 +97,7 @@ export class GestionUsuariosFiltroComponent implements OnInit {
     }
   
     limpiarFiltro(){
-      this.id = 0;
+      this.id = "";
       this.usuario = "";
       this.email = "";
       this.telefono = 0;

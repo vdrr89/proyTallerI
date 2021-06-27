@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-//..
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-import { NavBarComponent } from './nav-bar/nav-bar.component';
 //GRAL
 import { HomeComponent } from './gral/home/home.component';
+import { NavBarComponent } from './gral/nav-bar/nav-bar.component';
 import { ProductosCarouselComponent } from './gral/home/productos-carousel/productos-carousel.component';
+import { BreadcrumbComponent } from './gral/breadcrumb/breadcrumb.component';
 import { FooterComponent } from './gral/footer/footer.component';
 //.. productos
 import { ProductosComponent } from './gral/productos/productos.component';
@@ -46,7 +45,7 @@ const routes: Routes = [
   {path:'productos',component: ProductosComponent},
   {path:'productos/filtro',component: ProductosFiltroComponent},
   {path:'caja',component: CajaComponent},
-  {path:'producto-detalle/:codigo',component: ProductoDetalleComponent},
+  {path:'producto-detalle/:id',component: ProductoDetalleComponent},
   //GESTION
   {path:'gestion',component: GestionComponent},
   {path:'gestion/tabs',component: GestionTabsComponent},

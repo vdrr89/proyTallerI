@@ -16,10 +16,10 @@ export class AppComponent {
 
   ngOnInit(): void { //agregar acá
     this._productoService.getProductos().subscribe((response:any) => {
-      console.log(response);
+      console.log("app component ngOnInit prod: ",response);
     });
     this._usuarioService.getUsuarios().subscribe((response:any) => {
-      console.log(response);
+      console.log("app component ngOnInit usu: ", response);
     })
   }
 

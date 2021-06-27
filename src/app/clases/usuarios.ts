@@ -1,5 +1,5 @@
 export class Usuarios {
-    id:number;
+    id:string;
     usuario:string;
     email:string;
     telefono:number;
@@ -8,7 +8,7 @@ export class Usuarios {
     direccion:string;
 
     constructor(){
-        this.id=0;
+        this.id="";
         this.usuario="";
         this.email="";
         this.telefono=0;

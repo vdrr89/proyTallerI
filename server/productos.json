@@ -47,22 +47,22 @@
     },
     {
       "id": "eIFYyzy",
-      "codigo": "456",
+      "codigo": "987",
       "imgUrl": "",
-      "titulo": "un tit",
-      "autor": "un aut",
-      "editorial": "un edit",
-      "capitulo": "un cap",
-      "proveedor": "un prov",
-      "fechaCompra": "",
+      "titulo": "dos tit",
+      "autor": "dos aut",
+      "editorial": "dos edit",
+      "capitulo": "dos cap",
+      "proveedor": "dos prov",
+      "fechaCompra": "2021-06-02",
       "nuevasUnidades": 0,
-      "stock": 0,
-      "precioCosto": 0,
-      "precioVenta": 0
+      "stock": "45",
+      "precioCosto": 65,
+      "precioVenta": 654
     },
     {
       "id": "5qfjFpl",
-      "codigo": "123",
+      "codigo": "123456",
       "imgUrl": "",
       "titulo": "aqui un ejemplo",
       "autor": "listo para",
@@ -78,7 +78,7 @@
   ],
   "usuarios": [
     {
-      "id": "f1uar9V",
+      "id": "1",
       "usuario": "Mar456",
       "email": "maria@gmail.com",
       "telefono": "090123456",
@@ -103,6 +103,24 @@
       "nombre": "Fernand",
       "apellido": "Gonzalez",
       "direccion": "Murillo"
+    },
+    {
+      "id": "KrM_KDt",
+      "usuario": "un usuario",
+      "email": "de prueba",
+      "telefono": "123",
+      "nombre": "a ver si",
+      "apellido": "edita",
+      "direccion": "esta vez"
+    },
+    {
+      "id": "mbqLdJc",
+      "usuario": "era usuarios2",
+      "email": "si...",
+      "telefono": "666",
+      "nombre": "o no",
+      "apellido": "...",
+      "direccion": "nunca lo sabremos"
     }
   ]
 }

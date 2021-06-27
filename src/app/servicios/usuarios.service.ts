@@ -8,21 +8,21 @@ import { Usuarios } from '../clases/usuarios';
 export class UsuariosService {
   url = "http://localhost:3000/usuarios";
 
-  constructor(private _http: HttpClient) {}
+  constructor(public _http: HttpClient) {}
 
   getUsuarios(){
     return this._http.get<Usuarios[]>(this.url);
   }
 
-  insertarUsuarios(Usuarios:any){
+  insertarUsuarios(Usuarios:Usuarios){
     return this._http.post(this.url,Usuarios);
   }
 
-  actualizarUsuarios(Usuarios:any){
-    return this._http.put(this.url+"/"+Usuarios.usuario,Usuarios);
+  actualizarUsuarios(Usuarios:Usuarios){
+    return this._http.put(this.url+"/"+Usuarios.id,Usuarios);
  }
 
-  eliminarUsuarios(id:number){
+  eliminarUsuarios(id:string){
     return this._http.delete(this.url+"/"+id);
   }
 

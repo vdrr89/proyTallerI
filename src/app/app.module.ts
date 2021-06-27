@@ -8,15 +8,14 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 
-//comun
-import { NavBarComponent } from './nav-bar/nav-bar.component';
-import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
 //servicios
-import { BreadcrumbService } from './breadcrumb/breadcrumb.service';
+import { BreadcrumbService } from './gral/breadcrumb/breadcrumb.service';
 import { ProductosService } from './servicios/productos.service';
 import { UsuariosService } from './servicios/usuarios.service';
 //GRAL
 import { HomeComponent } from './gral/home/home.component';
+import { NavBarComponent } from './gral/nav-bar/nav-bar.component';
+import { BreadcrumbComponent } from './gral/breadcrumb/breadcrumb.component';
 import { ProductosCarouselComponent } from './gral/home/productos-carousel/productos-carousel.component';
 import { CajaComponent } from './gral/caja/caja.component';
 import { FooterComponent } from './gral/footer/footer.component';
