@@ -21,28 +21,34 @@
     <!-- CAJA ITEMS -->
     <tbody>
       <tr *ngFor="let producto of cartProduct">
-        <td>{{producto.titulo}} </td>
-        <td>{{producto.codigo}}</td>
-        <td>{{producto.precioVenta}}</td>
-        <td>{{producto.precioTotal}}</td>
-        <td></td>
+        <td>{{producto.titulo}} </td> 
+        <td>{{producto.cantidad}}</td>
+        <td>{{producto.precio}}</td> 
+        <td class="terciaryPrice">{{producto.precioTotal}}</td> <!-- no funca -->
+        <td></td> 
         <td class="manage-amount">
           <button (click)="less(producto)" class="btn-out-micro-alone"><i class="bi bi-dash-lg"></i></button>
-          <input [(ngModel)]="cantidad" class="input-micro + .amount-number" type="number" maxlength="4">
+          <input [(ngModel)]="producto.cantidad" class="input-micro + .amount-number" type="number" maxlength="4">
           <button (click)="plus(producto)" class="btn-out-micro-alone"><i class="bi bi-plus-lg"></i></button>
         </td>
       </tr>
     </tbody>
     <!-- CART FOOTER | TOT-->
     <tfoot>
+      <td>
+        <tr>Envío: $ -envío-</tr>
+      </td>
       <tr>
-        <td>Total: $ {{total}}</td>
+        <td>Subtotal: <span class="secondaryPrice">$ -subtotal-</span></td>
+      </tr>
+      <tr>
+        <td class="primaryPriceBox">Total: $ {{total}}</td>
       </tr>
     </tfoot>
   </table>
   <div *ngIf="!hideDiv">
     <span routerLink="/productos" class="bottom-buttons-left"><button id="first-left" class="btn-red" href="#"><i class="bi bi-arrow-left"></i></button></span>            
-    <span (click)="showDiv()" class="bottom-buttons-right"><button id="first-right" class="btn-green" href="#"><i class="bi bi-arrow-right"></i></button></span>
+    <span (click)="showDiv()" class="bottom-buttons-right"><button id="first-right" class="btn-green" href="#">Next</button></span>
   </div>
 </div>
   
@@ -81,8 +87,10 @@
   <div>
     <div id="siefectivo">
       <label class="label-siefectivo" for="entregamonto">Con cuanto va a pagar</label>
-      <input class="input-siefectivo" type="number" placeholder="con cuanto va a pagar" name="entregamonto">
-      <p class="p-siefectivo" id="devuelvemonto">Monto a devolver: $ {{vuelto}}</p>
+      <!-- <input [(ngModel)]="entregaCliente" (keypress)="keyPress($event)" class="input-siefectivo" type="number" placeholder="con cuanto va a pagar" name="entregamonto"> -->
+      <input [(ngModel)]="entregaCliente" class="input-siefectivo" type="number" placeholder="con cuanto va a pagar" name="entregamonto">
+      <button (click)="calcularVuelto()" class="btn-out"><i class="bi bi-check2"></i></button>
+      <p class="p-siefectivo" id="devuelvemonto">{{sobraOFalta}} $ {{vuelto}}</p>
     </div>
     <div id="sitarjeta">
 
@@ -103,7 +111,7 @@
   <!-- BOTONES FINALES -->
   <div>
     <span (click)="showDiv()" class="bottom-buttons-left"><button class="btn-red" href="#"><i class="bi bi-arrow-left"></i></button></span>            
-    <span class="bottom-buttons-right"><button class="btn-green" href="#"><i class="bi bi-cart-fill"></i></button></span>
+    <span class="bottom-buttons-right"><button class="btn-green" href="#">Concretar Compra</button></span>
   </div>
 
 </div>

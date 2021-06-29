@@ -402,6 +402,39 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
   border-width: 1px;
   border-color: #000000b2;
 }
+/* ---------------------- BOTONES INABILITADOS ---------------------- */
+
+.disabledText{
+ color: #3d4b57 !important;
+}
+
+/* ---------------------- PRECIOS ---------------------- */
+
+.primaryPriceBox {
+  text-align: center;
+  font-weight: bold !important;
+  color: #fff !important;
+  background-color: #9b0b0b !important;
+  border-radius: 0px;
+  padding: 4px;
+  margin: 2px 1px;
+ }
+
+.primaryPrice {
+ font-weight: bold !important;
+ color: #9b0b0b !important;
+ margin: 2px 1px;
+}
+
+.secondaryPrice {
+ font-weight: bold !important;
+ color: #914343c5 !important;
+}
+
+.terciaryPrice {
+  font-weight: bold !important;
+  color: #3d4b57 !important;
+}
 
 /* ---------------------- DIAGRAMACIÓN ---------------------- */
 

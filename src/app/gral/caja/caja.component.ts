@@ -18,10 +18,12 @@ export class CajaComponent implements OnInit {
   hideDiv = false;
 
   cantidad:number = 0;
+  precioVenta = 0;
+  totXProd = 0;
   total = 0;
   entregaCliente = 0;
   vuelto = 0;
-  sobraOFalta = "Vuelto: "
+  sobraOFalta = "Monto a Devolver: "
 
   productos:any[] = [];
   productos2:Productos = {
@@ -67,37 +69,31 @@ showDiv(){
   this.hideDiv = !this.hideDiv;
 }
 
-//hacer al presionar cada tecla en el input
-calcularVuelto(){
-  this.vuelto = this.entregaCliente - this.total;
-  this.sobraOFalta = this.vuelto >= 0 ? "Vuelto: " : "Aún le falta: ";
-}
 
-plus(producto:any){
-  let temp = this.cartProduct.map((element:any)=>{
-    if (element.id === producto.id){
-      element.cantidad++;
-      this.total += element.precio;
-      return element;
-    } else {
-      return element;
-    }
-  });
-  this.cartProduct = temp;
-}
+totalXProducto(producto:any){
+    this.totXProd =  this.cantidad*this.precioVenta; 
+    this.totXProd =  parseInt(producto.precioTotal);
+    console.log("caja totalXProducto producto.precioTotal", producto.precioTotal);
+  }
 
-less(producto:any){
-  if(producto.cantidad === 1){
-    let borrar = this.cartProduct.filter((element:any)=>{
-      return element.id !== producto.id
-    })
-    this.total -= producto.precio;
-    this.cartProduct = borrar;
-  } else {
+  // //no calcula lo que debería
+  // keyPress(event: KeyboardEvent) {
+  //   this.calcularVuelto();
+  //   console.log("caja keypress: ", this.calcularVuelto());
+  // }
+
+  calcularVuelto(){
+    this.vuelto = this.entregaCliente - this.total;
+    this.sobraOFalta = this.vuelto >= 0 ? "Monto a Devolver: " : "Falta para pagar: ";
+    console.log("caja calcularVuelto: ", this.vuelto);
+  }
+
+  // hay un problema con el plus, suma concatenando, no sumando
+  plus(producto:any){
     let temp = this.cartProduct.map((element:any)=>{
-      if(element.id === producto.id){
-        element.cantidad--;
-        this.total -= element.precio;
+      if (element.id === producto.id){
+        element.cantidad++;
+        this.total +=  parseInt(element.precio);
         return element;
       } else {
         return element;
@@ -105,26 +101,46 @@ less(producto:any){
     });
     this.cartProduct = temp;
   }
-}
 
-cancelar(){
-  this.sobraOFalta = "Vuelto: ";
-  this.total = 0;
-  this.entregaCliente = 0;
-  this.cartProduct = [];
-  this.productos.forEach((el:any)=>{
-    sessionStorage.removeItem(el);
-  });
-  this.productos = [];
-}
+  less(producto:any){
+    if(producto.cantidad === 1){
+      let borrar = this.cartProduct.filter((element:any)=>{
+        return element.id !== producto.id
+      })
+      this.total -= producto.precio;
+      this.cartProduct = borrar;
+    } else {
+      let temp = this.cartProduct.map((element:any)=>{
+        if(element.id === producto.id){
+          element.cantidad--;
+          this.total -= element.precio;
+          return element;
+        } else {
+          return element;
+        }
+      });
+      this.cartProduct = temp;
+    }
+  }
 
-deleteItem(producto:any){
-  sessionStorage.removeItem("Producto: "+producto.id);
-  const newItems = this.cartProduct.filter((item:any)=>{
-    return item.id !== producto.id
-  });
-  this.cartProduct = newItems;
-  this.total -= producto.cantidad*producto.precio;
-}
+  cancelar(){
+    this.sobraOFalta = "Vuelto: ";
+    this.total = 0;
+    this.entregaCliente = 0;
+    this.cartProduct = [];
+    this.productos.forEach((el:any)=>{
+      sessionStorage.removeItem(el);
+    });
+    this.productos = [];
+  }
+
+  deleteItem(producto:any){
+    sessionStorage.removeItem("Producto: "+producto.id);
+    const newItems = this.cartProduct.filter((item:any)=>{
+      return item.id !== producto.id
+    });
+    this.cartProduct = newItems;
+    this.total -= producto.cantidad*producto.precio;
+  }
 
 }

@@ -78,7 +78,7 @@ export class ProductoCardComponent implements OnInit {
 
   less(){
     this.cantd = this.cantd > 0 ? this.cantd -1 : 0;
-    console.log("less cantd", this.cantd);
+    console.log("producto card less cantd", this.cantd);
   }
 
   limpiarInput(){
@@ -92,7 +92,7 @@ export class ProductoCardComponent implements OnInit {
     this.cartProduct.imgUrl = producto5.imgUrl;
     this.cartProduct.codigo = producto5.codigo;
     sessionStorage.removeItem("producto"+this.producto.id);
-    console.log("deleteCart", this.cartProduct);
+    console.log("producto card deleteCart", this.cartProduct);
   }
 
   deleteFavorite(producto4:Productos){
@@ -101,6 +101,6 @@ export class ProductoCardComponent implements OnInit {
     this.cartProduct.imgUrl = producto4.imgUrl;
     this.cartProduct.codigo = producto4.codigo;
     sessionStorage.removeItem("producto"+this.producto.id);
-    console.log("deleteFavorite: ", this.cartProduct);
+    console.log("producgto card deleteFavorite: ", this.cartProduct);
   }
 }
