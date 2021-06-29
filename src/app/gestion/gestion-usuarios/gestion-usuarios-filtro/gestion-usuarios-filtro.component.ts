@@ -19,7 +19,7 @@ export class GestionUsuariosFiltroComponent implements OnInit {
     nombre:"",
     apellido:"",
     direccion:""
-      }
+  };
   usuarios2: Usuarios[] = [];
   backup: Usuarios[] = [];
   
@@ -54,45 +54,51 @@ export class GestionUsuariosFiltroComponent implements OnInit {
 
     buscar(){
       if(this.usuario.length > 0){
-        let usuariosFiltrados = this.usuarios2.filter(usua => {
-          return usua.usuario === this.usuario;
+        let usuariosFiltrados = this.usuarios2.filter(usuario => {
+          return usuario.usuario === this.usuario;
         });
         this.usuarios2 = usuariosFiltrados;
+        console.log("buscar() usuariosFiltrados usuario: ", usuariosFiltrados);
       };
   
       if(this.email.length > 0){
-        let usuariosFiltrados = this.usuarios2.filter(usua => {
-          return usua.email === this.email;
+        let usuariosFiltrados = this.usuarios2.filter(usuario => {
+          return usuario.email === this.email;
         });
         this.usuarios2 = usuariosFiltrados;
+        console.log("buscar() usuariosFiltrados email: ", usuariosFiltrados);
       };
   
       if(this.telefono > 0){
-        let usuariosFiltrados = this.usuarios2.filter(usua => {
-        return usua.telefono === this.telefono;
+        let usuariosFiltrados = this.usuarios2.filter(usuario => {
+        return usuario.telefono === this.telefono;
         });
         this.usuarios2 = usuariosFiltrados;
+        console.log("buscar() usuariosFiltrados telefono: ", usuariosFiltrados);
       };
   
       if(this.nombre.length > 0){
-        let usuariosFiltrados = this.usuarios2.filter(usua => {
-          return usua.nombre === this.nombre;
+        let usuariosFiltrados = this.usuarios2.filter(usuario => {
+          return usuario.nombre === this.nombre;
         });
         this.usuarios2 = usuariosFiltrados;
+        console.log("buscar() usuariosFiltrados nombre: ", usuariosFiltrados);
       };
   
       if(this.apellido.length > 0){
-        let usuariosFiltrados = this.usuarios2.filter(usua => {
-          return usua.apellido === this.apellido;
+        let usuariosFiltrados = this.usuarios2.filter(usuario => {
+          return usuario.apellido === this.apellido;
         });
         this.usuarios2 = usuariosFiltrados;
+        console.log("buscar() usuariosFiltrados apellido: ", usuariosFiltrados);
       };
 
       if(this.direccion.length > 0){
-        let usuariosFiltrados = this.usuarios2.filter(usua => {
-          return usua.direccion === this.direccion;
+        let usuariosFiltrados = this.usuarios2.filter(usuario => {
+          return usuario.direccion === this.direccion;
         });
         this.usuarios2 = usuariosFiltrados;
+        console.log("buscar() usuariosFiltrados direccion: ", usuariosFiltrados);
       }
     }
   

@@ -11,7 +11,7 @@ export class ProductosFiltroComponent implements OnInit {
 
   hideDiv = false;
 
-  productos:Productos = {
+  productos:Productos = { //usado en todos los filtros
         id:"",
         codigo:"",
         imgUrl:"",
@@ -26,8 +26,8 @@ export class ProductosFiltroComponent implements OnInit {
         precioCosto:0,
         precioVenta:0
       }
-  productos2: Productos[] = [];
-  backup: Productos[] = [];
+  productos2: Productos[] = []; //usado en todos los filtros
+  backup: Productos[] = []; // usado en ngOnInit y limpiarFiltro()
 
   codigo = "";
   titulo = "";
@@ -55,18 +55,21 @@ export class ProductosFiltroComponent implements OnInit {
       this.buscar();
     }
 
+    // filtra en cada input, no muestra en lista el resulta pero si en consola, no funciona para el buscar unico
     buscar(){
       if(this.codigo.length > 0){
-        let filtradosByCodigo = this.productos2.filter(producto => {
+        let productosFiltrados = this.productos2.filter(producto => {
           return producto.codigo === this.codigo;
         });
-        this.productos2 = filtradosByCodigo;
+        console.log("productosFiltrados codigo: ", productosFiltrados);
+        this.productos2 = productosFiltrados;
       };
 
       if(this.titulo.length > 0){
         let productosFiltrados = this.productos2.filter(producto => {
           return producto.titulo === this.titulo;
         });
+        console.log("productosFiltrados titulo: ", productosFiltrados);
         this.productos2 = productosFiltrados;
       };
 
@@ -74,6 +77,7 @@ export class ProductosFiltroComponent implements OnInit {
         let productosFiltrados = this.productos2.filter(producto => {
           return producto.autor === this.autor;
         });
+        console.log("productosFiltrados autor: ", productosFiltrados);
         this.productos2 = productosFiltrados;
       };
 
@@ -81,6 +85,7 @@ export class ProductosFiltroComponent implements OnInit {
         let productosFiltrados = this.productos2.filter(producto => {
           return producto.editorial === this.editorial;
         });
+        console.log("productosFiltrados editorial: ", productosFiltrados);
         this.productos2 = productosFiltrados;
       };
 
@@ -88,7 +93,34 @@ export class ProductosFiltroComponent implements OnInit {
         let productosFiltrados = this.productos2.filter(producto => {
           return producto.precioVenta >= this.precioMin && this.precioMax <= this.precioMax;
         });
+        console.log("productosFiltrados precioVenta: ", productosFiltrados);
         this.productos2 = productosFiltrados;
+      }
+    }
+
+    showAllAgain(){
+      if(this.codigo.length === 0){
+        this.productos2 = this.backup;
+      };
+      
+      if(this.titulo.length === 0){
+        this.productos2 = this.backup;
+      };
+
+      if(this.autor.length === 0){
+        this.productos2 = this.backup;
+      };
+
+      if(this.editorial.length === 0){
+        this.productos2 = this.backup;
+      };
+
+      if(this.precioMin === 0){
+        this.productos2 = this.backup;
+      };
+
+      if(this.precioMax === 0){
+        this.productos2 = this.backup;
       }
     }
 

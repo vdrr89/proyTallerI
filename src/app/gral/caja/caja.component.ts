@@ -17,13 +17,13 @@ export class CajaComponent implements OnInit {
 
   hideDiv = false;
 
-  unidades = 0;
+  cantidad:number = 0;
   total = 0;
   entregaCliente = 0;
   vuelto = 0;
   sobraOFalta = "Vuelto: "
 
-  productos:string[] = [];
+  productos:any[] = [];
   productos2:Productos = {
     id: "",
     codigo:"",
@@ -39,24 +39,26 @@ export class CajaComponent implements OnInit {
     precioCosto:0,
     precioVenta:0
   };
-  CartContent:any = [];
-  cartProduct:any[] = [];
+  cartProduct:any = [];
+  cartElotro:any[] = [];
 
   constructor() { }
 
   ngOnInit(): void {
 
-    //trae del sessionStorage
     this.productos = Object.keys(sessionStorage);
     console.log(this.productos);
     this.productos.forEach((element:any) => {
-      const item = sessionStorage.getItem(element);
+    const item = sessionStorage.getItem(element);
+    console.log("caja ngOnInit item: ", item);
 
-      //agrega al carrito
       if(item != null){
         let obj = JSON.parse(item);
         this.cartProduct.push(JSON.parse(item));
-        this.total += obj.unidades*obj.precio
+        this.total += obj.cantidad*obj.precio;
+        // console.log("ngOnInit total: ", this.total);
+        // console.log("ngOnInit obj cantidad: ", obj.cantidad);
+        // console.log("ngOnInit obj precio: ", obj.precio);
       }
     });
 }
@@ -74,7 +76,7 @@ calcularVuelto(){
 plus(producto:any){
   let temp = this.cartProduct.map((element:any)=>{
     if (element.id === producto.id){
-      element.unidades++;
+      element.cantidad++;
       this.total += element.precio;
       return element;
     } else {
@@ -85,7 +87,7 @@ plus(producto:any){
 }
 
 less(producto:any){
-  if(producto.unidades === 1){
+  if(producto.cantidad === 1){
     let borrar = this.cartProduct.filter((element:any)=>{
       return element.id !== producto.id
     })
@@ -94,7 +96,7 @@ less(producto:any){
   } else {
     let temp = this.cartProduct.map((element:any)=>{
       if(element.id === producto.id){
-        element.unidades--;
+        element.cantidad--;
         this.total -= element.precio;
         return element;
       } else {
@@ -122,7 +124,7 @@ deleteItem(producto:any){
     return item.id !== producto.id
   });
   this.cartProduct = newItems;
-  this.total -= producto.unidades*producto.precio;
+  this.total -= producto.cantidad*producto.precio;
 }
 
 }

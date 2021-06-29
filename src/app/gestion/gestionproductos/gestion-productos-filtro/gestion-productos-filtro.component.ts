@@ -12,20 +12,20 @@ export class GestionProductosFiltroComponent implements OnInit {
   hideDiv = false;
 
   productos:Productos = {
-        id:"",
-        codigo:"",
-        imgUrl:"",
-        titulo:"",
-        autor:"",
-        editorial:"",
-        capitulo:"",
-        proveedor:"",
-        fechaCompra:"",
-        nuevasUnidades:0,
-        stock:0,
-        precioCosto:0,
-        precioVenta:0
-      }
+    id:"",
+    codigo:"",
+    imgUrl:"",
+    titulo:"",
+    autor:"",
+    editorial:"",
+    capitulo:"",
+    proveedor:"",
+    fechaCompra:"",
+    nuevasUnidades:0,
+    stock:0,
+    precioCosto:0,
+    precioVenta:0
+  };
   productos2: Productos[] = [];
   backup: Productos[] = [];
 
@@ -59,10 +59,11 @@ export class GestionProductosFiltroComponent implements OnInit {
 
     buscar(){
       if(this.codigo.length > 0){
-        let filtradosByCodigo = this.productos2.filter(producto => {
+        let productosFiltrados = this.productos2.filter(producto => {
           return producto.codigo === this.codigo;
         });
-        this.productos2 = filtradosByCodigo;
+        this.productos2 = productosFiltrados;
+        console.log("buscar() productosFiltrados codigo: ", productosFiltrados);
       };
 
       if(this.titulo.length > 0){
@@ -70,6 +71,7 @@ export class GestionProductosFiltroComponent implements OnInit {
           return producto.titulo === this.titulo;
         });
         this.productos2 = productosFiltrados;
+        console.log("buscar() productosFiltrados titulo: ", productosFiltrados);
       };
 
       if(this.autor.length > 0){
@@ -77,6 +79,7 @@ export class GestionProductosFiltroComponent implements OnInit {
           return producto.autor === this.autor;
         });
         this.productos2 = productosFiltrados;
+        console.log("buscar() productosFiltrados autor: ", productosFiltrados);
       };
 
       if(this.editorial.length > 0){
@@ -84,6 +87,7 @@ export class GestionProductosFiltroComponent implements OnInit {
           return producto.editorial === this.editorial;
         });
         this.productos2 = productosFiltrados;
+        console.log("buscar() productosFiltrados editorial: ", productosFiltrados);
       };
 
       if(this.precioMin > 0 && this.precioMax > 0){
@@ -91,6 +95,7 @@ export class GestionProductosFiltroComponent implements OnInit {
           return producto.precioVenta >= this.precioMin && this.precioMax <= this.precioMax;
         });
         this.productos2 = productosFiltrados;
+        console.log("buscar() productosFiltrados precio: ", productosFiltrados);
       }
     }
 

@@ -52,14 +52,13 @@ export class CrearProductoComponent implements OnInit {
           })[0];
           this.producto2 = item;
         })
+          //version2 / cargar()
+          // this.cargar();
       }
     })
-
-    //version2 / cargar()
-    // this.cargar();
   }
 
-  //VERSION1 / funca con update2() y cleanFormData() y ngOnInit
+  // VERSION1 / funca con update2() y cleanFormData() y ngOnInit
   submit(event:any){
     if(this.producto2.id != ""){
       this._productosService.actualizarProductos(this.producto2).subscribe((response:any)=>{
@@ -77,8 +76,9 @@ export class CrearProductoComponent implements OnInit {
   }
 
   //VERSION1 / funca con submit() y cleanFormData() y ngOnInit / edita
+  //este funcionaba hasta que sin tocarlo dejó de funcionar
   update2(productos3:Productos){
-    //da igual con this.producto2 que con this.prod
+    // da igual con this.producto2 que con this.prod
     this.producto2.id = productos3.id;
     this.producto2.codigo = productos3.codigo;
     this.producto2.titulo = productos3.titulo;
@@ -92,6 +92,7 @@ export class CrearProductoComponent implements OnInit {
     this.producto2.stock = productos3.stock;
     this.producto2.nuevasUnidades = productos3.nuevasUnidades;
   }
+
 
   //VERSION1 / funca con submit() update2() y ngOnInit / funca divino
   cleanFormData(){
@@ -111,27 +112,26 @@ export class CrearProductoComponent implements OnInit {
     this.producto2.precioVenta = 0;
   }
 
-
   //VERSION2 / funca con create() y update3() y cargar(ngOnInit) / agregar la función en el ngOnInit()
   cargar():void{
-    this._activedRoute.params.subscribe(
-      e=>{
-        let id=e['id'];
-        if(id){
-          this._productosService.getProductos().subscribe(
-            es=>this.prod=es
-          );
-        };
-      }
-    );
+    // this._activedRoute.params.subscribe(
+    //   e=>{
+    //     let id=e['id'];
+    //     if(id){
+    //       this._productosService.getProductos().subscribe(
+    //         es=>this.prod=es
+    //       );
+    //     };
+    //   }
+    // );
   }
 
   //VERSION2 / funca con update3() y cargar(ngOnInit)
   create(){
-    console.log(this.productos);
-    this._productosService.addProductos(this.producto2).subscribe(
-      res=>this.route.navigate(['/gestion/productos'])
-    )
+    // console.log(this.productos);
+    // this._productosService.addProductos(this.producto2).subscribe(
+    //   res=>this.route.navigate(['/gestion/productos'])
+    // )
   }
 
   //VERSION2 / funca con create() y cargar(ngOnInit)
@@ -142,8 +142,8 @@ export class CrearProductoComponent implements OnInit {
   }
 
   //VERSION3 / funca con save3() hay que agregar en ngOnInit
-  id1:any;
-  editing:boolean=false;
+  // id1:any;
+  // editing:boolean=false;
   getId(){
   //   this.id1=this._activedRoute.snapshot.params['id1'];
   //   if(this.id1){ //ya el if this.id1 es = si tiene un valor

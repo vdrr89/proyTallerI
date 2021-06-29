@@ -8,6 +8,7 @@ import { BreadcrumbComponent } from './gral/breadcrumb/breadcrumb.component';
 import { FooterComponent } from './gral/footer/footer.component';
 //.. productos
 import { ProductosComponent } from './gral/productos/productos.component';
+import { ProductoCardComponent } from './gral/productos/producto-card/producto-card.component';
 import { CajaComponent } from './gral/caja/caja.component';
 import { ProductoDetalleComponent } from './gral/productos/producto-detalle/producto-detalle.component';
 //.. usuarios
@@ -43,6 +44,7 @@ const routes: Routes = [
   {path:'newuser/tabs',component: NewUserTabsComponent},
   //.. productos
   {path:'productos',component: ProductosComponent},
+  {path:'productos/productos-card',component: ProductoCardComponent},
   {path:'productos/filtro',component: ProductosFiltroComponent},
   {path:'caja',component: CajaComponent},
   {path:'producto-detalle/:id',component: ProductoDetalleComponent},

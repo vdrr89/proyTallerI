@@ -14,25 +14,6 @@
   
 <!-- CARDS DE PRODUCTOS -->
 <div class="vr-card-group">
-  <div class="vr-card" *ngFor="let item of prod">
-    <!-- IMG -->
-    <img src="{{item.imgUrl}}" class="cardImg" alt="img-libro-1">
-    <button class="btn-gold-micro-alone"><i class="bi bi-heart"></i></button>
-    <!-- PROD INFO -->
-    <div class="card-body">  
-      <h5 class="card-title">{{item.titulo}}</h5>
-      <p class="card-text">{{item.autor}}</p>
-      <p class="price">$ {{item.precioVenta}}</p>
-    </div> 
-    <!-- CART SITUATION -->
-    <div class="cart-situation">
-      <button (click)="deleteItem(productos)" class="btn-red-micro-alone" href="#"><i class="bi bi-trash-fill"></i></button>
-      <div class="manage-amount">
-          <button (click)="less()" class="btn-out-micro-alone"><i class="bi bi-dash-lg"></i></button>
-          <input [(ngModel)]="cantd" class="input-micro + .amount-number" type="number" maxlength="4">
-          <button (click)="plus()" class="btn-out-micro-alone"><i class="bi bi-plus-lg"></i></button>
-      </div>
-      <button (click)="addCart(productos)" class="btn-green-micro-alone" href="#"><i class="bi bi-cart-fill"></i></button>
-    </div>
-  </div>
+  <app-producto-card *ngFor="let productos of prod" [producto]="productos"></app-producto-card>
+  <!-- clase 14 01.20 -->
 </div>

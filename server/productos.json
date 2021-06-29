@@ -63,17 +63,17 @@
     {
       "id": "5qfjFpl",
       "codigo": "123456",
-      "imgUrl": "",
-      "titulo": "aqui un ejemplo",
-      "autor": "listo para",
+      "imgUrl": "https://pbs.twimg.com/profile_images/1186555554669514753/gwZmHROF_400x400.jpg",
+      "titulo": "el mismo ejemplo",
+      "autor": "otra vez",
       "editorial": "editar",
-      "capitulo": "su contenido jhikgyuulog;u",
+      "capitulo": "su contenido",
       "proveedor": "a ver si",
       "fechaCompra": "",
       "nuevasUnidades": 0,
-      "stock": 0,
-      "precioCosto": 0,
-      "precioVenta": 0
+      "stock": 30,
+      "precioCosto": 20,
+      "precioVenta": 50
     }
   ],
   "usuarios": [
@@ -112,15 +112,6 @@
       "nombre": "a ver si",
       "apellido": "edita",
       "direccion": "esta vez"
-    },
-    {
-      "id": "mbqLdJc",
-      "usuario": "era usuarios2",
-      "email": "si...",
-      "telefono": "666",
-      "nombre": "o no",
-      "apellido": "...",
-      "direccion": "nunca lo sabremos"
     }
   ]
 }

@@ -1,0 +1,95 @@
+/* CARD */
+
+.vr-card-group { /* all cards */
+    /* width: 100%; */
+    max-width: 100%;
+    margin: 0 auto;
+  
+    display: grid;
+
+    gap: 2vw;
+    grid-auto-flow: inherit;
+    grid-template-columns:auto auto auto auto;
+    grid-template-rows: auto;
+}
+
+.vr-card { /* only 1 card */
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: 0;
+    /* margin: 10px; */
+    padding: 15px;
+
+    min-height: 100%;
+    width: 18rem;
+
+    border: solid 1px gray;
+    background: white;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+
+    transition: all .1s ease-in;
+}
+
+.vr-card:hover {
+    top: -2px;
+    box-shadow: 0 4px 5px rgba(0,0,0,0.2);
+}
+
+.cardImg {
+    width: 35%;
+    height: 100px;;
+    margin: auto;
+}
+
+.card-body{ /* all texts */
+    padding: 20px;
+    display: flex;
+
+    flex: 1;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+.price {
+    font-size: x-large;
+    font-weight: 800;
+    text-align: center;
+}
+
+.btn-gold-micro-alone {
+    display: flex;
+    left: 200px;
+    top: 50px;
+}
+  
+@media only screen and (max-width: 900px) {
+    .vr-card-band {
+        grid-template-columns: auto auto auto;
+    }
+  }
+
+@media only screen and (max-width: 600px){
+    .vr-card-band {
+        grid-template-columns: auto auto;
+    }
+}
+
+@media only screen and (max-widht: 300px){
+    .vr-card-band {
+        grid-template-columns: auto;
+    }
+}
+
+/* CART */
+.cart-situation{
+    text-align:center;
+}
+
+.manage-amount{
+    display: inline
+}
+
+.search-filtro {
+    display: inline-flexbox;
+}

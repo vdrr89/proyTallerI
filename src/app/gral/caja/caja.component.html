@@ -5,49 +5,50 @@
       <li class="breadcrumb-item"><a [routerLink]="'/'">Home</a></li>
       <li class="breadcrumb-item active" aria-current="page">Caja</li>
     </ol>
-  </div>
+</div>
   
-  <!-- CAJA --> 
+<!-- CAJA --> 
   
-  <!-- PRODUCTOS CONFIRM -->
-  <div id="all-form" class="all-form">
-    <table class="table">
-      <!-- CAJA TITLE -->
-      <thead>
-        <tr>
-          <th scope="col" *ngFor="let item of CartTitle">{{item.title}}</th>
-        </tr>
-      </thead>
-      <!-- CAJA ITEMS -->
-      <tbody>
-        <tr *ngFor="let producto of CartContent">
-          <td>{{producto.producto}} </td>
-          <td>{{producto.codigo}}</td>
-          <td>{{producto.precioVenta}}</td>
-          <td>{{producto.precioTotal}}</td>
-          <td></td>
-          <td class="manage-amount">
-            <button (click)="less(producto)" class="btn-out-micro-alone"><i class="bi bi-dash-lg"></i></button>
-            <input [(ngModel)]="unidades" class="input-micro + .amount-number" type="number" maxlength="4">
-            <button (click)="plus(producto)" class="btn-out-micro-alone"><i class="bi bi-plus-lg"></i></button>
-          </td>
-        </tr>
-      </tbody>
-      <!-- CART FOOTER -->
-      <tfoot>
-        <tr>
-          <td>Total: $ {{total}}</td>
-        </tr>
-      </tfoot>
-    </table>
-    <div *ngIf="!hideDiv">
-      <span routerLink="/productos" class="bottom-buttons-left"><button id="first-left" class="btn-red" href="#"><i class="bi bi-arrow-left"></i></button></span>            
-      <span (click)="showDiv()" class="bottom-buttons-right"><button id="first-right" class="btn-green" href="#"><i class="bi bi-arrow-right"></i></button></span>
-    </div>
+<!-- PRODUCTOS CONFIRM -->
+<div id="all-form" class="all-form">
+  <table class="table">
+    <!-- CAJA TITLE -->
+    <thead>
+      <tr>
+        <th scope="col" *ngFor="let item of CartTitle">{{item.title}}</th>
+      </tr>
+    </thead>
+    <!-- CAJA ITEMS -->
+    <tbody>
+      <tr *ngFor="let producto of cartProduct">
+        <td>{{producto.titulo}} </td>
+        <td>{{producto.codigo}}</td>
+        <td>{{producto.precioVenta}}</td>
+        <td>{{producto.precioTotal}}</td>
+        <td></td>
+        <td class="manage-amount">
+          <button (click)="less(producto)" class="btn-out-micro-alone"><i class="bi bi-dash-lg"></i></button>
+          <input [(ngModel)]="cantidad" class="input-micro + .amount-number" type="number" maxlength="4">
+          <button (click)="plus(producto)" class="btn-out-micro-alone"><i class="bi bi-plus-lg"></i></button>
+        </td>
+      </tr>
+    </tbody>
+    <!-- CART FOOTER | TOT-->
+    <tfoot>
+      <tr>
+        <td>Total: $ {{total}}</td>
+      </tr>
+    </tfoot>
+  </table>
+  <div *ngIf="!hideDiv">
+    <span routerLink="/productos" class="bottom-buttons-left"><button id="first-left" class="btn-red" href="#"><i class="bi bi-arrow-left"></i></button></span>            
+    <span (click)="showDiv()" class="bottom-buttons-right"><button id="first-right" class="btn-green" href="#"><i class="bi bi-arrow-right"></i></button></span>
   </div>
+</div>
   
 <!-- CONTACTO Y PAGO -->
 <div id="contactoypago" class="all-form" *ngIf="hideDiv">
+  
   <!-- CONTACTO -->
   <div>
     <!-- DIRECCION -->
@@ -61,37 +62,27 @@
       <input type="text" class="form-control" id="telefono" placeholder="Telefono">
     </div>
   </div>
+
   <hr>
 
-    <!-- MEDIO DE PAGO -->
+  <!-- MEDIO DE PAGO -->
+  <ul class="medio-de-pago-items">
+    <li><div class="circulo"></div></li>
+    <li class="medio-de-pago-text"><p>Efectivo</p></li>
 
-    <ul class="medio-de-pago-items">
-      <li>
-        <div class="circulo"></div>
-      </li>
-      <li class="medio-de-pago-text">
-        <p>Efectivo</p>
-      </li>
-      <li>
-        <div class="circulo"></div>
-      </li>
-      <li class="medio-de-pago-text">
-        <p>Tarjeta</p> 
-      </li>
-      <li>
-        <div class="circulo"></div>
-      </li>
-      <li class="medio-de-pago-text">
-        <p>MercadoPago</p>        
-      </li>
-    </ul>
+    <li><div class="circulo"></div></li>
+    <li class="medio-de-pago-text"><p>Tarjeta</p></li>
+
+    <li><div class="circulo"></div></li>
+    <li class="medio-de-pago-text"><p>MercadoPago</p></li>
+  </ul>
 
   <!-- DETALLE MEDIO DE PAGO -->
   <div>
     <div id="siefectivo">
       <label class="label-siefectivo" for="entregamonto">Con cuanto va a pagar</label>
       <input class="input-siefectivo" type="number" placeholder="con cuanto va a pagar" name="entregamonto">
-      <p class="p-siefectivo" id="devuelvemonto">Monto a devolver: $</p>
+      <p class="p-siefectivo" id="devuelvemonto">Monto a devolver: $ {{vuelto}}</p>
     </div>
     <div id="sitarjeta">
 
@@ -100,6 +91,7 @@
 
     </div>
   </div>
+
   <hr>
 
   <!-- COMENTARIOS -->
@@ -113,4 +105,5 @@
     <span (click)="showDiv()" class="bottom-buttons-left"><button class="btn-red" href="#"><i class="bi bi-arrow-left"></i></button></span>            
     <span class="bottom-buttons-right"><button class="btn-green" href="#"><i class="bi bi-cart-fill"></i></button></span>
   </div>
+
 </div>

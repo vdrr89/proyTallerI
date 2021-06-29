@@ -1,15 +1,14 @@
-<!-- add -->
+<!-- ADD -->
 <button class="btn-green" [routerLink]="'/gestion/crearproducto'"><i class="bi bi-plus-lg"></i></button>  
 
-<!-- filtro botones fijo-->
-<!-- poner keyup desde filtros hasta buscador gral -->
+<!-- FILTRO BOTONES FIJO -->
 <div class="left">
     <button (click)="showDiv()" class="btn-out"><i class="bi bi-filter"></i></button>
     <input (keyup)="keyupSearch($event)" type="text" placeholder="escriba aqui lo que desea buscar" class="sty-search">
     <button (click)="buscar()" class="btn-out"><i class="bi bi-search"></i></button>
 </div>
 
-<!-- inputs del filtro -->
+<!-- INPUTS DEL FILTRO -->
 <table class="mb-3" *ngIf="hideDiv">
     <tr>
         <td>
