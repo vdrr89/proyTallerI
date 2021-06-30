@@ -69,27 +69,6 @@ export class CajaComponent implements OnInit {
     this.hideDiv = !this.hideDiv;
   }
 
-
-  // totalXProducto(producto:any){
-  //     this.totXProd =  this.cantidad*this.precioVenta; 
-  //     this.totXProd =  parseInt(producto.precioTotal);
-  //     console.log("caja totalXProducto producto.precioTotal", producto.precioTotal);
-  //   }
-
-  //clon del de arriba
-  // totalXProducto(producto:any){
-  //   this.productos.forEach((producto:any)=>{
-  //     this.totXProd =  this.cantidad*this.precioVenta; 
-  //     this.totXProd =  parseInt(this.totXProd);
-  //   })
-  //   console.log("caja totalXProducto producto.precioTotal", producto.precioTotal);
-  // }
-  // //no calcula lo que debería
-  // keyPress(event: KeyboardEvent) {
-  //   this.calcularVuelto();
-  //   console.log("caja keypress: ", this.calcularVuelto());
-  // }
-
   calcularVuelto(){
     this.vuelto = this.entregaCliente - this.total;
     this.sobraOFalta = this.vuelto >= 0 ? "Monto a Devolver: " : "Falta para pagar: ";
@@ -131,24 +110,13 @@ export class CajaComponent implements OnInit {
     }
   }
 
-  cancelar(){
-  //   this.sobraOFalta = "Vuelto: ";
-  //   this.total = 0;
-  //   this.entregaCliente = 0;
-  //   this.cartProduct = [];
-  //   this.productos.forEach((el:any)=>{
-  //     sessionStorage.removeItem(el);
-  //   });
-  //   this.productos = [];
-  }
-
   deleteItem(producto:any){
     sessionStorage.removeItem(producto.id);
     const newItems = this.cartProduct.filter((item:any)=>{
       return item.id !== producto.id
     });
     this.cartProduct = newItems;
-    this.total = this.total -= producto.cantidad*producto.precio;
+    this.total -= producto.cantidad*producto.precio;
   }
 
 }
