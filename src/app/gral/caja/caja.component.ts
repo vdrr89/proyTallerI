@@ -65,17 +65,25 @@ export class CajaComponent implements OnInit {
     });
 }
 
-showDiv(){
-  this.hideDiv = !this.hideDiv;
-}
-
-
-totalXProducto(producto:any){
-    this.totXProd =  this.cantidad*this.precioVenta; 
-    this.totXProd =  parseInt(producto.precioTotal);
-    console.log("caja totalXProducto producto.precioTotal", producto.precioTotal);
+  showDiv(){
+    this.hideDiv = !this.hideDiv;
   }
 
+
+  // totalXProducto(producto:any){
+  //     this.totXProd =  this.cantidad*this.precioVenta; 
+  //     this.totXProd =  parseInt(producto.precioTotal);
+  //     console.log("caja totalXProducto producto.precioTotal", producto.precioTotal);
+  //   }
+
+  //clon del de arriba
+  // totalXProducto(producto:any){
+  //   this.productos.forEach((producto:any)=>{
+  //     this.totXProd =  this.cantidad*this.precioVenta; 
+  //     this.totXProd =  parseInt(this.totXProd);
+  //   })
+  //   console.log("caja totalXProducto producto.precioTotal", producto.precioTotal);
+  // }
   // //no calcula lo que debería
   // keyPress(event: KeyboardEvent) {
   //   this.calcularVuelto();
@@ -124,23 +132,23 @@ totalXProducto(producto:any){
   }
 
   cancelar(){
-    this.sobraOFalta = "Vuelto: ";
-    this.total = 0;
-    this.entregaCliente = 0;
-    this.cartProduct = [];
-    this.productos.forEach((el:any)=>{
-      sessionStorage.removeItem(el);
-    });
-    this.productos = [];
+  //   this.sobraOFalta = "Vuelto: ";
+  //   this.total = 0;
+  //   this.entregaCliente = 0;
+  //   this.cartProduct = [];
+  //   this.productos.forEach((el:any)=>{
+  //     sessionStorage.removeItem(el);
+  //   });
+  //   this.productos = [];
   }
 
   deleteItem(producto:any){
-    sessionStorage.removeItem("Producto: "+producto.id);
+    sessionStorage.removeItem(producto.id);
     const newItems = this.cartProduct.filter((item:any)=>{
       return item.id !== producto.id
     });
     this.cartProduct = newItems;
-    this.total -= producto.cantidad*producto.precio;
+    this.total = this.total -= producto.cantidad*producto.precio;
   }
 
 }

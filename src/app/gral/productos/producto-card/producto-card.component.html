@@ -2,7 +2,7 @@
     <div class="vr-card">
       <!-- IMG -->
       <img [src]="producto.imgUrl" class="cardImg" alt="img-libro-1">
-      <button class="btn-gold-micro-alone"><i class="bi bi-heart"></i></button>
+      <button (click)="addFavorites" class="btn-gold-micro-alone"><i class="bi bi-heart"></i></button>
       <!-- PROD INFO -->
       <div class="card-body">  
         <h5 class="card-title">{{producto.titulo}}</h5>

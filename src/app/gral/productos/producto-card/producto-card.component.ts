@@ -40,6 +40,14 @@ export class ProductoCardComponent implements OnInit {
     codigo:""
   }
 
+  favProduct = {
+    id:"",
+    precio:0,
+    titulo:"",
+    imgUrl:"",
+    codigo:""
+  }
+
   constructor(private _productosService: ProductosService) { }
 
   ngOnInit(): void {
@@ -61,14 +69,14 @@ export class ProductoCardComponent implements OnInit {
     console.log("addCart cartProduct: ", this.cartProduct);
   }
 
-  //hacer maquetación de configurar cuenta con receptor de favoritos
+  // FAVORITOS hacer maquetación de configurar cuenta con receptor de favoritos
   addFavorites(producto4:Productos){
-    this.cartProduct.precio = producto4.precioVenta;
-    this.cartProduct.titulo = producto4.titulo;
-    this.cartProduct.imgUrl = producto4.imgUrl;
-    this.cartProduct.codigo = producto4.codigo;
-    sessionStorage.setItem("producto"+producto4.id,JSON.stringify(this.cartProduct));
-    console.log("addFavorites producto card component: ")
+    // this.favProduct.precio = producto4.precioVenta;
+    // this.favProduct.titulo = producto4.titulo;
+    // this.favProduct.imgUrl = producto4.imgUrl;
+    // this.favProduct.codigo = producto4.codigo;
+    // sessionStorage.setItem("producto"+producto4.id,JSON.stringify(this.favProduct));
+    // console.log("addFavorites producto card component: ", this.favProduct)
   }
 
   plus(){
@@ -96,11 +104,11 @@ export class ProductoCardComponent implements OnInit {
   }
 
   deleteFavorite(producto4:Productos){
-    this.cartProduct.precio = producto4.precioVenta;
-    this.cartProduct.titulo = producto4.titulo;
-    this.cartProduct.imgUrl = producto4.imgUrl;
-    this.cartProduct.codigo = producto4.codigo;
-    sessionStorage.removeItem("producto"+this.producto.id);
-    console.log("producgto card deleteFavorite: ", this.cartProduct);
+    // this.favProduct.precio = producto4.precioVenta;
+    // this.favProduct.titulo = producto4.titulo;
+    // this.favProduct.imgUrl = producto4.imgUrl;
+    // this.favProduct.codigo = producto4.codigo;
+    // sessionStorage.removeItem("producto"+this.producto.id);
+    // console.log("producgto card deleteFavorite: ", this.favProduct);
   }
 }

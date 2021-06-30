@@ -11,6 +11,7 @@
   
 <!-- PRODUCTOS CONFIRM -->
 <div id="all-form" class="all-form">
+
   <table class="table">
     <!-- CAJA TITLE -->
     <thead>
@@ -24,32 +25,30 @@
         <td>{{producto.titulo}} </td> 
         <td>{{producto.cantidad}}</td>
         <td>{{producto.precio}}</td> 
-        <td class="terciaryPrice">{{producto.precioTotal}}</td> <!-- no funca -->
+        <td class="terciaryPrice">{{producto.cantidad*producto.precio}}</td><!-- no funca -->
         <td></td> 
         <td class="manage-amount">
           <button (click)="less(producto)" class="btn-out-micro-alone"><i class="bi bi-dash-lg"></i></button>
           <input [(ngModel)]="producto.cantidad" class="input-micro + .amount-number" type="number" maxlength="4">
           <button (click)="plus(producto)" class="btn-out-micro-alone"><i class="bi bi-plus-lg"></i></button>
+          <button (click)="deleteItem(producto)" class="btn-red-micro-alone" href="#"><i class="bi bi-trash-fill"></i></button>
         </td>
       </tr>
     </tbody>
     <!-- CART FOOTER | TOT-->
-    <tfoot>
-      <td>
-        <tr>Envío: $ -envío-</tr>
-      </td>
-      <tr>
-        <td>Subtotal: <span class="secondaryPrice">$ -subtotal-</span></td>
-      </tr>
-      <tr>
-        <td class="primaryPriceBox">Total: $ {{total}}</td>
-      </tr>
-    </tfoot>
+    <div style="display: table-caption;">
+      <p>Envío: $ -envío-</p>
+      <p>Subtotal: <span class="secondaryPrice">$ -subtotal-</span></p>
+      <p class="primaryPriceBox right-div">Total: $ {{total}}</p>
+    </div>
   </table>
+
+  <!-- FIRST BUTTONS -->
   <div *ngIf="!hideDiv">
     <span routerLink="/productos" class="bottom-buttons-left"><button id="first-left" class="btn-red" href="#"><i class="bi bi-arrow-left"></i></button></span>            
     <span (click)="showDiv()" class="bottom-buttons-right"><button id="first-right" class="btn-green" href="#">Next</button></span>
   </div>
+
 </div>
   
 <!-- CONTACTO Y PAGO -->

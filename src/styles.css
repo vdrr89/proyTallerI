@@ -360,38 +360,38 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
 }
 
 /* FORM */
-  .form-box {
-    box-shadow: 0 15px 25px rgba(0,0,0,.6);
-    border-radius: 10px;
-  }
+.form-box {
+  box-shadow: 0 15px 25px rgba(0,0,0,.6);
+  border-radius: 10px;
+}
 
-  input, 
-  .input {
-    border-radius: 0px;
-    padding: 16px 32px;
-    margin: 4px 2px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #0303035e;
-    } 
+input, 
+.input {
+  border-radius: 0px;
+  padding: 16px 32px;
+  margin: 4px 2px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #0303035e;
+  } 
 
-  .input-micro {
-    border-radius: 0px;
-    margin: 2px 1px;
-    padding: 4px;
-    border-style: solid;
-    border-width: 1px;
-    border-color: #0303035e;
-    max-width: 70px;
-  }
+.input-micro {
+  border-radius: 0px;
+  margin: 2px 1px;
+  padding: 4px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #0303035e;
+  max-width: 70px;
+}
 
-  label {
-    padding: 10px 0;
-    font-size: 16px;
-    color: #0303035e;
-    pointer-events: none;
-    transition: .5s;
-  }
+label {
+  padding: 10px 0;
+  font-size: 16px;
+  color: #0303035e;
+  pointer-events: none;
+  transition: .5s;
+}
 
 /* para que el formulario no ocupe toda la pantalla */
 .all-form {
@@ -402,7 +402,7 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
   border-width: 1px;
   border-color: #000000b2;
 }
-/* ---------------------- BOTONES INABILITADOS ---------------------- */
+/* ---------------------- BOTONES / TEXTOS INABILITADOS ---------------------- */
 
 .disabledText{
  color: #3d4b57 !important;
@@ -448,7 +448,8 @@ nav {
     width: 100%;
 }
 
-nav > form {
+nav > form, 
+.right-div {
     margin-right: 1%;
     float: right;
     margin: 4px 2px
