@@ -49,12 +49,10 @@ export class GestionUsuariosComponent implements OnInit {
     })
 }
 
-//GO TO EDITAR USUARIO
 goToUpdate(usuarios:Usuarios){
   this._route.navigate(["/gestion/usuarios/crearusuario",usuarios.id]);
 }
 
-//ELIMINAR USUARIO
 delete(id: string){
   this._usuariosService.eliminarUsuarios(id).subscribe((response:any)=>{
     console.log("delete usu response: ", response);

@@ -33,8 +33,6 @@ export class ProductosComponent implements OnInit {
 
   constructor(private _ProductosService: ProductosService) { }
 
-// constructor(){}
-
   ngOnInit(): void {
     this._ProductosService.getProductos().subscribe(response => {
       console.log("productos component response: ", response);

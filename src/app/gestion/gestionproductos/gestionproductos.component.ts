@@ -61,12 +61,10 @@ export class GestionproductosComponent implements OnInit {
     })
   }
 
-//GO TO EDITAR PRODUCTO
 goToUpdate(productos:Productos){
   this._route.navigate(["/gestion/crearproducto",productos.id]);
 }
 
-//ELIMINAR PRODUCTO
 delete(id: string){
   this._productosService.eliminarProductos(id).subscribe((response:any)=>{
     console.log("delete response: ", response);

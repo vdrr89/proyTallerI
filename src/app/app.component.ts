@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router'; //agregar import
-import { ProductosService } from './servicios/productos.service'; //agregar imports servicios
+import { Router } from '@angular/router';
+import { ProductosService } from './servicios/productos.service';
 import { UsuariosService } from './servicios/usuarios.service';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor(private route: Router,private _productoService: ProductosService, private _usuarioService: UsuariosService) {}
 
-  ngOnInit(): void { //agregar acá
+  ngOnInit(): void { 
     this._productoService.getProductos().subscribe((response:any) => {
       console.log("app component ngOnInit prod: ",response);
     });

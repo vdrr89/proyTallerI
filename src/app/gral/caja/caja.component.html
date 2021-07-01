@@ -25,7 +25,7 @@
         <td>{{producto.titulo}} </td> 
         <td>{{producto.cantidad}}</td>
         <td>{{producto.precio}}</td> 
-        <td class="terciaryPrice">{{producto.cantidad*producto.precio}}</td><!-- no funca -->
+        <td class="terciaryPrice">{{producto.cantidad*producto.precio}}</td>
         <td></td> 
         <td class="manage-amount">
           <button (click)="less(producto)" class="btn-out-micro-alone"><i class="bi bi-dash-lg"></i></button>
@@ -86,7 +86,6 @@
   <div>
     <div id="siefectivo">
       <label class="label-siefectivo" for="entregamonto">Con cuanto va a pagar</label>
-      <!-- <input [(ngModel)]="entregaCliente" (keypress)="keyPress($event)" class="input-siefectivo" type="number" placeholder="con cuanto va a pagar" name="entregamonto"> -->
       <input [(ngModel)]="entregaCliente" class="input-siefectivo" type="number" placeholder="con cuanto va a pagar" name="entregamonto">
       <button (click)="calcularVuelto()" class="btn-out"><i class="bi bi-check2"></i></button>
       <p class="p-siefectivo" id="devuelvemonto">{{sobraOFalta}} $ {{vuelto}}</p>

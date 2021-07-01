@@ -75,7 +75,6 @@ export class CajaComponent implements OnInit {
     console.log("caja calcularVuelto: ", this.vuelto);
   }
 
-  // hay un problema con el plus, suma concatenando, no sumando
   plus(producto:any){
     let temp = this.cartProduct.map((element:any)=>{
       if (element.id === producto.id){
@@ -89,6 +88,7 @@ export class CajaComponent implements OnInit {
     this.cartProduct = temp;
   }
 
+  //clon del de abajo
   less(producto:any){
     if(producto.cantidad === 1){
       let borrar = this.cartProduct.filter((element:any)=>{
@@ -109,6 +109,27 @@ export class CajaComponent implements OnInit {
       this.cartProduct = temp;
     }
   }
+
+  // less(producto:any){
+  //   if(producto.cantidad === 1){
+  //     let borrar = this.cartProduct.filter((element:any)=>{
+  //       return element.id !== producto.id
+  //     })
+  //     this.total -= producto.precio;
+  //     this.cartProduct = borrar;
+  //   } else {
+  //     let temp = this.cartProduct.map((element:any)=>{
+  //       if(element.id === producto.id){
+  //         element.cantidad--;
+  //         this.total -= element.precio;
+  //         return element;
+  //       } else {
+  //         return element;
+  //       }
+  //     });
+  //     this.cartProduct = temp;
+  //   }
+  // }
 
   deleteItem(producto:any){
     sessionStorage.removeItem(producto.id);

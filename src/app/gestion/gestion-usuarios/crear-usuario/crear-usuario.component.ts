@@ -48,14 +48,14 @@ export class CrearUsuarioComponent implements OnInit {
     })
   }
 
-  //usuarios2 otra vez... OTRA VEZ... y eso que te dije que no lo toques...
+  //usuarios2 ... 2 .... O.O
   submit(event:any){ 
     if(this.usuarios2.id != ""){
       this._usuariosService.actualizarUsuarios(this.usuarios2).subscribe((response:any)=>{
         console.log("submit if response: ", response);
         this._route.navigate(['/gestion/usuarios']);
       });
-    } else { //update
+    } else { 
       this._usuariosService.insertarUsuarios(this.usuarios2).subscribe((response:any)=>{
         console.log("submit else response: ", response);
         this.update2(this.usuarios);

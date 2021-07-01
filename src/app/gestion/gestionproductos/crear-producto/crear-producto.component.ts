@@ -42,7 +42,7 @@ export class CrearProductoComponent implements OnInit {
 
   ngOnInit(): void {
     //version1 / funciona con submit() update2() y cleanFormData()
-    // no sacar el producto2 por favor comportate
+    // producto2 ... O.O ... no sacar ...
     this._activedRoute.paramMap.subscribe((item:any)=>{
       this.id = item.get('id');
       if(this.id != ""){
@@ -94,7 +94,7 @@ export class CrearProductoComponent implements OnInit {
   }
 
 
-  //VERSION1 / funca con submit() update2() y ngOnInit / funca divino
+  //VERSION1 / funca con submit() update2() y ngOnInit
   cleanFormData(){
     console.log("crear-producto cleanFormData");
     this.producto2.id = "";

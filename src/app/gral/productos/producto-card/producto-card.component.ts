@@ -69,7 +69,7 @@ export class ProductoCardComponent implements OnInit {
     console.log("addCart cartProduct: ", this.cartProduct);
   }
 
-  // FAVORITOS hacer maquetación de configurar cuenta con receptor de favoritos
+  // FAVORITOS hacer maquetación de configurar cuenta con receptor de favoritos // hacer como el indio
   addFavorites(producto4:Productos){
     // this.favProduct.precio = producto4.precioVenta;
     // this.favProduct.titulo = producto4.titulo;
