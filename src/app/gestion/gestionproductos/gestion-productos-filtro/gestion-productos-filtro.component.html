@@ -4,7 +4,7 @@
 <!-- FILTRO BOTONES FIJO -->
 <div class="left">
     <button (click)="showDiv()" class="btn-out"><i class="bi bi-filter"></i></button>
-    <input (keyup)="keyupSearch($event)" type="text" placeholder="escriba aqui lo que desea buscar" class="sty-search">
+    <input (keyup)="buscar()" type="text" placeholder="escriba aqui lo que desea buscar" class="sty-search">
     <button (click)="buscar()" class="btn-out"><i class="bi bi-search"></i></button>
 </div>
 
@@ -13,29 +13,29 @@
     <tr>
         <td>
             <label for="codigo" class="form-label">Código</label>
-            <input (keyup)="keyupSearch($event)" class="form-control" name="codigo" type="text" placeholder="Codigo" [(ngModel)]="codigo">
+            <input (keyup)="buscar()" class="form-control" name="codigo" type="text" placeholder="Codigo" [(ngModel)]="codigo">
         </td>
         <td>
             <label for="titulo" class="form-label">Titulo</label>
-            <input (keyup)="keyupSearch($event)" class="form-control" name="titulo" type="text" placeholder="Titulo" [(ngModel)]="titulo">
+            <input (keyup)="buscar()" class="form-control" name="titulo" type="text" placeholder="Titulo" [(ngModel)]="titulo">
         </td>
         <td>
             <label for="autor" class="form-label">Autor</label>
-            <input (keyup)="keyupSearch($event)" class="form-control" name="autor" type="text" placeholder="Autor" [(ngModel)]="autor">
+            <input (keyup)="buscar()" class="form-control" name="autor" type="text" placeholder="Autor" [(ngModel)]="autor">
         </td>
     </tr>
     <tr>
         <td>
             <label for="editorial" class="form-label">Editorial</label>
-            <input (keyup)="keyupSearch($event)" class="form-control" name="editorial" type="text" placeholder="Editorial" [(ngModel)]="editorial">
+            <input (keyup)="buscar()" class="form-control" name="editorial" type="text" placeholder="Editorial" [(ngModel)]="editorial">
         </td>
         <td>
             <label for="precioMax" class="form-label">Precio Máximo</label>
-            <input (keyup)="keyupSearch($event)" class="form-control" name="precioMax" type="text" placeholder="Precio Máximo" [(ngModel)]="precioMax">
+            <input (keyup)="buscar()" class="form-control" name="precioMax" type="text" placeholder="Precio Máximo" [(ngModel)]="precioMax">
         </td>
         <td>
             <label for="precioMin" class="form-label">Precio Mínimo</label>
-            <input (keyup)="keyupSearch($event)" class="form-control" name="precioMin" type="text" placeholder="Precio Mínimo" [(ngModel)]="precioMin">
+            <input (keyup)="buscar()" class="form-control" name="precioMin" type="text" placeholder="Precio Mínimo" [(ngModel)]="precioMin">
         </td>
         <td>
             <button (click)="limpiarFiltro()" class="btn-red-micro-alone"><i class="bi bi-trash-fill"></i></button>

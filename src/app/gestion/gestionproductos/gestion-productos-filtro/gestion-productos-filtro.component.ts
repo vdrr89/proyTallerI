@@ -53,10 +53,6 @@ export class GestionProductosFiltroComponent implements OnInit {
       this.limpiarFiltro();
     }
 
-    keyupSearch(event:any){
-      this.buscar();
-    }
-
     buscar(){
       if(this.codigo.length > 0){
         let productosFiltrados = this.productos2.filter(producto => {

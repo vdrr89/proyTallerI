@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-  menu = [
+  menu = [ // fijo / menu title
     {
       id:"home",
       nombre: '',

@@ -40,6 +40,7 @@ import { CrearProductoComponent } from './gestion/gestionproductos/crear-product
 import { GestionUsuariosFiltroComponent } from './gestion/gestion-usuarios/gestion-usuarios-filtro/gestion-usuarios-filtro.component';
 import { GestionUsuariosComponent } from './gestion/gestion-usuarios/gestion-usuarios.component';
 import { CrearUsuarioComponent } from './gestion/gestion-usuarios/crear-usuario/crear-usuario.component';
+import { ProductFilterComponent } from './gral/nav-bar/product-filter/product-filter.component';
 
 @NgModule({
   declarations: [ // componentes
@@ -65,7 +66,8 @@ import { CrearUsuarioComponent } from './gestion/gestion-usuarios/crear-usuario/
     ProductosCarouselComponent,
     ProductoDetalleComponent,
     ProductosFiltroComponent,
-    ProductoCardComponent
+    ProductoCardComponent,
+    ProductFilterComponent
   ],
   imports: [  //modules
     BrowserModule,

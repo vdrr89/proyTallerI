@@ -2,9 +2,14 @@
   <button *ngFor="let item of menu" class="btn-nav" [routerLink]="item.link"><i class="{{item.icon}}"></i>{{item.nombre}}</button>   
 
    <form id="search-seccion">
-    <!-- <input id="search-inp" type="search" placeholder="Search" aria-label="Search">
-    <button id="search-btn" class="btn-nav" type="submit"><i class="bi bi-search"></i></button> -->
+    <app-product-filter></app-product-filter>
+    <!-- <span class="input-img"><i class="bi bi-filter" (click)="showFilter()"></i></span>
+    <input id="search-input" type="search" placeholder="Search" aria-label="Search">
+    <button id="search-btn" class="btn-nav" type="submit"><i class="bi bi-search"></i></button>     
+    <app-product-filter *ngIf="filterDropdown"></app-product-filter> -->
+
     <!-- <app-gestion-productos-filtro></app-gestion-productos-filtro> -->
+
     <button id="login" class="btn-nav" [routerLink]="'/login'"><i class="bi bi-person-fill"></i></button>
   </form>
 </nav>

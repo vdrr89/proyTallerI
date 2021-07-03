@@ -112,8 +112,8 @@ guardar color para otro momento: #fdfcf7 (casi blanco beige)
       font-family: 'Open Sans', sans-serif;
       color: #262626; 
       font-weight: 400; 
-      font-size: 1rem;
-      line-height: 1.5rem;
+      font-size: 0.7rem;
+      line-height: 0.9rem;
     }
   
     .longText{
@@ -375,6 +375,24 @@ input,
   border-color: #0303035e;
   } 
 
+  /* hay algo mal acá */
+.input-img{
+
+  background-color: #fff !important;
+  /* position:relative; */
+
+  padding: 14px 30px;
+  /* margin: 4px 2px; */
+
+  border-radius: 0px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #0303035e;
+
+  font-size: 2vw;
+  font-weight: bold;
+}
+
 .input-micro {
   border-radius: 0px;
   margin: 2px 1px;
@@ -437,6 +455,23 @@ label {
 }
 
 /* ---------------------- DIAGRAMACIÓN ---------------------- */
+
+/* ---------------------- CIRCLE CHECK ---------------------- */
+
+.circulo {
+  width: 16px;
+  height: 16px;
+  -moz-border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #12876f;
+}
+
+.circulo:focus {
+  background: #1abc9c;
+  border: none;
+}
 
 /* ---------------------- MENU NAV Y FOOTER ---------------------- */
 nav {
